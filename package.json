@@ -1,6 +1,6 @@
 {
   "name": "fluxer-core-monorepo",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "private": true,
   "license": "Apache-2.0",
   "description": "@fluxerjs SDK monorepo",
@@ -68,8 +68,8 @@
   },
   "pnpm": {
     "overrides": {
-      "tar": ">=7.5.8",
-      "minimatch": ">=10.2.1"
+      "tar": ">=7.5.11",
+      "minimatch": ">=10.2.3"
     }
   }
 }

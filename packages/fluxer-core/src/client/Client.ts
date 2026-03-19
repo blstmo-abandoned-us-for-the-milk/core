@@ -163,6 +163,8 @@ export class Client extends EventEmitter {
   private _ws: WebSocketManager | null = null;
   /** When waitForGuilds, set of guild IDs we're waiting for GUILD_CREATE on. Null when not waiting. */
   _pendingGuildIds: Set<string> | null = null;
+  /** Timeout for guild stream when READY has no guilds (gateway sends only GUILD_CREATE). Cleared in finally. */
+  private _guildStreamSettleTimeout: ReturnType<typeof setTimeout> | null = null;
   /** Per-channel message cache (channelId -> messageId -> APIMessage). Used when options.cache.messages > 0. */
   private _messageCaches: Map<string, Map<string, APIMessage>> | null = null;
 
@@ -461,6 +463,16 @@ export class Client extends EventEmitter {
           this._pendingGuildIds = pending;
           return;
         }
+        if (waitForGuilds && (data.guilds ?? []).length === 0) {
+          // Gateway sent READY with no guilds; guilds will arrive via GUILD_CREATE.
+          // Defer Ready until guild stream settles (avoids Ready firing with empty client.guilds).
+          const GUILD_STREAM_SETTLE_MS = 500;
+          this._guildStreamSettleTimeout = setTimeout(() => {
+            this._guildStreamSettleTimeout = null;
+            this._finalizeReady();
+          }, GUILD_STREAM_SETTLE_MS);
+          return;
+        }
         this._finalizeReady();
       },
     );
@@ -493,6 +505,10 @@ export class Client extends EventEmitter {
 
   /** Disconnect from the gateway and clear cached data. */
   async destroy(): Promise<void> {
+    if (this._guildStreamSettleTimeout !== null) {
+      clearTimeout(this._guildStreamSettleTimeout);
+      this._guildStreamSettleTimeout = null;
+    }
     if (this._ws) {
       this._ws.destroy();
       this._ws = null;

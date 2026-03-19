@@ -11,6 +11,31 @@ export interface ChangelogEntry {
 
 export const changelogEntries: ChangelogEntry[] = [
   {
+    version: '1.2.4',
+    date: '2026-03-19',
+    sections: [
+      {
+        title: '@fluxerjs/core — waitForGuilds fix',
+        items: [
+          'Fixed waitForGuilds: true — Ready event now receives populated client.guilds when the gateway sends READY with an empty guilds array and guilds via GUILD_CREATE; SDK defers Ready by 500ms so guild stream settles before emitting',
+        ],
+      },
+      {
+        title: '@fluxerjs/core — GuildMember.move()',
+        items: [
+          'GuildMember.move(channelId) — move members between voice channels (#27)',
+        ],
+      },
+      {
+        title: '@fluxerjs/ws — Reconnect fixes',
+        items: [
+          'Close socket before reconnecting on invalid session (#25)',
+          'Add gateway close code 4013 (AckBackpressure) as reconnectable (#24)',
+        ],
+      },
+    ],
+  },
+  {
     version: '1.2.3',
     date: '2026-02-23',
     sections: [
