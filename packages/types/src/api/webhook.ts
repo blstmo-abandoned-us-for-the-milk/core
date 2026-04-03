@@ -32,3 +32,10 @@ export interface APIWebhookTokenUpdateRequest {
   name?: string;
   avatar?: string | null;
 }
+
+/** Request body for PATCH /webhooks/{id}/{token}/messages/{message_id}. All fields optional. */
+export interface APIWebhookEditMessageRequest {
+  content?: string;
+  embeds?: unknown[];
+  attachments?: unknown[];
+}

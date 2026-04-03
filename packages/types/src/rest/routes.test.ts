@@ -66,6 +66,11 @@ describe('Routes', () => {
     it('webhookExecute builds path with token', () => {
       expect(Routes.webhookExecute('wid', 'token123')).toBe('/webhooks/wid/token123');
     });
+    it('webhookMessage builds path with token and message id', () => {
+      expect(Routes.webhookMessage('wid', 'token123', 'mid')).toBe(
+        '/webhooks/wid/token123/messages/mid',
+      );
+    });
   });
 
   describe('application commands', () => {

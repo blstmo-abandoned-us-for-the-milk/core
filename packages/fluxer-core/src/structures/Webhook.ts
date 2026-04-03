@@ -1,7 +1,12 @@
 import { Client } from '../client/Client.js';
 import { Base } from './Base.js';
 import { APIEmbed, APIMessage } from '@fluxerjs/types';
-import { APIWebhook, APIWebhookUpdateRequest, APIWebhookTokenUpdateRequest } from '@fluxerjs/types';
+import {
+  APIWebhook,
+  APIWebhookUpdateRequest,
+  APIWebhookTokenUpdateRequest,
+  APIWebhookEditMessageRequest,
+} from '@fluxerjs/types';
 import { Routes } from '@fluxerjs/types';
 import { EmbedBuilder } from '@fluxerjs/builders';
 import { buildSendBody, resolveMessageFiles, type MessageFileData } from '../util/messageUtils.js';
@@ -156,6 +161,27 @@ export class Webhook extends Base {
       return new Message(this.client, data);
     }
     return undefined;
+  }
+
+  /**
+   * Edit a message previously sent by this webhook.
+   * Requires the webhook token.
+   * @param messageId - The ID of the message to edit
+   * @param options - Fields to update (content, embeds, attachments)
+   * @returns The updated Message
+   * @throws Error if token is not available
+   */
+  async editMessage(messageId: string, options: APIWebhookEditMessageRequest): Promise<Message> {
+    if (!this.token) {
+      throw new Error(
+        'Webhook token is required to edit messages. The token is only returned when creating a webhook; fetched webhooks cannot edit messages.',
+      );
+    }
+    const data = await this.client.rest.patch<APIMessage>(
+      Routes.webhookMessage(this.id, this.token, messageId),
+      { body: options as Record<string, unknown>, auth: false },
+    );
+    return new Message(this.client, data);
   }
 
   /**
