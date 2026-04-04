@@ -1,6 +1,6 @@
 import { EventEmitter } from 'events';
-import { REST } from '@fluxerjs/rest';
-import { WebSocketManager } from '@fluxerjs/ws';
+import { REST } from '@erinjs/rest';
+import { WebSocketManager } from '@erinjs/ws';
 import {
   APIApplicationCommandInteraction,
   GatewayGuildRoleCreateDispatchData,
@@ -11,7 +11,7 @@ import {
   GatewayTypingStartDispatchData,
   GatewayUserUpdateDispatchData,
   Routes,
-} from '@fluxerjs/types';
+} from '@erinjs/types';
 import { ChannelManager } from './ChannelManager.js';
 import { GuildManager } from './GuildManager.js';
 import { ClientOptions } from '../util/Options.js';
@@ -38,7 +38,7 @@ import {
   GatewayChannelPinsUpdateDispatchData,
   GatewayPresenceUpdateDispatchData,
   GatewayWebhooksUpdateDispatchData,
-} from '@fluxerjs/types';
+} from '@erinjs/types';
 import {
   APIChannel,
   APIGuild,
@@ -46,13 +46,13 @@ import {
   APIUser,
   APIUserPartial,
   APIInstance,
-} from '@fluxerjs/types';
+} from '@erinjs/types';
 import {
   emitDeprecationWarning,
   formatEmoji,
   getUnicodeFromShortcode,
   parseEmoji,
-} from '@fluxerjs/util';
+} from '@erinjs/util';
 import { User } from '../structures/User.js';
 import { UsersManager } from './UsersManager.js';
 import { eventHandlers } from './EventHandlerRegistry.js';

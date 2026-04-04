@@ -22,7 +22,7 @@ What you expected to happen.
 
 ## Environment
 
-- @fluxerjs/core version:
+- @erinjs/core version:
 - Node.js version:
 - OS:
 

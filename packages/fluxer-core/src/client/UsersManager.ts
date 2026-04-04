@@ -1,6 +1,6 @@
-import { Collection } from '@fluxerjs/collection';
-import { Routes } from '@fluxerjs/types';
-import { APIUserPartial, APIProfileResponse, APIGuildMember } from '@fluxerjs/types';
+import { Collection } from '@erinjs/collection';
+import { Routes } from '@erinjs/types';
+import { APIUserPartial, APIProfileResponse, APIGuildMember } from '@erinjs/types';
 import { Client } from './Client.js';
 import { User } from '../structures/User.js';
 import { GuildMember } from '../structures/GuildMember.js';

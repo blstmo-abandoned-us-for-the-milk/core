@@ -1,11 +1,11 @@
 /**
- * Minimal Fluxer bot — login + !ping → Pong.
+ * Minimal erin.js bot — login + !ping → Pong.
  * Usage: FLUXER_BOT_TOKEN=your_token node examples/minimal-bot.js
  *
- * See the Basic Bot guide: https://fluxerjs.blstmo.com/v/latest/guides/basic-bot
+ * Guide route (local docs): /v/latest/guides/basic-bot
  */
 
-import { Client, Events } from '@fluxerjs/core';
+import { Client, Events } from '@erinjs/core';
 
 const client = new Client({ intents: 0 });
 

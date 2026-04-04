@@ -1,11 +1,11 @@
 import { execFile, spawn } from 'node:child_process';
 import { EventEmitter } from 'events';
-import { Client } from '@fluxerjs/core';
-import { VoiceChannel } from '@fluxerjs/core';
+import { Client } from '@erinjs/core';
+import { VoiceChannel } from '@erinjs/core';
 import {
   GatewayVoiceServerUpdateDispatchData,
   GatewayVoiceStateUpdateDispatchData,
-} from '@fluxerjs/types';
+} from '@erinjs/types';
 import {
   AudioStream,
   Room,

@@ -12,6 +12,30 @@ importers:
 
   .:
     devDependencies:
+      '@erinjs/builders':
+        specifier: workspace:*
+        version: link:packages/builders
+      '@erinjs/collection':
+        specifier: workspace:*
+        version: link:packages/collection
+      '@erinjs/core':
+        specifier: workspace:*
+        version: link:packages/fluxer-core
+      '@erinjs/rest':
+        specifier: workspace:*
+        version: link:packages/rest
+      '@erinjs/types':
+        specifier: workspace:*
+        version: link:packages/types
+      '@erinjs/util':
+        specifier: workspace:*
+        version: link:packages/util
+      '@erinjs/voice':
+        specifier: workspace:*
+        version: link:packages/voice
+      '@erinjs/ws':
+        specifier: workspace:*
+        version: link:packages/ws
       '@changesets/changelog-github':
         specifier: ^0.5.2
         version: 0.5.2
@@ -21,30 +45,6 @@ importers:
       '@eslint/js':
         specifier: ^10.0.1
         version: 10.0.1(eslint@9.39.2(jiti@1.21.7))
-      '@fluxerjs/builders':
-        specifier: workspace:*
-        version: link:packages/builders
-      '@fluxerjs/collection':
-        specifier: workspace:*
-        version: link:packages/collection
-      '@fluxerjs/core':
-        specifier: workspace:*
-        version: link:packages/fluxer-core
-      '@fluxerjs/rest':
-        specifier: workspace:*
-        version: link:packages/rest
-      '@fluxerjs/types':
-        specifier: workspace:*
-        version: link:packages/types
-      '@fluxerjs/util':
-        specifier: workspace:*
-        version: link:packages/util
-      '@fluxerjs/voice':
-        specifier: workspace:*
-        version: link:packages/voice
-      '@fluxerjs/ws':
-        specifier: workspace:*
-        version: link:packages/ws
       '@typescript-eslint/eslint-plugin':
         specifier: ^8.55.0
         version: 8.55.0(@typescript-eslint/parser@8.55.0(eslint@9.39.2(jiti@1.21.7))(typescript@5.9.3))(eslint@9.39.2(jiti@1.21.7))(typescript@5.9.3)
@@ -148,10 +148,10 @@ importers:
 
   examples:
     dependencies:
-      '@fluxerjs/core':
+      '@erinjs/core':
         specifier: workspace:*
         version: link:../packages/fluxer-core
-      '@fluxerjs/voice':
+      '@erinjs/voice':
         specifier: workspace:*
         version: link:../packages/voice
       youtube-dl-exec:
@@ -160,10 +160,10 @@ importers:
 
   packages/builders:
     dependencies:
-      '@fluxerjs/types':
+      '@erinjs/types':
         specifier: workspace:*
         version: link:../types
-      '@fluxerjs/util':
+      '@erinjs/util':
         specifier: workspace:*
         version: link:../util
     devDependencies:
@@ -207,22 +207,22 @@ importers:
 
   packages/fluxer-core:
     dependencies:
-      '@fluxerjs/builders':
+      '@erinjs/builders':
         specifier: workspace:*
         version: link:../builders
-      '@fluxerjs/collection':
+      '@erinjs/collection':
         specifier: workspace:*
         version: link:../collection
-      '@fluxerjs/rest':
+      '@erinjs/rest':
         specifier: workspace:*
         version: link:../rest
-      '@fluxerjs/types':
+      '@erinjs/types':
         specifier: workspace:*
         version: link:../types
-      '@fluxerjs/util':
+      '@erinjs/util':
         specifier: workspace:*
         version: link:../util
-      '@fluxerjs/ws':
+      '@erinjs/ws':
         specifier: workspace:*
         version: link:../ws
     devDependencies:
@@ -238,7 +238,7 @@ importers:
 
   packages/rest:
     dependencies:
-      '@fluxerjs/types':
+      '@erinjs/types':
         specifier: workspace:*
         version: link:../types
     devDependencies:
@@ -263,7 +263,7 @@ importers:
 
   packages/util:
     dependencies:
-      '@fluxerjs/types':
+      '@erinjs/types':
         specifier: workspace:*
         version: link:../types
     devDependencies:
@@ -279,13 +279,13 @@ importers:
 
   packages/voice:
     dependencies:
-      '@fluxerjs/collection':
+      '@erinjs/collection':
         specifier: workspace:*
         version: link:../collection
-      '@fluxerjs/core':
+      '@erinjs/core':
         specifier: workspace:*
         version: link:../fluxer-core
-      '@fluxerjs/types':
+      '@erinjs/types':
         specifier: workspace:*
         version: link:../types
       '@livekit/rtc-node':
@@ -329,7 +329,7 @@ importers:
 
   packages/ws:
     dependencies:
-      '@fluxerjs/types':
+      '@erinjs/types':
         specifier: workspace:*
         version: link:../types
       ws:

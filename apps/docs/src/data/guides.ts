@@ -58,7 +58,7 @@ export const guides: Guide[] = [
     category: 'getting-started',
     sections: [
       {
-        code: `npm install @fluxerjs/core
+        code: `npm install @erinjs/core
 
 # Run your bot (Node 18+)
 FLUXER_BOT_TOKEN=your_token node your-bot.js`,
@@ -75,7 +75,7 @@ FLUXER_BOT_TOKEN=your_token node your-bot.js`,
     category: 'getting-started',
     sections: [
       {
-        code: `import { Client, Events } from '@fluxerjs/core';
+        code: `import { Client, Events } from '@erinjs/core';
 
 const client = new Client({ intents: 0 });
 
@@ -91,7 +91,7 @@ await client.login(process.env.FLUXER_BOT_TOKEN);`,
         tip: 'You can also use client.events for chainable, typed handlers with better autocomplete.',
         alternateCode: {
           label: 'client.events',
-          code: `import { Client, Events } from '@fluxerjs/core';
+          code: `import { Client, Events } from '@erinjs/core';
 
 const client = new Client({ intents: 0 });
 
@@ -128,7 +128,7 @@ await message.reply('Pong!');`,
       {
         title: 'Overview',
         description:
-          'Fluxer SDK provides Discord.js-style APIs where it makes sense. Sections marked with the green "Discord.js compatible" badge offer familiar patterns — click the badge to see the full API reference.',
+          'erin.js provides Discord.js-style APIs where it makes sense. Sections marked with the green "Discord.js compatible" badge offer familiar patterns — click the badge to see the full API reference.',
       },
       {
         title: 'member.roles (GuildMemberRoleManager)',
@@ -177,7 +177,7 @@ if (me?.permissions.has(PermissionFlags.BanMembers)) {
         title: 'Sending to the same channel',
         description:
           'Use message.send() when you want to post in the channel without replying. Same signature as reply(): pass a string or object with content and/or embeds.',
-        code: `import { Client, Events } from '@fluxerjs/core';
+        code: `import { Client, Events } from '@erinjs/core';
 
 const client = new Client({ intents: 0 });
 
@@ -194,7 +194,7 @@ await client.login(process.env.FLUXER_BOT_TOKEN);`,
         title: 'Sending to a specific channel (e.g. logging)',
         description:
           'Use message.sendTo(channelId, payload) to send to another channel—handy for logging, announcements, or forwarding. You only need the target channel ID.',
-        code: `import { Client, Events, EmbedBuilder } from '@fluxerjs/core';
+        code: `import { Client, Events, EmbedBuilder } from '@erinjs/core';
 
 const client = new Client({ intents: 0 });
 const LOG_CHANNEL_ID = process.env.LOG_CHANNEL_ID; // Your log channel's snowflake
@@ -222,7 +222,7 @@ await client.login(process.env.FLUXER_BOT_TOKEN);`,
         title: 'client.channels.send() — send by channel ID',
         description:
           'Use client.channels.send(channelId, payload) when you have a channel ID. Works even if the channel is not cached. No need to fetch first when you only need to send.',
-        code: `import { Client, Events } from '@fluxerjs/core';
+        code: `import { Client, Events } from '@erinjs/core';
 
 const client = new Client({ intents: 0 });
 const ANNOUNCE_CHANNEL_ID = process.env.ANNOUNCE_CHANNEL_ID;
@@ -240,7 +240,7 @@ await client.login(process.env.FLUXER_BOT_TOKEN);`,
         title: 'client.channels.resolve() — get channel by ID',
         description:
           'Resolve a channel by ID from cache or API. Use channel.canSendMessage() or channel.isTextBased() before sending. For sending when you only have an ID, prefer client.channels.send() which skips the fetch.',
-        code: `import { Client } from '@fluxerjs/core';
+        code: `import { Client } from '@erinjs/core';
 
 const client = new Client({ intents: 0 });
 await client.login(process.env.FLUXER_BOT_TOKEN);
@@ -347,7 +347,7 @@ await client.channels.send(channelId, 'New update available!');`,
       {
         title: 'Basic embed',
         description: 'Minimal embed with title, description, color, fields, footer, and timestamp.',
-        code: `import { Client, Events, EmbedBuilder } from '@fluxerjs/core';
+        code: `import { Client, Events, EmbedBuilder } from '@erinjs/core';
 
 const client = new Client({ intents: 0 });
 
@@ -361,7 +361,7 @@ client.on(Events.MessageCreate, async (message) => {
         { name: 'Field 1', value: 'Value 1', inline: true },
         { name: 'Field 2', value: 'Value 2', inline: true }
       )
-      .setFooter({ text: 'Powered by Fluxer.js' })
+      .setFooter({ text: 'Powered by erin.js' })
       .setTimestamp();
 
     await message.reply({ embeds: [embed] });
@@ -394,9 +394,9 @@ embed.setColor([88, 101, 242]);`,
         title: 'Author',
         description: 'setAuthor() adds a header line with name. Optional: iconURL, url.',
         code: `embed.setAuthor({
-  name: 'Fluxer.js',
+  name: 'erin.js',
   iconURL: 'https://example.com/icon.png',
-  url: 'https://fluxerjs.dev',
+  url: 'https://example.com',
 });`,
         language: 'javascript',
       },
@@ -404,7 +404,7 @@ embed.setColor([88, 101, 242]);`,
         title: 'Footer',
         description: 'setFooter() adds text at the bottom. Optional: iconURL.',
         code: `embed.setFooter({
-  text: 'Powered by Fluxer.js',
+  text: 'Powered by erin.js',
   iconURL: 'https://example.com/footer-icon.png',
 });`,
         language: 'javascript',
@@ -514,7 +514,7 @@ await reply.edit({ content: 'Updated message!' });`,
         title: 'Edit Embeds',
         description:
           'Replace or update embeds on an existing message. Pass an array of EmbedBuilder instances or APIEmbed objects.',
-        code: `import { Client, Events, EmbedBuilder } from '@fluxerjs/core';
+        code: `import { Client, Events, EmbedBuilder } from '@erinjs/core';
 
 const client = new Client({ intents: 0 });
 
@@ -571,7 +571,7 @@ await client.login(process.env.FLUXER_BOT_TOKEN);`,
         title: 'Images and Thumbnails',
         description:
           'Use setImage() and setThumbnail() with a URL string, or pass full EmbedMediaOptions for width, height, content_type, and other metadata.',
-        code: `import { Client, Events, EmbedBuilder } from '@fluxerjs/core';
+        code: `import { Client, Events, EmbedBuilder } from '@erinjs/core';
 
 const client = new Client({ intents: 0 });
 
@@ -667,7 +667,7 @@ const embedWithDuration = new EmbedBuilder()
         title: 'Send a Tenor GIF',
         description:
           'Send the Tenor URL as content. No embeds needed. The unfurler detects the URL and creates the gifv embed.',
-        code: `import { Client, Events } from '@fluxerjs/core';
+        code: `import { Client, Events } from '@erinjs/core';
 
 const client = new Client({ intents: 0 });
 
@@ -683,7 +683,7 @@ client.on(Events.MessageCreate, async (message) => {
         title: 'Tenor URL in an embed',
         description:
           'Tenor page URLs do not work as setImage() URLs. Use resolveTenorToImageUrl() to fetch the Tenor page or oEmbed, derive the GIF URL (embeds require GIF, not MP4), and return { url, flags: IS_ANIMATED }. For full gifv embeds, send the Tenor URL as content.',
-        code: `import { EmbedBuilder, resolveTenorToImageUrl } from '@fluxerjs/core';
+        code: `import { EmbedBuilder, resolveTenorToImageUrl } from '@erinjs/core';
 
 const tenorUrl = 'https://tenor.com/view/stressed-gif-7048057395502071840';
 const media = await resolveTenorToImageUrl(tenorUrl);
@@ -716,7 +716,7 @@ if (media) {
         title: 'Basic File Upload',
         description:
           'Pass files in your send options. Each file needs a name and data (Buffer, Blob, Uint8Array). Use with message.reply(), message.send(), or channel.send().',
-        code: `import { Client, Events } from '@fluxerjs/core';
+        code: `import { Client, Events } from '@erinjs/core';
 import { readFileSync } from 'fs';
 
 const client = new Client({ intents: 0 });
@@ -736,7 +736,7 @@ client.on(Events.MessageCreate, async (message) => {
         title: 'Attachment Metadata',
         description:
           'When using files, you can pass attachments to set metadata per file: filename, title, description, and flags. The id in each attachment matches the file index (0, 1, 2...).',
-        code: `import { MessageAttachmentFlags } from '@fluxerjs/core';
+        code: `import { MessageAttachmentFlags } from '@erinjs/core';
 
 await message.reply({
   content: 'Spoiler image:',
@@ -756,7 +756,7 @@ await message.reply({
         title: 'Attachment Flags',
         description:
           'MessageAttachmentFlags: IS_SPOILER (8) blurs until clicked, CONTAINS_EXPLICIT_MEDIA (16) for explicit content, IS_ANIMATED (32) for GIFs and animated WebP. Combine with bitwise OR.',
-        code: `import { MessageAttachmentFlags } from '@fluxerjs/core';
+        code: `import { MessageAttachmentFlags } from '@erinjs/core';
 
 // Spoiler (blurred until clicked)
 flags: MessageAttachmentFlags.IS_SPOILER
@@ -782,7 +782,7 @@ flags: MessageAttachmentFlags.IS_SPOILER | MessageAttachmentFlags.IS_ANIMATED`,
         title: 'Using a URL',
         description:
           'Pass { name, url } in the files array. The SDK fetches the URL (30s timeout), validates it with URL.canParse(), and uploads the result. Works with channel.send(), message.reply(), message.send(), webhook.send(), and client.channels.send().',
-        code: `import { Client, Events } from '@fluxerjs/core';
+        code: `import { Client, Events } from '@erinjs/core';
 
 const client = new Client({ intents: 0 });
 
@@ -843,7 +843,7 @@ await client.login(process.env.FLUXER_BOT_TOKEN);`,
         title: 'User avatar and banner',
         description:
           'When you have a User object (e.g. message.author), use avatarURL(), displayAvatarURL(), and bannerURL(). These handle animated avatars (a_ prefix) and default fallbacks.',
-        code: `import { Client, Events, EmbedBuilder } from '@fluxerjs/core';
+        code: `import { Client, Events, EmbedBuilder } from '@erinjs/core';
 
 const client = new Client({ intents: 0 });
 
@@ -868,7 +868,7 @@ client.on(Events.MessageCreate, async (message) => {
         title: 'Raw API data: CDN helpers',
         description:
           'When you have raw API data (e.g. from client.rest.get(Routes.user(id))), use the standalone CDN helpers. They work with id + hash and support size and extension options.',
-        code: `import { cdnAvatarURL, cdnBannerURL } from '@fluxerjs/core';
+        code: `import { cdnAvatarURL, cdnBannerURL } from '@erinjs/core';
 
 // From REST response
 const userData = await client.rest.get(Routes.user(userId));
@@ -979,7 +979,7 @@ client.on(Events.MessageReactionAdd, async (reaction, user) => {
         title: 'Webhooks Without a Bot',
         description:
           'A Client with intents: 0 is enough. No need to connect to the gateway or handle events. Ideal for scripts or one-off sends.',
-        code: `import { Client, Webhook } from '@fluxerjs/core';
+        code: `import { Client, Webhook } from '@erinjs/core';
 
 const client = new Client({ intents: 0 });
 const webhook = Webhook.fromToken(client, webhookId, webhookToken);
@@ -990,7 +990,7 @@ await webhook.send('Message from a script!');`,
         title: 'Creating a Webhook',
         description:
           'Create a webhook on a text channel. Requires Manage Webhooks permission. The token is returned only when creating—store it securely. It will never be returned when listing or fetching.',
-        code: `import { Client } from '@fluxerjs/core';
+        code: `import { Client } from '@erinjs/core';
 
 const client = new Client({ intents: 0 });
 await client.login(process.env.FLUXER_BOT_TOKEN);
@@ -1006,7 +1006,7 @@ console.log(webhook.id, webhook.token); // Store token—it won't be returned wh
         title: 'Sending Messages',
         description:
           'Send text, embeds, or both. You can override the username and avatar for each message.',
-        code: `import { Client, Webhook, EmbedBuilder } from '@fluxerjs/core';
+        code: `import { Client, Webhook, EmbedBuilder } from '@erinjs/core';
 
 const client = new Client({ intents: 0 });
 const webhook = Webhook.fromToken(client, webhookId, webhookToken);
@@ -1046,7 +1046,7 @@ await webhook.send({
         title: 'Fetching & Listing Webhooks',
         description:
           'Fetch by ID or list channel/guild webhooks. Requires a logged-in bot. Fetched webhooks have no token and cannot send—but you can edit or delete them with bot auth.',
-        code: `import { Client, Webhook } from '@fluxerjs/core';
+        code: `import { Client, Webhook } from '@erinjs/core';
 
 const client = new Client({ intents: 0 });
 await client.login(process.env.FLUXER_BOT_TOKEN);
@@ -1067,7 +1067,7 @@ const guildWebhooks = await guild?.fetchWebhooks() ?? [];`,
         title: 'Editing a Webhook',
         description:
           'Use webhook.edit() to change name, avatar, or (with bot auth) channel. With a token (e.g. from createWebhook or fromToken), you can update name and avatar. Without a token (fetched webhook), bot auth lets you also change the target channel.',
-        code: `import { Client, Webhook } from '@fluxerjs/core';
+        code: `import { Client, Webhook } from '@erinjs/core';
 
 const client = new Client({ intents: 0 });
 await client.login(process.env.FLUXER_BOT_TOKEN);
@@ -1110,7 +1110,7 @@ await webhook.delete();`,
         title: 'Embeds Without a Title',
         description:
           'You do not need a title for embeds to work. At least one of title, description, fields, or image/thumbnail is required. A description-only embed is valid.',
-        code: `import { Client, Webhook, EmbedBuilder } from '@fluxerjs/core';
+        code: `import { Client, Webhook, EmbedBuilder } from '@erinjs/core';
 
 const client = new Client({ intents: 0 });
 const webhook = Webhook.fromToken(client, webhookId, webhookToken);
@@ -1130,7 +1130,7 @@ await webhook.send({
         title: 'Direct Attachments',
         description:
           'Attach files to webhook messages using the files array. Each file needs name and data (Blob, ArrayBuffer, or Uint8Array). Optional filename overrides the display name.',
-        code: `import { Client, Webhook } from '@fluxerjs/core';
+        code: `import { Client, Webhook } from '@erinjs/core';
 import { readFileSync } from 'fs';
 
 const client = new Client({ intents: 0 });
@@ -1150,7 +1150,7 @@ await webhook.send({
         title: 'Full Example: Embed + Files',
         description:
           'Combine content, description-only embed, and file attachments in a single webhook send.',
-        code: `import { Client, Webhook, EmbedBuilder } from '@fluxerjs/core';
+        code: `import { Client, Webhook, EmbedBuilder } from '@erinjs/core';
 import { readFileSync } from 'fs';
 
 const client = new Client({ intents: 0 });
@@ -1176,21 +1176,21 @@ await webhook.send({
     slug: 'voice',
     title: 'Voice',
     description:
-      'Join voice channels and play audio with @fluxerjs/voice. Supports WebM/Opus streams—no FFmpeg required.',
+      'Join voice channels and play audio with @erinjs/voice. Supports WebM/Opus streams—no FFmpeg required.',
     category: 'voice',
     sections: [
       {
         title: 'Installation',
         description: 'Add the voice package alongside the core library.',
-        code: `pnpm add @fluxerjs/voice @fluxerjs/core`,
+        code: `pnpm add @erinjs/voice @erinjs/core`,
         language: 'bash',
       },
       {
         title: 'Setup',
         description:
           'Create a VoiceManager before login so it receives VoiceStatesSync from READY/GUILD_CREATE. This lets the manager see users already in voice when the bot starts.',
-        code: `import { Client, Events, VoiceChannel } from '@fluxerjs/core';
-import { getVoiceManager } from '@fluxerjs/voice';
+        code: `import { Client, Events, VoiceChannel } from '@erinjs/core';
+import { getVoiceManager } from '@erinjs/voice';
 
 const client = new Client({ intents: 0 });
 getVoiceManager(client); // Must be before login
@@ -1241,7 +1241,7 @@ await connection.play(streamUrl);`,
         title: 'Volume Control',
         description:
           'LiveKitRtcConnection supports setVolume(0-200) and getVolume(). 100 = normal, 50 = half, 200 = double. Affects current and future playback.',
-        code: `import { LiveKitRtcConnection } from '@fluxerjs/voice';
+        code: `import { LiveKitRtcConnection } from '@erinjs/voice';
 
 if (connection instanceof LiveKitRtcConnection) {
   connection.setVolume(80); // 80% volume
@@ -1294,7 +1294,7 @@ voiceManager.leave(guildId);`,
         title: 'Usage',
         description:
           'Pass waitForGuilds: true in ClientOptions. Ready will emit only after all guilds from READY (including those marked unavailable) have been received via GUILD_CREATE.',
-        code: `import { Client, Events } from '@fluxerjs/core';
+        code: `import { Client, Events } from '@erinjs/core';
 
 const client = new Client({
   waitForGuilds: true,
@@ -1331,7 +1331,7 @@ await client.login(process.env.FLUXER_BOT_TOKEN);`,
         title: 'Basic Usage',
         description:
           'Use client.on(Events.X, handler) to subscribe to events. Handlers receive event-specific payloads.',
-        code: `import { Client, Events } from '@fluxerjs/core';
+        code: `import { Client, Events } from '@erinjs/core';
 
 const client = new Client({ intents: 0 });
 
@@ -1348,7 +1348,7 @@ await client.login(process.env.FLUXER_BOT_TOKEN);`,
         tip: 'client.events.X(handler) offers the same API with chaining and better autocomplete.',
         alternateCode: {
           label: 'client.events',
-          code: `import { Client, Events } from '@fluxerjs/core';
+          code: `import { Client, Events } from '@erinjs/core';
 
 const client = new Client({ intents: 0 });
 
@@ -1384,7 +1384,7 @@ client.on(Events.ChannelDelete, (channel) => {});
 client.on(Events.GuildMemberAdd, (member) => {});
 client.on(Events.GuildMemberRemove, (member) => {});
 
-// Voice state changed (for @fluxerjs/voice)
+// Voice state changed (for @erinjs/voice)
 client.on(Events.VoiceStateUpdate, (data) => {});
 client.on(Events.VoiceServerUpdate, (data) => {});`,
         language: 'javascript',
@@ -1393,7 +1393,7 @@ client.on(Events.VoiceServerUpdate, (data) => {});`,
         title: 'Reaction Events',
         description:
           'Listen for when users add or remove reactions. Handlers receive (reaction, user, messageId, channelId, emoji, userId). Use MessageReactionRemoveAll and MessageReactionRemoveEmoji for moderator actions.',
-        code: `import { Client, Events } from '@fluxerjs/core';
+        code: `import { Client, Events } from '@erinjs/core';
 
 const client = new Client({ intents: 0 });
 
@@ -1432,7 +1432,7 @@ await client.login(process.env.FLUXER_BOT_TOKEN);`,
       {
         title: 'Gateway Dispatch Events Reference',
         description:
-          'All events the Fluxer gateway can send. Use GatewayDispatchEvents from @fluxerjs/types for type-safe checks.',
+          'All events the Fluxer gateway can send. Use GatewayDispatchEvents from @erinjs/types for type-safe checks.',
         table: {
           headers: ['Category', 'Events'],
           codeColumns: [1],
@@ -1477,7 +1477,7 @@ await client.login(process.env.FLUXER_BOT_TOKEN);`,
       {
         title: 'Event Payload Reference',
         description:
-          'Payload structure for each event. Handler receives (data) or (message), (reaction, user, ...) etc. Types: Gateway*DispatchData from @fluxerjs/types.',
+          'Payload structure for each event. Handler receives (data) or (message), (reaction, user, ...) etc. Types: Gateway*DispatchData from @erinjs/types.',
         table: {
           headers: ['Event', 'Payload'],
           codeColumns: [0, 1],
@@ -1667,7 +1667,7 @@ const message = channel?.messages ? await channel.messages.fetch(messageId) : nu
         title: 'Guild-level permissions',
         description:
           'member.permissions returns an object with has(permission). Use it for server-wide actions like ban, kick, manage roles.',
-        code: `import { Client, Events, PermissionFlags } from '@fluxerjs/core';
+        code: `import { Client, Events, PermissionFlags } from '@erinjs/core';
 
 const client = new Client({ intents: 0 });
 
@@ -1764,7 +1764,7 @@ await guild.removeRoleFromMember(userId, roleId);`,
         title: 'PermissionFlags reference',
         description:
           'Common flags: BanMembers, KickMembers, Administrator, ManageRoles, ManageChannels, ManageGuild, ViewAuditLog, ManageMessages, SendMessages, EmbedLinks, AttachFiles, ReadMessageHistory, MentionEveryone, Connect, Speak, MuteMembers, ModerateMembers, CreateExpressions, PinMessages, BypassSlowmode.',
-        code: `import { PermissionFlags } from '@fluxerjs/core';
+        code: `import { PermissionFlags } from '@erinjs/core';
 
 // Check multiple
 const canModerate = perms.has(PermissionFlags.BanMembers) || perms.has(PermissionFlags.Administrator);
@@ -1827,7 +1827,7 @@ if (userId) {
         title: 'Full moderation example',
         description:
           'See examples/moderation-bot.js for a complete bot with !ban, !kick, !unban, and !perms commands.',
-        code: `import { Client, Events, PermissionFlags, parseUserMention } from '@fluxerjs/core';
+        code: `import { Client, Events, PermissionFlags, parseUserMention } from '@erinjs/core';
 
 const PREFIX = '!';
 const client = new Client({ intents: 0 });
@@ -1887,7 +1887,7 @@ await client.login(process.env.FLUXER_BOT_TOKEN);`,
         title: 'Create a role',
         description:
           'Use guild.createRole() to create a new role. Pass name, permissions, color, hoist, mentionable, unicode_emoji, position, or hoist_position. Permissions accept PermissionResolvable (string, number, array) for convenience.',
-        code: `import { Client, Events, PermissionFlags, resolvePermissionsToBitfield } from '@fluxerjs/core';
+        code: `import { Client, Events, PermissionFlags, resolvePermissionsToBitfield } from '@erinjs/core';
 
 const client = new Client({ intents: 0 });
 
@@ -1947,7 +1947,7 @@ await message.reply('Role deleted.');`,
         title: 'Check role permissions',
         description:
           'Use role.has(permission) to check if a role has a specific permission. Administrator implies all permissions.',
-        code: `import { PermissionFlags } from '@fluxerjs/core';
+        code: `import { PermissionFlags } from '@erinjs/core';
 
 if (role.has(PermissionFlags.BanMembers)) {
   await message.reply('This role can ban members.');
@@ -1983,7 +1983,7 @@ await guild.removeRoleFromMember(userId, roleId);`,
         title: 'Permission bitfields for create/edit',
         description:
           'When creating or editing roles, pass permissions as a string (API format), number, PermissionString, or array. Use resolvePermissionsToBitfield() to combine multiple permissions. Handles high bits (PinMessages, ModerateMembers, etc.) correctly with BigInt.',
-        code: `import { resolvePermissionsToBitfield, PermissionFlags } from '@fluxerjs/core';
+        code: `import { resolvePermissionsToBitfield, PermissionFlags } from '@erinjs/core';
 
 // Single permission by name
 resolvePermissionsToBitfield('SendMessages');  // "2048"
@@ -2008,7 +2008,7 @@ resolvePermissionsToBitfield(PermissionFlags.BanMembers);  // "4"`,
       {
         title: 'Basic Structure',
         description: 'Check for a prefix, split args, and dispatch to command handlers.',
-        code: `import { Client, Events } from '@fluxerjs/core';
+        code: `import { Client, Events } from '@erinjs/core';
 
 const PREFIX = '!';
 const client = new Client({ intents: 0 });
@@ -2054,7 +2054,7 @@ await client.login(process.env.FLUXER_BOT_TOKEN);`,
         title: 'Channels — Create',
         description:
           'Use guild.createChannel() to create text (0), voice (2), category (4), or link (5) channels. Requires Manage Channels permission. Pass parent_id to put a channel under a category.',
-        code: `import { Client, Events } from '@fluxerjs/core';
+        code: `import { Client, Events } from '@erinjs/core';
 
 const client = new Client({ intents: 0 });
 
@@ -2128,7 +2128,7 @@ await guild.setChannelPositions([
         title: 'Channel Permission Overwrites',
         description:
           'Use channel.editPermission() to add or update overwrites (type 0=role, 1=member). Use channel.deletePermission() to remove. Use resolvePermissionsToBitfield() for allow/deny bitfields.',
-        code: `import { resolvePermissionsToBitfield, PermissionFlags } from '@fluxerjs/core';
+        code: `import { resolvePermissionsToBitfield, PermissionFlags } from '@erinjs/core';
 
 // Deny SendMessages for a role (type 0=role, 1=member)
 await channel.editPermission(roleId, {
@@ -2162,7 +2162,7 @@ await guild.setRolePositions([{ id: role.id, position: 5 }]);`,
         title: 'Invites',
         description:
           'Use channel.createInvite() to create an invite. Use channel.fetchInvites() to list channel invites. Use invite.delete() to revoke. invite.url gives the full invite URL.',
-        code: `import { Client, Events } from '@fluxerjs/core';
+        code: `import { Client, Events } from '@erinjs/core';
 
 const client = new Client({ intents: 0 });
 
@@ -2236,7 +2236,7 @@ await client.login(process.env.FLUXER_BOT_TOKEN);`,
         title: 'Fetch Emojis',
         description:
           'Use guild.fetchEmojis() to get all emojis in a guild. Cached in guild.emojis. Use guild.fetchEmoji(emojiId) for a single emoji. Use emoji.delete() to remove an emoji (e.g. autocreated ones).',
-        code: `import { Client, Events } from '@fluxerjs/core';
+        code: `import { Client, Events } from '@erinjs/core';
 
 const client = new Client({ intents: 0 });
 
@@ -2261,7 +2261,7 @@ await emoji.delete();`,
         title: 'Create Emojis & Stickers',
         description:
           'Use guild.createEmojisBulk() and guild.createStickersBulk() with base64 image data. Use emoji.edit() / emoji.delete() and sticker.edit() / sticker.delete() for individual updates.',
-        code: `import { Client, Events } from '@fluxerjs/core';
+        code: `import { Client, Events } from '@erinjs/core';
 
 const client = new Client({ intents: 0 });
 

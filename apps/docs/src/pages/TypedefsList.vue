@@ -1,7 +1,7 @@
 <template>
   <div class="typedefs-list">
     <h1>API Types</h1>
-    <p class="lead">Interfaces and enums used across the Fluxer.js SDK.</p>
+    <p class="lead">Interfaces and enums used across the erin.js SDK.</p>
 
     <p v-if="store.loading">Loading...</p>
     <p v-else-if="store.error" class="error">{{ store.error }}</p>

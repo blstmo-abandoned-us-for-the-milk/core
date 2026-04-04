@@ -1,5 +1,5 @@
 /**
- * Fluxer Moderation Example
+ * erin.js Moderation Example
  *
  * Prefix commands for ban, kick, and unban. Requires Ban Members / Kick Members permissions.
  * Server owner automatically has all permissions (no role needed).
@@ -13,8 +13,8 @@
  * Usage:
  *   FLUXER_BOT_TOKEN=your_token node examples/moderation-bot.js
  *
- * @see https://fluxerjs.blstmo.com/v/latest/guides/permissions
- * @see https://fluxerjs.blstmo.com/v/latest/guides/moderation
+ * @see /v/latest/guides/permissions (local docs)
+ * @see /v/latest/guides/moderation (local docs)
  */
 
 import {
@@ -24,7 +24,7 @@ import {
   FluxerError,
   ErrorCodes,
   PermissionFlags,
-} from '@fluxerjs/core';
+} from '@erinjs/core';
 
 const PREFIX = '!';
 

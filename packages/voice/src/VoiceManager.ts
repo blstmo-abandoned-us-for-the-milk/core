@@ -1,17 +1,17 @@
 import { EventEmitter } from 'events';
-import { Client } from '@fluxerjs/core';
-import { VoiceChannel } from '@fluxerjs/core';
-import { Events } from '@fluxerjs/core';
-import { GatewayOpcodes, Routes } from '@fluxerjs/types';
+import { Client } from '@erinjs/core';
+import { VoiceChannel } from '@erinjs/core';
+import { Events } from '@erinjs/core';
+import { GatewayOpcodes, Routes } from '@erinjs/types';
 import { thumbnail } from './streamPreviewPlaceholder.js';
 import {
   GatewayVoiceServerUpdateDispatchData,
   GatewayVoiceStateUpdateDispatchData,
-} from '@fluxerjs/types';
+} from '@erinjs/types';
 import { VoiceConnection } from './VoiceConnection.js';
 import { LiveKitRtcConnection, type LiveKitReceiveSubscription } from './LiveKitRtcConnection.js';
 import { isLiveKitEndpoint } from './livekit.js';
-import { Collection } from '@fluxerjs/collection';
+import { Collection } from '@erinjs/collection';
 
 /** Maps guild_id -> user_id -> channel_id (null if not in voice). */
 export type VoiceStateMap = Map<string, Map<string, string | null>>;

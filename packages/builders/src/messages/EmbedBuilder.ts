@@ -1,5 +1,5 @@
-import { APIEmbed, APIEmbedAuthor, APIEmbedFooter, APIEmbedMedia } from '@fluxerjs/types';
-import { resolveColor } from '@fluxerjs/util';
+import { APIEmbed, APIEmbedAuthor, APIEmbedFooter, APIEmbedMedia } from '@erinjs/types';
+import { resolveColor } from '@erinjs/util';
 
 /** Options for embed media (image, thumbnail, video, audio). */
 export interface EmbedMediaOptions {

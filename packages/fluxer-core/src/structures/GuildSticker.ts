@@ -1,7 +1,7 @@
 import { Client } from '../client/Client.js';
 import { Base } from './Base.js';
-import { APISticker } from '@fluxerjs/types';
-import { Routes } from '@fluxerjs/types';
+import { APISticker } from '@erinjs/types';
+import { Routes } from '@erinjs/types';
 import { CDN_URL } from '../util/Constants.js';
 
 /** Represents a custom sticker in a guild. */

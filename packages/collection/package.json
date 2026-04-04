@@ -1,17 +1,17 @@
 {
-  "name": "@fluxerjs/collection",
+  "name": "@erinjs/collection",
   "publishConfig": {
     "access": "public"
   },
   "version": "1.2.4",
-  "description": "Extended Map with utility methods for @fluxerjs/core",
+  "description": "Extended Map with utility methods for @erinjs/core",
   "repository": {
     "type": "git",
-    "url": "https://github.com/fluxerjs/core.git",
+    "url": "https://github.com/blstmo-abandoned-us-for-the-milk/core.git",
     "directory": "packages/collection"
   },
-  "bugs": "https://github.com/fluxerjs/core/issues",
-  "homepage": "https://fluxerjs.blstmo.com",
+  "bugs": "https://github.com/blstmo-abandoned-us-for-the-milk/core/issues",
+  "homepage": "https://github.com/blstmo-abandoned-us-for-the-milk/core#readme",
   "keywords": [
     "fluxer",
     "collection",

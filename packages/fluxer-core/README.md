@@ -1,17 +1,17 @@
-# @fluxerjs/core
+# @erinjs/core
 
 Main client for the Fluxer bot SDK.
 
 ## Install
 
 ```bash
-npm install @fluxerjs/core
+npm install @erinjs/core
 ```
 
 ## Usage
 
 ```javascript
-import { Client, Events } from '@fluxerjs/core';
+import { Client, Events } from '@erinjs/core';
 
 const client = new Client({ intents: 0 });
 
@@ -23,4 +23,4 @@ client.on(Events.MessageCreate, async (m) => {
 await client.login(process.env.FLUXER_BOT_TOKEN);
 ```
 
-For voice, add `@fluxerjs/voice`. For embeds, use `EmbedBuilder`.
+For voice, add `@erinjs/voice`. For embeds, use `EmbedBuilder`.

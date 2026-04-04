@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <div class="hero">
-      <h1>Fluxer.js</h1>
+      <h1>erin.js</h1>
       <p class="lead">SDK for building bots on Fluxer.</p>
       <div class="hero-ctas">
         <router-link to="/v/latest/guides/basic-bot" class="cta-link"
@@ -15,7 +15,7 @@
         <router-link to="/v/latest/docs" class="nav-link">Docs</router-link>
         <router-link to="/changelog" class="nav-link">Changelog</router-link>
         <a
-          href="https://github.com/fluxerjs/core"
+          href="https://github.com/blstmo-abandoned-us-for-the-milk/core"
           target="_blank"
           rel="noopener noreferrer"
           class="nav-link"

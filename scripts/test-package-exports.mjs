@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Exercise actual code from each published @fluxerjs package.
+ * Exercise actual code from each published erin.js community package.
  * Verifies exports work and basic functionality runs (not just import).
  *
  * Run from repo root after build:
@@ -9,14 +9,14 @@
 
 const TESTS = [
   {
-    pkg: '@fluxerjs/types',
+    pkg: '@erinjs/types',
     exercise: async (m) => {
       if (typeof m.Routes?.channel !== 'function') throw new Error('Routes.channel missing');
       if (m.Routes.channel('123') !== '/channels/123') throw new Error('Routes.channel() wrong');
     },
   },
   {
-    pkg: '@fluxerjs/util',
+    pkg: '@erinjs/util',
     exercise: async (m) => {
       if (!m.SnowflakeUtil?.isValid('0')) throw new Error('SnowflakeUtil.isValid failed');
       const id = m.SnowflakeUtil?.snowflakeFromTimestamp?.(Date.now());
@@ -24,7 +24,7 @@ const TESTS = [
     },
   },
   {
-    pkg: '@fluxerjs/collection',
+    pkg: '@erinjs/collection',
     exercise: async (m) => {
       const coll = new m.Collection();
       if (coll.size !== 0) throw new Error('Collection.size wrong');
@@ -33,21 +33,21 @@ const TESTS = [
     },
   },
   {
-    pkg: '@fluxerjs/rest',
+    pkg: '@erinjs/rest',
     exercise: async (m) => {
       const rm = new m.RequestManager({ baseURL: 'https://example.com' });
       if (typeof rm.request !== 'function') throw new Error('RequestManager.request missing');
     },
   },
   {
-    pkg: '@fluxerjs/ws',
+    pkg: '@erinjs/ws',
     exercise: async (m) => {
       if (typeof m.GatewayCloseCodes !== 'object') throw new Error('GatewayCloseCodes missing');
       if (m.GatewayCloseCodes.Normal !== 1000) throw new Error('GatewayCloseCodes.Normal wrong');
     },
   },
   {
-    pkg: '@fluxerjs/builders',
+    pkg: '@erinjs/builders',
     exercise: async (m) => {
       const embed = new m.EmbedBuilder().setTitle('test').setDescription('desc');
       const json = embed.toJSON();
@@ -57,7 +57,7 @@ const TESTS = [
     },
   },
   {
-    pkg: '@fluxerjs/core',
+    pkg: '@erinjs/core',
     exercise: async (m) => {
       if (typeof m.Client !== 'function') throw new Error('Client missing');
       if (typeof m.Events !== 'object') throw new Error('Events missing');
@@ -65,7 +65,7 @@ const TESTS = [
     },
   },
   {
-    pkg: '@fluxerjs/voice',
+    pkg: '@erinjs/voice',
     exercise: async (m) => {
       const mockClient = { on: () => {} };
       const manager = m.getVoiceManager(mockClient);

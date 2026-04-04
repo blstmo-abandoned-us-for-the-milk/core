@@ -7,8 +7,8 @@ export {
   type LiveKitReceiveSubscription,
   type VideoPlayOptions,
 } from './LiveKitRtcConnection.js';
-import { Client } from '@fluxerjs/core';
-import { VoiceChannel } from '@fluxerjs/core';
+import { Client } from '@erinjs/core';
+import { VoiceChannel } from '@erinjs/core';
 import { VoiceManager } from './VoiceManager.js';
 import { VoiceConnection } from './VoiceConnection';
 import { LiveKitRtcConnection } from './LiveKitRtcConnection';

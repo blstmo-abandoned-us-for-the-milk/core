@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Test that all published @fluxerjs packages can be required as CJS without throwing.
+ * Test that all published erin.js community packages can be required as CJS without throwing.
  * Catches issues when packages fail to load via require().
  *
  * Run from repo root after build:
@@ -12,14 +12,14 @@ import { createRequire } from 'node:module';
 const require = createRequire(import.meta.url);
 
 const PACKAGES = [
-  '@fluxerjs/types',
-  '@fluxerjs/util',
-  '@fluxerjs/collection',
-  '@fluxerjs/rest',
-  '@fluxerjs/ws',
-  '@fluxerjs/builders',
-  '@fluxerjs/core',
-  '@fluxerjs/voice',
+  '@erinjs/types',
+  '@erinjs/util',
+  '@erinjs/collection',
+  '@erinjs/rest',
+  '@erinjs/ws',
+  '@erinjs/builders',
+  '@erinjs/core',
+  '@erinjs/voice',
 ];
 
 function main() {

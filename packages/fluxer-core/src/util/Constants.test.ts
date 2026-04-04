@@ -10,7 +10,7 @@ describe('Constants', () => {
     expect(STATIC_CDN_URL).toBe('https://fluxerstatic.com');
   });
 
-  it('DEFAULT_USER_AGENT is fluxerjs', () => {
-    expect(DEFAULT_USER_AGENT).toBe('fluxerjs');
+  it('DEFAULT_USER_AGENT is erin.js', () => {
+    expect(DEFAULT_USER_AGENT).toBe('erin.js');
   });
 });

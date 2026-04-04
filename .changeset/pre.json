@@ -1,0 +1,17 @@
+{
+  "mode": "pre",
+  "tag": "community",
+  "initialVersions": {
+    "@erinjs/builders": "1.2.4",
+    "@erinjs/collection": "1.2.4",
+    "@erinjs/core": "1.2.4",
+    "@erinjs/docgen": "1.2.4",
+    "@erinjs/docs": "1.2.4",
+    "@erinjs/rest": "1.2.4",
+    "@erinjs/types": "1.2.4",
+    "@erinjs/util": "1.2.4",
+    "@erinjs/voice": "1.2.4",
+    "@erinjs/ws": "1.2.4"
+  },
+  "changesets": []
+}

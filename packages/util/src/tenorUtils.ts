@@ -1,4 +1,4 @@
-import { EmbedMediaFlags } from '@fluxerjs/types';
+import { EmbedMediaFlags } from '@erinjs/types';
 
 /** Result for embed media: url and optional flags. */
 export interface TenorMediaResult {

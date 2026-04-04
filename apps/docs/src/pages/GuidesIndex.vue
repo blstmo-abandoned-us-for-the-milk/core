@@ -2,7 +2,7 @@
   <div class="guides-index">
     <div class="hero">
       <h1>Guides</h1>
-      <p class="lead">Learn how to build bots with Fluxer.js. Pick a guide to get started.</p>
+      <p class="lead">Learn how to build bots with erin.js. Pick a guide to get started.</p>
       <div class="quick-links">
         <span class="quick-links-label">Quick links:</span>
         <router-link :to="versionedPath('/api')" class="quick-link">REST API</router-link>

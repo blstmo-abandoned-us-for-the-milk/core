@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Test that all published @fluxerjs packages can be imported as ESM without throwing.
+ * Test that all published erin.js community packages can be imported as ESM without throwing.
  * Catches issues like "Dynamic require of X is not supported" when bundled CJS
  * code gets loaded in ESM context.
  *
@@ -11,14 +11,14 @@
  */
 
 const PACKAGES = [
-  '@fluxerjs/types',
-  '@fluxerjs/util',
-  '@fluxerjs/collection',
-  '@fluxerjs/rest',
-  '@fluxerjs/ws',
-  '@fluxerjs/builders',
-  '@fluxerjs/core',
-  '@fluxerjs/voice',
+  '@erinjs/types',
+  '@erinjs/util',
+  '@erinjs/collection',
+  '@erinjs/rest',
+  '@erinjs/ws',
+  '@erinjs/builders',
+  '@erinjs/core',
+  '@erinjs/voice',
 ];
 
 async function main() {

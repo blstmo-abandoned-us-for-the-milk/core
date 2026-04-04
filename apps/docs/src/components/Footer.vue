@@ -6,14 +6,14 @@
         target="_blank"
         rel="noopener noreferrer"
         class="footer-community">
-        Join our Fluxer community →
+        Join our erin.js community →
       </a>
       <nav class="footer-nav" aria-label="Footer navigation">
         <router-link to="/v/latest/guides" class="footer-link">Guides</router-link>
         <router-link to="/v/latest/docs" class="footer-link">Docs</router-link>
         <router-link to="/changelog" class="footer-link">Changelog</router-link>
         <a
-          href="https://github.com/fluxerjs/core"
+          href="https://github.com/blstmo-abandoned-us-for-the-milk/core"
           target="_blank"
           rel="noopener noreferrer"
           class="footer-link">
@@ -27,7 +27,7 @@
           Fluxer
         </a>
       </nav>
-      <p class="footer-copy">Fluxer.js v{{ version }} · SDK for Fluxer bots</p>
+      <p class="footer-copy">erin.js v{{ version }} · SDK for Fluxer bots</p>
     </div>
   </footer>
 </template>

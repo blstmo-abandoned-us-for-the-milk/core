@@ -28,8 +28,8 @@ import {
   cdnMemberAvatarURL,
   UserFlagsBits,
   PermissionFlags,
-} from '@fluxerjs/core';
-import { getVoiceManager, LiveKitRtcConnection } from '@fluxerjs/voice';
+} from '@erinjs/core';
+import { getVoiceManager, LiveKitRtcConnection } from '@erinjs/voice';
 
 /** Fixed non‑copyrighted track; we get a direct WebM/Opus URL so the voice package can play without FFmpeg. */
 const PLAY_URL = 'https://www.youtube.com/watch?v=eVTXPUF4Oz4';
@@ -173,7 +173,7 @@ commands.set('info', {
         { name: 'API Latency', value: `${apiLatency}ms`, inline: true },
         { name: 'Node.js', value: process.version, inline: true },
       )
-      .setFooter({ text: 'Powered by @fluxerjs/core' })
+      .setFooter({ text: 'Powered by @erinjs/core' })
       .setTimestamp();
 
     await message.reply({ embeds: [embed.toJSON()] });

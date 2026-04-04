@@ -9,7 +9,7 @@
  *   FLUXER_BOT_TOKEN=your_token node examples/reaction-bot.js
  */
 
-import { Client, Events } from '@fluxerjs/core';
+import { Client, Events } from '@erinjs/core';
 
 const client = new Client();
 

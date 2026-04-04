@@ -5,10 +5,10 @@
       target="_blank"
       rel="noopener noreferrer"
       class="support-cta-banner"
-      aria-label="Support Fluxer.js on GitHub Sponsors">
+      aria-label="Support erin.js on GitHub Sponsors">
       <span class="support-heart" aria-hidden="true">♥</span>
       <span class="support-text">
-        <strong>Support Fluxer.js</strong> — Sponsor or donate on GitHub to help keep the project
+        <strong>Support erin.js</strong> — Sponsor or donate on GitHub to help keep the project
         going
       </span>
       <span class="support-button">Sponsor →</span>

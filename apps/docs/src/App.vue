@@ -4,7 +4,7 @@
     <header class="header">
       <router-link to="/" class="logo">
         <FluxerLogo class="logo-icon" />
-        <span class="logo-text">Fluxer.js</span>
+        <span class="logo-text">erin.js</span>
       </router-link>
       <nav class="header-nav header-nav-desktop" aria-label="Main navigation">
         <router-link to="/v/latest/guides" class="header-link">Guides</router-link>
@@ -19,7 +19,7 @@
           </div>
           <div class="header-icons">
             <a
-              href="https://github.com/fluxerjs/core"
+              href="https://github.com/blstmo-abandoned-us-for-the-milk/core"
               target="_blank"
               rel="noopener noreferrer"
               class="header-icon-link"
@@ -74,7 +74,7 @@
             <VersionPicker />
           </div>
           <a
-            href="https://github.com/fluxerjs/core"
+            href="https://github.com/blstmo-abandoned-us-for-the-milk/core"
             target="_blank"
             rel="noopener noreferrer"
             class="mobile-link mobile-link-icon"

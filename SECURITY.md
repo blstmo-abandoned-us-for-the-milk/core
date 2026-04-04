@@ -18,4 +18,4 @@ If you discover a security vulnerability, please report it responsibly:
 3. Include a description of the vulnerability and steps to reproduce
 4. Allow time for a fix before public disclosure
 
-We will acknowledge your report and work on a fix. Thank you for helping keep the Fluxer SDK secure.
+We will acknowledge your report and work on a fix. Thank you for helping keep the erin.js SDK secure.

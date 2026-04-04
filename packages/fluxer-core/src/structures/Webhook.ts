@@ -1,14 +1,14 @@
 import { Client } from '../client/Client.js';
 import { Base } from './Base.js';
-import { APIEmbed, APIMessage } from '@fluxerjs/types';
+import { APIEmbed, APIMessage } from '@erinjs/types';
 import {
   APIWebhook,
   APIWebhookUpdateRequest,
   APIWebhookTokenUpdateRequest,
   APIWebhookEditMessageRequest,
-} from '@fluxerjs/types';
-import { Routes } from '@fluxerjs/types';
-import { EmbedBuilder } from '@fluxerjs/builders';
+} from '@erinjs/types';
+import { Routes } from '@erinjs/types';
+import { EmbedBuilder } from '@erinjs/builders';
 import { buildSendBody, resolveMessageFiles, type MessageFileData } from '../util/messageUtils.js';
 import { Message } from './Message.js';
 import { User } from './User.js';

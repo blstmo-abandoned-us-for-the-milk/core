@@ -1,5 +1,5 @@
-import { OverwriteType, type APIChannelOverwrite } from '@fluxerjs/types';
-import { ALL_PERMISSIONS_BIGINT, PermissionFlags } from '@fluxerjs/util';
+import { OverwriteType, type APIChannelOverwrite } from '@erinjs/types';
+import { ALL_PERMISSIONS_BIGINT, PermissionFlags } from '@erinjs/util';
 
 /**
  * Compute the effective permission bitfield for a member in a channel.

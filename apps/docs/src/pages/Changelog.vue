@@ -2,7 +2,7 @@
   <div class="changelog-page">
     <div class="changelog-hero">
       <h1>Changelog</h1>
-      <p class="lead">Release history and changes for Fluxer.js SDK.</p>
+      <p class="lead">Release history and changes for erin.js SDK.</p>
       <div class="version-filter" role="group" aria-label="Filter by version">
         <button
           type="button"

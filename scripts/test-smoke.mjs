@@ -12,7 +12,7 @@ const require = createRequire(import.meta.url);
 const iterations = 5;
 
 async function exerciseTypes() {
-  const m = await import('@fluxerjs/types');
+  const m = await import('@erinjs/types');
   const Routes = m.Routes;
   if (!Routes?.channel) throw new Error('Routes.channel missing');
   if (Routes.channel('123') !== '/channels/123') throw new Error('Routes.channel wrong');
@@ -21,7 +21,7 @@ async function exerciseTypes() {
 }
 
 async function exerciseUtil() {
-  const m = await import('@fluxerjs/util');
+  const m = await import('@erinjs/util');
   if (!m.SnowflakeUtil?.isValid('0')) throw new Error('SnowflakeUtil.isValid failed');
   const id = m.SnowflakeUtil?.snowflakeFromTimestamp?.(Date.now());
   if (typeof id !== 'string') throw new Error('SnowflakeUtil.snowflakeFromTimestamp failed');
@@ -32,7 +32,7 @@ async function exerciseUtil() {
 }
 
 async function exerciseCollection() {
-  const m = await import('@fluxerjs/collection');
+  const m = await import('@erinjs/collection');
   const coll = new m.Collection();
   coll.set('a', 1);
   coll.set('b', 2);
@@ -42,18 +42,18 @@ async function exerciseCollection() {
 }
 
 async function exerciseRest() {
-  const m = await import('@fluxerjs/rest');
+  const m = await import('@erinjs/rest');
   const rm = new m.RequestManager({ baseURL: 'https://example.com' });
   if (typeof rm.request !== 'function') throw new Error('RequestManager.request missing');
 }
 
 async function exerciseWs() {
-  const m = await import('@fluxerjs/ws');
+  const m = await import('@erinjs/ws');
   if (m.GatewayCloseCodes?.Normal !== 1000) throw new Error('GatewayCloseCodes wrong');
 }
 
 async function exerciseBuilders() {
-  const m = await import('@fluxerjs/builders');
+  const m = await import('@erinjs/builders');
   const embed = new m.EmbedBuilder().setTitle('t').setDescription('d');
   const json = embed.toJSON();
   if (json.title !== 't' || json.description !== 'd') throw new Error('EmbedBuilder failed');
@@ -62,13 +62,13 @@ async function exerciseBuilders() {
 }
 
 async function exerciseCore() {
-  const m = await import('@fluxerjs/core');
+  const m = await import('@erinjs/core');
   if (typeof m.Client !== 'function') throw new Error('Client missing');
   if (!m.Events?.Ready) throw new Error('Events.Ready missing');
 }
 
 async function exerciseVoice() {
-  const m = await import('@fluxerjs/voice');
+  const m = await import('@erinjs/voice');
   const manager = m.getVoiceManager({ on: () => {} });
   if (!manager || typeof manager.join !== 'function') throw new Error('VoiceManager failed');
 }

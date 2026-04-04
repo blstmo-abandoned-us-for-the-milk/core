@@ -1,17 +1,17 @@
 {
-  "name": "@fluxerjs/util",
+  "name": "@erinjs/util",
   "publishConfig": {
     "access": "public"
   },
   "version": "1.2.4",
-  "description": "Shared utilities for @fluxerjs/core",
+  "description": "Shared utilities for @erinjs/core",
   "repository": {
     "type": "git",
-    "url": "https://github.com/fluxerjs/core.git",
+    "url": "https://github.com/blstmo-abandoned-us-for-the-milk/core.git",
     "directory": "packages/util"
   },
-  "bugs": "https://github.com/fluxerjs/core/issues",
-  "homepage": "https://fluxerjs.blstmo.com",
+  "bugs": "https://github.com/blstmo-abandoned-us-for-the-milk/core/issues",
+  "homepage": "https://github.com/blstmo-abandoned-us-for-the-milk/core#readme",
   "keywords": [
     "fluxer",
     "util",
@@ -20,7 +20,7 @@
   ],
   "license": "Apache-2.0",
   "dependencies": {
-    "@fluxerjs/types": "workspace:*"
+    "@erinjs/types": "workspace:*"
   },
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",

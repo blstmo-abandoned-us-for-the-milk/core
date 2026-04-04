@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Publish @fluxerjs packages in dependency order with a delay between each
+ * Publish erin.js community packages in dependency order with a delay between each
  * to avoid npm 409 (packument not fully processed).
  *
  * Run from repo root:
@@ -18,14 +18,14 @@ const ROOT = path.resolve(__dirname, '..');
 
 // Dependency order: no internal deps first, then dependents
 const PACKAGES = [
-  '@fluxerjs/types',
-  '@fluxerjs/util',
-  '@fluxerjs/collection',
-  '@fluxerjs/rest',
-  '@fluxerjs/ws',
-  '@fluxerjs/builders',
-  '@fluxerjs/core',
-  '@fluxerjs/voice',
+  '@erinjs/types',
+  '@erinjs/util',
+  '@erinjs/collection',
+  '@erinjs/rest',
+  '@erinjs/ws',
+  '@erinjs/builders',
+  '@erinjs/core',
+  '@erinjs/voice',
 ];
 
 const args = process.argv.slice(2);

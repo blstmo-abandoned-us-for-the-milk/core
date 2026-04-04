@@ -10,7 +10,7 @@
  *   FLUXER_BOT_TOKEN=your_token node examples/webhook-bot.js
  */
 
-import { Client, Events, EmbedBuilder, Webhook } from '@fluxerjs/core';
+import { Client, Events, EmbedBuilder, Webhook } from '@erinjs/core';
 
 const PREFIX = '!';
 const BRAND_COLOR = 0x4641d9;

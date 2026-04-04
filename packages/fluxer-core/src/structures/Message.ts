@@ -1,6 +1,6 @@
 import { Client } from '../client/Client.js';
 import { Base } from './Base.js';
-import { Collection } from '@fluxerjs/collection';
+import { Collection } from '@erinjs/collection';
 import {
   APIMessage,
   APIMessageAttachment,
@@ -11,9 +11,9 @@ import {
   APIMessageCall,
   APIEmbed,
   APIUserPartial,
-} from '@fluxerjs/types';
-import { MessageType, MessageFlags, Routes } from '@fluxerjs/types';
-import { EmbedBuilder } from '@fluxerjs/builders';
+} from '@erinjs/types';
+import { MessageType, MessageFlags, Routes } from '@erinjs/types';
+import { EmbedBuilder } from '@erinjs/builders';
 import { User } from './User.js';
 import { Channel, TextChannel, DMChannel, GuildChannel } from './Channel.js';
 import { Guild } from './Guild.js';

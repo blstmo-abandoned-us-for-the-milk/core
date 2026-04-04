@@ -1,5 +1,5 @@
 import { EventEmitter } from 'events';
-import { APIGatewayBotResponse, GatewayPresenceUpdateData } from '@fluxerjs/types';
+import { APIGatewayBotResponse, GatewayPresenceUpdateData } from '@erinjs/types';
 import { WebSocketShard } from './WebSocketShard.js';
 import { getDefaultWebSocket } from './utils/getWebSocket.js';
 

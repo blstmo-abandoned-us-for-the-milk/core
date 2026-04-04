@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import { Message } from '../';
-import { EmbedBuilder } from '@fluxerjs/builders';
+import { EmbedBuilder } from '@erinjs/builders';
 
 describe('Message._createMessageBody', () => {
   it('converts string to content-only body', async () => {

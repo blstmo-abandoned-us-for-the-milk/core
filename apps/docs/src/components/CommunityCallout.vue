@@ -5,9 +5,9 @@
     rel="noopener noreferrer"
     class="community-callout"
     :class="variant"
-    aria-label="Join our Fluxer community">
+    aria-label="Join our erin.js community">
     <span class="community-text">
-      <strong>Join our Fluxer community</strong>
+      <strong>Join our erin.js community</strong>
       <span v-if="variant === 'sidebar'" class="community-arrow"> →</span>
       <span v-else class="community-external" aria-hidden="true"> ↗</span>
     </span>

@@ -13,10 +13,10 @@ import {
   APIMessage,
   APIWebhook,
   APIInvite,
-} from '@fluxerjs/types';
-import { ChannelType, Routes } from '@fluxerjs/types';
-import { PermissionFlags } from '@fluxerjs/util';
-import { emitDeprecationWarning } from '@fluxerjs/util';
+} from '@erinjs/types';
+import { ChannelType, Routes } from '@erinjs/types';
+import { PermissionFlags } from '@erinjs/util';
+import { emitDeprecationWarning } from '@erinjs/util';
 import { User } from './User.js';
 import { Webhook } from './Webhook.js';
 import { Message } from './Message';

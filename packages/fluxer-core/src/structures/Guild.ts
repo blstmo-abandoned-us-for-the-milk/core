@@ -2,10 +2,10 @@ import {
   parseRoleMention,
   resolvePermissionsToBitfield,
   type PermissionResolvable,
-} from '@fluxerjs/util';
-import { FluxerAPIError } from '@fluxerjs/rest';
+} from '@erinjs/util';
+import { FluxerAPIError } from '@erinjs/rest';
 import { Client } from '../client/Client.js';
-import { Collection } from '@fluxerjs/collection';
+import { Collection } from '@erinjs/collection';
 import { Base } from './Base.js';
 import { FluxerError } from '../errors/FluxerError.js';
 import { ErrorCodes } from '../errors/ErrorCodes.js';
@@ -25,13 +25,13 @@ import {
   APIChannel,
   APIEmoji,
   APISticker,
-} from '@fluxerjs/types';
+} from '@erinjs/types';
 import { GuildMemberManager } from '../client/GuildMemberManager.js';
 import { GuildMember } from './GuildMember.js';
 import { Role } from './Role.js';
 import { Channel, GuildChannel } from './Channel.js';
 import { CDN_URL } from '../util/Constants.js';
-import { Routes } from '@fluxerjs/types';
+import { Routes } from '@erinjs/types';
 import { Webhook } from './Webhook.js';
 import { GuildBan } from './GuildBan.js';
 import { GuildEmoji } from './GuildEmoji';

@@ -10,7 +10,7 @@
  * Configure ROLE_EMOJI_MAP with your guild's role IDs.
  */
 
-import { Client, Events, EmbedBuilder } from '@fluxerjs/core';
+import { Client, Events, EmbedBuilder } from '@erinjs/core';
 
 // Map emoji (unicode or "name:id") to role ID. Update these for your server.
 const ROLE_EMOJI_MAP = {

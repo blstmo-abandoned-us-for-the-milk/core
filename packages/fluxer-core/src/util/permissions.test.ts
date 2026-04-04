@@ -1,7 +1,7 @@
 import { describe, it, expect } from 'vitest';
 import { computePermissions, hasPermission } from './permissions.js';
-import { OverwriteType } from '@fluxerjs/types';
-import { PermissionFlags } from '@fluxerjs/util';
+import { OverwriteType } from '@erinjs/types';
+import { PermissionFlags } from '@erinjs/util';
 
 describe('hasPermission', () => {
   it('returns true when Administrator is set (grants all permissions)', () => {

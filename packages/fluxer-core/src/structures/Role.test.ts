@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import { Client, Role } from '../';
-import { PermissionFlags } from '@fluxerjs/util';
+import { PermissionFlags } from '@erinjs/util';
 
 function createMockClient() {
   return {} as Client;

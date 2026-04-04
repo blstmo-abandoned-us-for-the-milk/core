@@ -7,7 +7,7 @@ import {
   APIUserPartial,
   APIApplicationCommandInteraction,
   APIBan,
-} from '@fluxerjs/types';
+} from '@erinjs/types';
 import {
   GatewayMessageReactionAddDispatchData,
   GatewayMessageReactionRemoveDispatchData,
@@ -27,7 +27,7 @@ import {
   GatewayTypingStartDispatchData,
   GatewayUserUpdateDispatchData,
   GatewayGuildMemberRemoveDispatchData,
-} from '@fluxerjs/types';
+} from '@erinjs/types';
 import { Client } from './Client.js';
 import { normalizeGuildPayload } from '../util/guildUtils';
 import { GuildMember } from '../structures/GuildMember';

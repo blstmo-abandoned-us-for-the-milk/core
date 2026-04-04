@@ -6,7 +6,7 @@
  * Usage (from repo root after pnpm install && pnpm run build):
  *   FLUXER_BOT_TOKEN=your_token node examples/first-steps-bot.js
  *
- * See the Basic Bot guide: https://fluxerjs.blstmo.com/v/latest/guides/basic-bot
+ * Guide route (local docs): /v/latest/guides/basic-bot
  */
 
 import {
@@ -16,7 +16,7 @@ import {
   parsePrefixCommand,
   parseUserMention,
   PermissionFlags,
-} from '@fluxerjs/core';
+} from '@erinjs/core';
 
 const PREFIX = '!';
 const client = new Client({ intents: 0 });
@@ -76,7 +76,7 @@ client.on(Events.MessageCreate, async (message) => {
           { name: 'Field 1', value: 'Value 1', inline: true },
           { name: 'Field 2', value: 'Value 2', inline: true },
         )
-        .setFooter({ text: 'Fluxer.js' })
+        .setFooter({ text: 'erin.js' })
         .setTimestamp();
       await message.reply({ embeds: [embed] });
       return;

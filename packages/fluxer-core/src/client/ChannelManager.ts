@@ -1,7 +1,7 @@
-import { Collection } from '@fluxerjs/collection';
-import { APIChannel, APIMessage, Routes } from '@fluxerjs/types';
-import { emitDeprecationWarning } from '@fluxerjs/util';
-import { FluxerAPIError, RateLimitError } from '@fluxerjs/rest';
+import { Collection } from '@erinjs/collection';
+import { APIChannel, APIMessage, Routes } from '@erinjs/types';
+import { emitDeprecationWarning } from '@erinjs/util';
+import { FluxerAPIError, RateLimitError } from '@erinjs/rest';
 import { FluxerError } from '../errors/FluxerError.js';
 import { ErrorCodes } from '../errors/ErrorCodes.js';
 import { buildSendBody, resolveMessageFiles } from '../util/messageUtils.js';

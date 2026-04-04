@@ -1,6 +1,6 @@
 import { EventEmitter } from 'events';
 import { RequestManager } from './RequestManager.js';
-import { Routes } from '@fluxerjs/types';
+import { Routes } from '@erinjs/types';
 
 /** Options for the REST client. */
 export interface RESTOptions {
@@ -25,7 +25,7 @@ export class REST extends EventEmitter {
       authPrefix: options.authPrefix ?? 'Bot',
       timeout: options.timeout ?? 15000,
       retries: options.retries ?? 3,
-      userAgent: options.userAgent ?? 'fluxerjs',
+      userAgent: options.userAgent ?? 'erin.js',
     });
   }
 
@@ -83,7 +83,7 @@ export class REST extends EventEmitter {
     return this.requestManager.request<T>('DELETE', route, { auth: options?.auth });
   }
 
-  /** Route helpers (from @fluxerjs/types) for building paths. */
+  /** Route helpers (from @erinjs/types) for building paths. */
   static get Routes(): typeof Routes {
     return Routes;
   }

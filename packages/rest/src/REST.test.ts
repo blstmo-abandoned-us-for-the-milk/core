@@ -1,6 +1,6 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
 import { REST } from './REST.js';
-import { Routes } from '@fluxerjs/types';
+import { Routes } from '@erinjs/types';
 
 describe('REST', () => {
   let fetchMock: ReturnType<typeof vi.fn>;

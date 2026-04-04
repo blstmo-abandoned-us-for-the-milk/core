@@ -1,10 +1,10 @@
 import { EventEmitter } from 'events';
-import { Client } from '@fluxerjs/core';
-import { VoiceChannel } from '@fluxerjs/core';
+import { Client } from '@erinjs/core';
+import { VoiceChannel } from '@erinjs/core';
 import {
   GatewayVoiceServerUpdateDispatchData,
   GatewayVoiceStateUpdateDispatchData,
-} from '@fluxerjs/types';
+} from '@erinjs/types';
 import * as nacl from 'tweetnacl';
 import * as dgram from 'dgram';
 import * as ws from 'ws';

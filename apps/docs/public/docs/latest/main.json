@@ -4,17 +4,17 @@
     "version": "1",
     "date": 1773927822187
   },
-  "package": "@fluxerjs/core",
+  "package": "/core",
   "version": "1.2.4",
   "packages": [
-    "@fluxerjs/builders",
-    "@fluxerjs/collection",
-    "@fluxerjs/core",
-    "@fluxerjs/rest",
-    "@fluxerjs/types",
-    "@fluxerjs/util",
-    "@fluxerjs/voice",
-    "@fluxerjs/ws"
+    "/builders",
+    "/collection",
+    "/core",
+    "/rest",
+    "/types",
+    "/util",
+    "/voice",
+    "/ws"
   ],
   "classes": [
     {
@@ -135,7 +135,7 @@
         "line": 19,
         "path": "packages/builders/src/messages/AttachmentBuilder.ts"
       },
-      "package": "@fluxerjs/builders"
+      "package": "/builders"
     },
     {
       "name": "Base",
@@ -155,7 +155,7 @@
         "line": 4,
         "path": "packages/fluxer-core/src/structures/Base.ts"
       },
-      "package": "@fluxerjs/core"
+      "package": "/core"
     },
     {
       "name": "BitField",
@@ -331,7 +331,7 @@
         "line": 15,
         "path": "packages/util/src/BitField.ts"
       },
-      "package": "@fluxerjs/util"
+      "package": "/util"
     },
     {
       "name": "CategoryChannel",
@@ -343,7 +343,7 @@
         "line": 388,
         "path": "packages/fluxer-core/src/structures/Channel.ts"
       },
-      "package": "@fluxerjs/core"
+      "package": "/core"
     },
     {
       "name": "Channel",
@@ -563,7 +563,7 @@
         "line": 26,
         "path": "packages/fluxer-core/src/structures/Channel.ts"
       },
-      "package": "@fluxerjs/core"
+      "package": "/core"
     },
     {
       "name": "ChannelManager",
@@ -711,7 +711,7 @@
         "line": 17,
         "path": "packages/fluxer-core/src/client/ChannelManager.ts"
       },
-      "package": "@fluxerjs/core"
+      "package": "/core"
     },
     {
       "name": "Client",
@@ -1010,7 +1010,7 @@
         "line": 152,
         "path": "packages/fluxer-core/src/client/Client.ts"
       },
-      "package": "@fluxerjs/core"
+      "package": "/core"
     },
     {
       "name": "ClientUser",
@@ -1073,7 +1073,7 @@
         "line": 7,
         "path": "packages/fluxer-core/src/client/ClientUser.ts"
       },
-      "package": "@fluxerjs/core"
+      "package": "/core"
     },
     {
       "name": "Collection",
@@ -1441,7 +1441,7 @@
         "line": 5,
         "path": "packages/collection/src/Collection.ts"
       },
-      "package": "@fluxerjs/collection"
+      "package": "/collection"
     },
     {
       "name": "DMChannel",
@@ -1610,7 +1610,7 @@
         "line": 411,
         "path": "packages/fluxer-core/src/structures/Channel.ts"
       },
-      "package": "@fluxerjs/core"
+      "package": "/core"
     },
     {
       "name": "EmbedBuilder",
@@ -1890,7 +1890,7 @@
         "line": 70,
         "path": "packages/builders/src/messages/EmbedBuilder.ts"
       },
-      "package": "@fluxerjs/builders"
+      "package": "/builders"
     },
     {
       "name": "FluxerAPIError",
@@ -1942,7 +1942,7 @@
         "line": 3,
         "path": "packages/rest/src/errors/FluxerAPIError.ts"
       },
-      "package": "@fluxerjs/rest"
+      "package": "/rest"
     },
     {
       "name": "FluxerError",
@@ -1975,7 +1975,7 @@
         "line": 6,
         "path": "packages/fluxer-core/src/errors/FluxerError.ts"
       },
-      "package": "@fluxerjs/core"
+      "package": "/core"
     },
     {
       "name": "Guild",
@@ -2727,7 +2727,7 @@
         "line": 41,
         "path": "packages/fluxer-core/src/structures/Guild.ts"
       },
-      "package": "@fluxerjs/core"
+      "package": "/core"
     },
     {
       "name": "GuildBan",
@@ -2804,7 +2804,7 @@
         "line": 8,
         "path": "packages/fluxer-core/src/structures/GuildBan.ts"
       },
-      "package": "@fluxerjs/core"
+      "package": "/core"
     },
     {
       "name": "GuildChannel",
@@ -3025,7 +3025,7 @@
         "line": 132,
         "path": "packages/fluxer-core/src/structures/Channel.ts"
       },
-      "package": "@fluxerjs/core"
+      "package": "/core"
     },
     {
       "name": "GuildEmoji",
@@ -3132,7 +3132,7 @@
         "line": 8,
         "path": "packages/fluxer-core/src/structures/GuildEmoji.ts"
       },
-      "package": "@fluxerjs/core"
+      "package": "/core"
     },
     {
       "name": "GuildManager",
@@ -3243,7 +3243,7 @@
         "line": 10,
         "path": "packages/fluxer-core/src/client/GuildManager.ts"
       },
-      "package": "@fluxerjs/core"
+      "package": "/core"
     },
     {
       "name": "GuildMember",
@@ -3533,7 +3533,7 @@
         "line": 14,
         "path": "packages/fluxer-core/src/structures/GuildMember.ts"
       },
-      "package": "@fluxerjs/core"
+      "package": "/core"
     },
     {
       "name": "GuildMemberManager",
@@ -3622,7 +3622,7 @@
         "path": "packages/fluxer-core/src/client/GuildMemberManager.ts"
       },
       "discordJsCompat": "https://discord.js.org/docs/packages/discord.js/main/GuildMemberManager",
-      "package": "@fluxerjs/core"
+      "package": "/core"
     },
     {
       "name": "GuildMemberRoleManager",
@@ -3737,7 +3737,7 @@
         "path": "packages/fluxer-core/src/structures/GuildMemberRoleManager.ts"
       },
       "discordJsCompat": "https://discord.js.org/docs/packages/discord.js/main/GuildMemberRoleManager",
-      "package": "@fluxerjs/core"
+      "package": "/core"
     },
     {
       "name": "GuildSticker",
@@ -3849,7 +3849,7 @@
         "line": 8,
         "path": "packages/fluxer-core/src/structures/GuildSticker.ts"
       },
-      "package": "@fluxerjs/core"
+      "package": "/core"
     },
     {
       "name": "HTTPError",
@@ -3895,7 +3895,7 @@
         "line": 7,
         "path": "packages/rest/src/errors/HTTPError.ts"
       },
-      "package": "@fluxerjs/rest"
+      "package": "/rest"
     },
     {
       "name": "Invite",
@@ -4038,7 +4038,7 @@
         "line": 9,
         "path": "packages/fluxer-core/src/structures/Invite.ts"
       },
-      "package": "@fluxerjs/core"
+      "package": "/core"
     },
     {
       "name": "LinkChannel",
@@ -4071,7 +4071,7 @@
         "line": 402,
         "path": "packages/fluxer-core/src/structures/Channel.ts"
       },
-      "package": "@fluxerjs/core"
+      "package": "/core"
     },
     {
       "name": "LiveKitRtcConnection",
@@ -4578,7 +4578,7 @@
         "line": 253,
         "path": "packages/voice/src/LiveKitRtcConnection.ts"
       },
-      "package": "@fluxerjs/voice"
+      "package": "/voice"
     },
     {
       "name": "Message",
@@ -5103,7 +5103,7 @@
         "line": 56,
         "path": "packages/fluxer-core/src/structures/Message.ts"
       },
-      "package": "@fluxerjs/core"
+      "package": "/core"
     },
     {
       "name": "MessageCollector",
@@ -5219,7 +5219,7 @@
         "line": 30,
         "path": "packages/fluxer-core/src/util/MessageCollector.ts"
       },
-      "package": "@fluxerjs/core"
+      "package": "/core"
     },
     {
       "name": "MessageFlagsBitField",
@@ -5238,7 +5238,7 @@
         "line": 16,
         "path": "packages/util/src/MessageFlagsBitField.ts"
       },
-      "package": "@fluxerjs/util"
+      "package": "/util"
     },
     {
       "name": "MessageManager",
@@ -5301,7 +5301,7 @@
         "line": 15,
         "path": "packages/fluxer-core/src/client/MessageManager.ts"
       },
-      "package": "@fluxerjs/core"
+      "package": "/core"
     },
     {
       "name": "MessagePayload",
@@ -5474,7 +5474,7 @@
         "line": 19,
         "path": "packages/builders/src/messages/MessagePayload.ts"
       },
-      "package": "@fluxerjs/builders"
+      "package": "/builders"
     },
     {
       "name": "MessageReaction",
@@ -5558,7 +5558,7 @@
         "line": 16,
         "path": "packages/fluxer-core/src/structures/MessageReaction.ts"
       },
-      "package": "@fluxerjs/core"
+      "package": "/core"
     },
     {
       "name": "PermissionsBitField",
@@ -5577,7 +5577,7 @@
         "line": 57,
         "path": "packages/util/src/PermissionsBitField.ts"
       },
-      "package": "@fluxerjs/util"
+      "package": "/util"
     },
     {
       "name": "RateLimitError",
@@ -5616,7 +5616,7 @@
         "line": 4,
         "path": "packages/rest/src/errors/RateLimitError.ts"
       },
-      "package": "@fluxerjs/rest"
+      "package": "/rest"
     },
     {
       "name": "RateLimitManager",
@@ -5753,7 +5753,7 @@
         "line": 11,
         "path": "packages/rest/src/RateLimitManager.ts"
       },
-      "package": "@fluxerjs/rest"
+      "package": "/rest"
     },
     {
       "name": "ReactionCollector",
@@ -5880,7 +5880,7 @@
         "line": 37,
         "path": "packages/fluxer-core/src/util/ReactionCollector.ts"
       },
-      "package": "@fluxerjs/core"
+      "package": "/core"
     },
     {
       "name": "RequestManager",
@@ -6027,7 +6027,7 @@
         "line": 26,
         "path": "packages/rest/src/RequestManager.ts"
       },
-      "package": "@fluxerjs/rest"
+      "package": "/rest"
     },
     {
       "name": "REST",
@@ -6054,7 +6054,7 @@
           "type": "{ readonly channel: (id: Snowflake) => `/channels/${string}`; readonly channelMessages: (id: Snowflake) => `/channels/${string}/messages`; ... 55 more ...; reado...",
           "readonly": true,
           "optional": false,
-          "description": "Route helpers (from @fluxerjs/types) for building paths."
+          "description": "Route helpers (from /types) for building paths."
         },
         {
           "name": "token",
@@ -6198,7 +6198,7 @@
         "line": 16,
         "path": "packages/rest/src/REST.ts"
       },
-      "package": "@fluxerjs/rest"
+      "package": "/rest"
     },
     {
       "name": "Role",
@@ -6343,7 +6343,7 @@
         "line": 14,
         "path": "packages/fluxer-core/src/structures/Role.ts"
       },
-      "package": "@fluxerjs/core"
+      "package": "/core"
     },
     {
       "name": "SnowflakeUtil",
@@ -6448,7 +6448,7 @@
         "line": 8,
         "path": "packages/util/src/SnowflakeUtil.ts"
       },
-      "package": "@fluxerjs/util"
+      "package": "/util"
     },
     {
       "name": "TextChannel",
@@ -6576,7 +6576,7 @@
         "line": 311,
         "path": "packages/fluxer-core/src/structures/Channel.ts"
       },
-      "package": "@fluxerjs/core"
+      "package": "/core"
     },
     {
       "name": "User",
@@ -6767,7 +6767,7 @@
         "line": 12,
         "path": "packages/fluxer-core/src/structures/User.ts"
       },
-      "package": "@fluxerjs/core"
+      "package": "/core"
     },
     {
       "name": "UserFlagsBitField",
@@ -6786,7 +6786,7 @@
         "line": 44,
         "path": "packages/util/src/UserFlagsBitField.ts"
       },
-      "package": "@fluxerjs/util"
+      "package": "/util"
     },
     {
       "name": "UsersManager",
@@ -6885,7 +6885,7 @@
         "line": 28,
         "path": "packages/fluxer-core/src/client/UsersManager.ts"
       },
-      "package": "@fluxerjs/core"
+      "package": "/core"
     },
     {
       "name": "VoiceChannel",
@@ -6930,7 +6930,7 @@
         "line": 389,
         "path": "packages/fluxer-core/src/structures/Channel.ts"
       },
-      "package": "@fluxerjs/core"
+      "package": "/core"
     },
     {
       "name": "VoiceConnection",
@@ -7230,7 +7230,7 @@
         "line": 68,
         "path": "packages/voice/src/VoiceConnection.ts"
       },
-      "package": "@fluxerjs/voice"
+      "package": "/voice"
     },
     {
       "name": "VoiceManager",
@@ -7596,7 +7596,7 @@
         "line": 31,
         "path": "packages/voice/src/VoiceManager.ts"
       },
-      "package": "@fluxerjs/voice"
+      "package": "/voice"
     },
     {
       "name": "Webhook",
@@ -7809,7 +7809,7 @@
         "line": 47,
         "path": "packages/fluxer-core/src/structures/Webhook.ts"
       },
-      "package": "@fluxerjs/core"
+      "package": "/core"
     },
     {
       "name": "WebSocketManager",
@@ -7907,7 +7907,7 @@
         "line": 28,
         "path": "packages/ws/src/WebSocketManager.ts"
       },
-      "package": "@fluxerjs/ws"
+      "package": "/ws"
     },
     {
       "name": "WebSocketShard",
@@ -8136,7 +8136,7 @@
         "line": 46,
         "path": "packages/ws/src/WebSocketShard.ts"
       },
-      "package": "@fluxerjs/ws"
+      "package": "/ws"
     }
   ],
   "interfaces": [
@@ -8206,7 +8206,7 @@
         "line": 9,
         "path": "packages/types/src/api/interaction.ts"
       },
-      "package": "@fluxerjs/types"
+      "package": "/types"
     },
     {
       "name": "APIApplicationCommandOptionValue",
@@ -8217,7 +8217,7 @@
         "line": 6,
         "path": "packages/types/src/api/interaction.ts"
       },
-      "package": "@fluxerjs/types"
+      "package": "/types"
     },
     {
       "name": "APIAttachmentPayload",
@@ -8247,7 +8247,7 @@
         "line": 12,
         "path": "packages/builders/src/messages/AttachmentBuilder.ts"
       },
-      "package": "@fluxerjs/builders"
+      "package": "/builders"
     },
     {
       "name": "APIBan",
@@ -8277,7 +8277,7 @@
         "line": 3,
         "path": "packages/types/src/api/ban.ts"
       },
-      "package": "@fluxerjs/types"
+      "package": "/types"
     },
     {
       "name": "APIChannel",
@@ -8398,7 +8398,7 @@
         "line": 45,
         "path": "packages/types/src/api/channel.ts"
       },
-      "package": "@fluxerjs/types"
+      "package": "/types"
     },
     {
       "name": "APIChannelOverwrite",
@@ -8434,7 +8434,7 @@
         "line": 26,
         "path": "packages/types/src/api/channel.ts"
       },
-      "package": "@fluxerjs/types"
+      "package": "/types"
     },
     {
       "name": "APIChannelPartial",
@@ -8476,7 +8476,7 @@
         "line": 34,
         "path": "packages/types/src/api/channel.ts"
       },
-      "package": "@fluxerjs/types"
+      "package": "/types"
     },
     {
       "name": "APIConnectedAccount",
@@ -8500,7 +8500,7 @@
         "line": 46,
         "path": "packages/types/src/api/user.ts"
       },
-      "package": "@fluxerjs/types"
+      "package": "/types"
     },
     {
       "name": "APIEmbed",
@@ -8608,7 +8608,7 @@
         "line": 64,
         "path": "packages/types/src/api/embed.ts"
       },
-      "package": "@fluxerjs/types"
+      "package": "/types"
     },
     {
       "name": "APIEmbedAuthor",
@@ -8643,7 +8643,7 @@
         "line": 1,
         "path": "packages/types/src/api/embed.ts"
       },
-      "package": "@fluxerjs/types"
+      "package": "/types"
     },
     {
       "name": "APIEmbedChild",
@@ -8745,7 +8745,7 @@
         "line": 46,
         "path": "packages/types/src/api/embed.ts"
       },
-      "package": "@fluxerjs/types"
+      "package": "/types"
     },
     {
       "name": "APIEmbedField",
@@ -8774,7 +8774,7 @@
         "line": 37,
         "path": "packages/types/src/api/embed.ts"
       },
-      "package": "@fluxerjs/types"
+      "package": "/types"
     },
     {
       "name": "APIEmbedFooter",
@@ -8803,7 +8803,7 @@
         "line": 8,
         "path": "packages/types/src/api/embed.ts"
       },
-      "package": "@fluxerjs/types"
+      "package": "/types"
     },
     {
       "name": "APIEmbedMedia",
@@ -8876,7 +8876,7 @@
         "line": 22,
         "path": "packages/types/src/api/embed.ts"
       },
-      "package": "@fluxerjs/types"
+      "package": "/types"
     },
     {
       "name": "APIEmoji",
@@ -8905,7 +8905,7 @@
         "line": 4,
         "path": "packages/types/src/api/emoji.ts"
       },
-      "package": "@fluxerjs/types"
+      "package": "/types"
     },
     {
       "name": "APIEmojiWithUser",
@@ -8922,7 +8922,7 @@
         "line": 10,
         "path": "packages/types/src/api/emoji.ts"
       },
-      "package": "@fluxerjs/types"
+      "package": "/types"
     },
     {
       "name": "APIErrorBody",
@@ -8951,7 +8951,7 @@
         "line": 58,
         "path": "packages/types/src/api/errors.ts"
       },
-      "package": "@fluxerjs/types"
+      "package": "/types"
     },
     {
       "name": "APIGatewayBotResponse",
@@ -8981,7 +8981,7 @@
         "line": 5,
         "path": "packages/types/src/api/gateway.ts"
       },
-      "package": "@fluxerjs/types"
+      "package": "/types"
     },
     {
       "name": "APIGuild",
@@ -9167,7 +9167,7 @@
         "line": 55,
         "path": "packages/types/src/api/guild.ts"
       },
-      "package": "@fluxerjs/types"
+      "package": "/types"
     },
     {
       "name": "APIGuildAuditLog",
@@ -9197,7 +9197,7 @@
         "line": 114,
         "path": "packages/types/src/api/guild.ts"
       },
-      "package": "@fluxerjs/types"
+      "package": "/types"
     },
     {
       "name": "APIGuildAuditLogEntry",
@@ -9246,7 +9246,7 @@
         "line": 88,
         "path": "packages/types/src/api/guild.ts"
       },
-      "package": "@fluxerjs/types"
+      "package": "/types"
     },
     {
       "name": "APIGuildFeatureToggle",
@@ -9264,7 +9264,7 @@
         "line": 109,
         "path": "packages/types/src/api/guild.ts"
       },
-      "package": "@fluxerjs/types"
+      "package": "/types"
     },
     {
       "name": "APIGuildMember",
@@ -9349,7 +9349,7 @@
         "line": 65,
         "path": "packages/types/src/api/user.ts"
       },
-      "package": "@fluxerjs/types"
+      "package": "/types"
     },
     {
       "name": "APIGuildPartial",
@@ -9396,7 +9396,7 @@
         "line": 5,
         "path": "packages/types/src/api/invite.ts"
       },
-      "package": "@fluxerjs/types"
+      "package": "/types"
     },
     {
       "name": "APIInstance",
@@ -9438,7 +9438,7 @@
         "line": 5,
         "path": "packages/types/src/api/instance.ts"
       },
-      "package": "@fluxerjs/types"
+      "package": "/types"
     },
     {
       "name": "APIInvite",
@@ -9527,7 +9527,7 @@
         "line": 14,
         "path": "packages/types/src/api/invite.ts"
       },
-      "package": "@fluxerjs/types"
+      "package": "/types"
     },
     {
       "name": "APIMessage",
@@ -9692,7 +9692,7 @@
         "line": 111,
         "path": "packages/types/src/api/message.ts"
       },
-      "package": "@fluxerjs/types"
+      "package": "/types"
     },
     {
       "name": "APIMessageAttachment",
@@ -9815,7 +9815,7 @@
         "line": 75,
         "path": "packages/types/src/api/message.ts"
       },
-      "package": "@fluxerjs/types"
+      "package": "/types"
     },
     {
       "name": "APIMessageCall",
@@ -9839,7 +9839,7 @@
         "line": 47,
         "path": "packages/types/src/api/message.ts"
       },
-      "package": "@fluxerjs/types"
+      "package": "/types"
     },
     {
       "name": "APIMessageReaction",
@@ -9868,7 +9868,7 @@
         "line": 31,
         "path": "packages/types/src/api/message.ts"
       },
-      "package": "@fluxerjs/types"
+      "package": "/types"
     },
     {
       "name": "APIMessageReference",
@@ -9905,7 +9905,7 @@
         "line": 38,
         "path": "packages/types/src/api/message.ts"
       },
-      "package": "@fluxerjs/types"
+      "package": "/types"
     },
     {
       "name": "APIMessageSnapshot",
@@ -9971,7 +9971,7 @@
         "line": 53,
         "path": "packages/types/src/api/message.ts"
       },
-      "package": "@fluxerjs/types"
+      "package": "/types"
     },
     {
       "name": "APIMessageSticker",
@@ -10012,7 +10012,7 @@
         "line": 100,
         "path": "packages/types/src/api/message.ts"
       },
-      "package": "@fluxerjs/types"
+      "package": "/types"
     },
     {
       "name": "APIProfileResponse",
@@ -10048,7 +10048,7 @@
         "line": 55,
         "path": "packages/types/src/api/user.ts"
       },
-      "package": "@fluxerjs/types"
+      "package": "/types"
     },
     {
       "name": "APIReactionEmoji",
@@ -10077,7 +10077,7 @@
         "line": 25,
         "path": "packages/types/src/api/message.ts"
       },
-      "package": "@fluxerjs/types"
+      "package": "/types"
     },
     {
       "name": "APIRole",
@@ -10143,7 +10143,7 @@
         "line": 7,
         "path": "packages/types/src/api/role.ts"
       },
-      "package": "@fluxerjs/types"
+      "package": "/types"
     },
     {
       "name": "APISticker",
@@ -10184,7 +10184,7 @@
         "line": 4,
         "path": "packages/types/src/api/sticker.ts"
       },
-      "package": "@fluxerjs/types"
+      "package": "/types"
     },
     {
       "name": "APIStickerWithUser",
@@ -10201,7 +10201,7 @@
         "line": 12,
         "path": "packages/types/src/api/sticker.ts"
       },
-      "package": "@fluxerjs/types"
+      "package": "/types"
     },
     {
       "name": "APIUser",
@@ -10211,7 +10211,7 @@
         "line": 28,
         "path": "packages/types/src/api/user.ts"
       },
-      "package": "@fluxerjs/types"
+      "package": "/types"
     },
     {
       "name": "APIUserPartial",
@@ -10294,7 +10294,7 @@
         "line": 8,
         "path": "packages/types/src/api/user.ts"
       },
-      "package": "@fluxerjs/types"
+      "package": "/types"
     },
     {
       "name": "APIUserProfile",
@@ -10342,7 +10342,7 @@
         "line": 34,
         "path": "packages/types/src/api/user.ts"
       },
-      "package": "@fluxerjs/types"
+      "package": "/types"
     },
     {
       "name": "APIVanityURL",
@@ -10366,7 +10366,7 @@
         "line": 103,
         "path": "packages/types/src/api/guild.ts"
       },
-      "package": "@fluxerjs/types"
+      "package": "/types"
     },
     {
       "name": "APIWebhook",
@@ -10421,7 +10421,7 @@
         "line": 12,
         "path": "packages/types/src/api/webhook.ts"
       },
-      "package": "@fluxerjs/types"
+      "package": "/types"
     },
     {
       "name": "APIWebhookTokenUpdateRequest",
@@ -10445,7 +10445,7 @@
         "line": 31,
         "path": "packages/types/src/api/webhook.ts"
       },
-      "package": "@fluxerjs/types"
+      "package": "/types"
     },
     {
       "name": "APIWebhookUpdateRequest",
@@ -10475,7 +10475,7 @@
         "line": 24,
         "path": "packages/types/src/api/webhook.ts"
       },
-      "package": "@fluxerjs/types"
+      "package": "/types"
     },
     {
       "name": "AttachmentData",
@@ -10486,7 +10486,7 @@
         "line": 10,
         "path": "packages/rest/src/utils/files.ts"
       },
-      "package": "@fluxerjs/rest"
+      "package": "/rest"
     },
     {
       "name": "AttachmentPayload",
@@ -10517,7 +10517,7 @@
         "line": 12,
         "path": "packages/rest/src/utils/files.ts"
       },
-      "package": "@fluxerjs/rest"
+      "package": "/rest"
     },
     {
       "name": "AttachmentPayloadOptions",
@@ -10547,7 +10547,7 @@
         "line": 5,
         "path": "packages/builders/src/messages/AttachmentBuilder.ts"
       },
-      "package": "@fluxerjs/builders"
+      "package": "/builders"
     },
     {
       "name": "BitFieldResolvable",
@@ -10558,7 +10558,7 @@
         "line": 8,
         "path": "packages/util/src/BitField.ts"
       },
-      "package": "@fluxerjs/util"
+      "package": "/util"
     },
     {
       "name": "CacheSizeLimits",
@@ -10595,7 +10595,7 @@
         "line": 5,
         "path": "packages/fluxer-core/src/util/Options.ts"
       },
-      "package": "@fluxerjs/core"
+      "package": "/core"
     },
     {
       "name": "CdnUrlOptions",
@@ -10618,7 +10618,7 @@
         "line": 3,
         "path": "packages/fluxer-core/src/util/cdn.ts"
       },
-      "package": "@fluxerjs/core"
+      "package": "/core"
     },
     {
       "name": "ClientEventMethods",
@@ -10629,7 +10629,7 @@
         "line": 135,
         "path": "packages/fluxer-core/src/client/Client.ts"
       },
-      "package": "@fluxerjs/core"
+      "package": "/core"
     },
     {
       "name": "ClientEvents",
@@ -10899,7 +10899,7 @@
         "line": 72,
         "path": "packages/fluxer-core/src/client/Client.ts"
       },
-      "package": "@fluxerjs/core"
+      "package": "/core"
     },
     {
       "name": "ClientOptions",
@@ -10958,7 +10958,7 @@
         "line": 13,
         "path": "packages/fluxer-core/src/util/Options.ts"
       },
-      "package": "@fluxerjs/core"
+      "package": "/core"
     },
     {
       "name": "CollectedReaction",
@@ -10981,7 +10981,7 @@
         "line": 20,
         "path": "packages/fluxer-core/src/util/ReactionCollector.ts"
       },
-      "package": "@fluxerjs/core"
+      "package": "/core"
     },
     {
       "name": "DispatchHandler",
@@ -10991,7 +10991,7 @@
         "line": 43,
         "path": "packages/fluxer-core/src/client/EventHandlerRegistry.ts"
       },
-      "package": "@fluxerjs/core"
+      "package": "/core"
     },
     {
       "name": "EmbedAuthorOptions",
@@ -11021,7 +11021,7 @@
         "line": 46,
         "path": "packages/builders/src/messages/EmbedBuilder.ts"
       },
-      "package": "@fluxerjs/builders"
+      "package": "/builders"
     },
     {
       "name": "EmbedFieldData",
@@ -11051,7 +11051,7 @@
         "line": 59,
         "path": "packages/builders/src/messages/EmbedBuilder.ts"
       },
-      "package": "@fluxerjs/builders"
+      "package": "/builders"
     },
     {
       "name": "EmbedFooterOptions",
@@ -11075,7 +11075,7 @@
         "line": 53,
         "path": "packages/builders/src/messages/EmbedBuilder.ts"
       },
-      "package": "@fluxerjs/builders"
+      "package": "/builders"
     },
     {
       "name": "EmbedMediaOptions",
@@ -11135,7 +11135,7 @@
         "line": 5,
         "path": "packages/builders/src/messages/EmbedBuilder.ts"
       },
-      "package": "@fluxerjs/builders"
+      "package": "/builders"
     },
     {
       "name": "EmbedType",
@@ -11145,7 +11145,7 @@
         "line": 43,
         "path": "packages/types/src/api/embed.ts"
       },
-      "package": "@fluxerjs/types"
+      "package": "/types"
     },
     {
       "name": "FetchedUserWithProfile",
@@ -11199,7 +11199,7 @@
         "line": 9,
         "path": "packages/fluxer-core/src/client/UsersManager.ts"
       },
-      "package": "@fluxerjs/core"
+      "package": "/core"
     },
     {
       "name": "FluxerErrorOptions",
@@ -11222,7 +11222,7 @@
         "line": 1,
         "path": "packages/fluxer-core/src/errors/FluxerError.ts"
       },
-      "package": "@fluxerjs/core"
+      "package": "/core"
     },
     {
       "name": "GatewayAuthSessionChangeDispatchData",
@@ -11233,7 +11233,7 @@
         "line": 412,
         "path": "packages/types/src/gateway/payloads.ts"
       },
-      "package": "@fluxerjs/types"
+      "package": "/types"
     },
     {
       "name": "GatewayCallCreateDispatchData",
@@ -11257,7 +11257,7 @@
         "line": 438,
         "path": "packages/types/src/gateway/payloads.ts"
       },
-      "package": "@fluxerjs/types"
+      "package": "/types"
     },
     {
       "name": "GatewayCallDeleteDispatchData",
@@ -11281,7 +11281,7 @@
         "line": 452,
         "path": "packages/types/src/gateway/payloads.ts"
       },
-      "package": "@fluxerjs/types"
+      "package": "/types"
     },
     {
       "name": "GatewayCallUpdateDispatchData",
@@ -11305,7 +11305,7 @@
         "line": 445,
         "path": "packages/types/src/gateway/payloads.ts"
       },
-      "package": "@fluxerjs/types"
+      "package": "/types"
     },
     {
       "name": "GatewayChannelCreateDispatchData",
@@ -11316,7 +11316,7 @@
         "line": 169,
         "path": "packages/types/src/gateway/payloads.ts"
       },
-      "package": "@fluxerjs/types"
+      "package": "/types"
     },
     {
       "name": "GatewayChannelDeleteDispatchData",
@@ -11327,7 +11327,7 @@
         "line": 177,
         "path": "packages/types/src/gateway/payloads.ts"
       },
-      "package": "@fluxerjs/types"
+      "package": "/types"
     },
     {
       "name": "GatewayChannelPinsAckDispatchData",
@@ -11351,7 +11351,7 @@
         "line": 354,
         "path": "packages/types/src/gateway/payloads.ts"
       },
-      "package": "@fluxerjs/types"
+      "package": "/types"
     },
     {
       "name": "GatewayChannelPinsUpdateDispatchData",
@@ -11381,7 +11381,7 @@
         "line": 348,
         "path": "packages/types/src/gateway/payloads.ts"
       },
-      "package": "@fluxerjs/types"
+      "package": "/types"
     },
     {
       "name": "GatewayChannelRecipientAddDispatchData",
@@ -11405,7 +11405,7 @@
         "line": 179,
         "path": "packages/types/src/gateway/payloads.ts"
       },
-      "package": "@fluxerjs/types"
+      "package": "/types"
     },
     {
       "name": "GatewayChannelRecipientRemoveDispatchData",
@@ -11429,7 +11429,7 @@
         "line": 184,
         "path": "packages/types/src/gateway/payloads.ts"
       },
-      "package": "@fluxerjs/types"
+      "package": "/types"
     },
     {
       "name": "GatewayChannelUpdateBulkDispatchData",
@@ -11447,7 +11447,7 @@
         "line": 173,
         "path": "packages/types/src/gateway/payloads.ts"
       },
-      "package": "@fluxerjs/types"
+      "package": "/types"
     },
     {
       "name": "GatewayChannelUpdateDispatchData",
@@ -11458,7 +11458,7 @@
         "line": 171,
         "path": "packages/types/src/gateway/payloads.ts"
       },
-      "package": "@fluxerjs/types"
+      "package": "/types"
     },
     {
       "name": "GatewayCustomStatus",
@@ -11488,7 +11488,7 @@
         "line": 39,
         "path": "packages/types/src/gateway/payloads.ts"
       },
-      "package": "@fluxerjs/types"
+      "package": "/types"
     },
     {
       "name": "GatewayDispatchEventName",
@@ -11498,7 +11498,7 @@
         "line": 188,
         "path": "packages/types/src/gateway/events.ts"
       },
-      "package": "@fluxerjs/types"
+      "package": "/types"
     },
     {
       "name": "GatewayFavoriteMemeCreateDispatchData",
@@ -11509,7 +11509,7 @@
         "line": 458,
         "path": "packages/types/src/gateway/payloads.ts"
       },
-      "package": "@fluxerjs/types"
+      "package": "/types"
     },
     {
       "name": "GatewayFavoriteMemeDeleteDispatchData",
@@ -11520,7 +11520,7 @@
         "line": 464,
         "path": "packages/types/src/gateway/payloads.ts"
       },
-      "package": "@fluxerjs/types"
+      "package": "/types"
     },
     {
       "name": "GatewayFavoriteMemeUpdateDispatchData",
@@ -11531,7 +11531,7 @@
         "line": 461,
         "path": "packages/types/src/gateway/payloads.ts"
       },
-      "package": "@fluxerjs/types"
+      "package": "/types"
     },
     {
       "name": "GatewayGuildBanAddDispatchData",
@@ -11561,7 +11561,7 @@
         "line": 231,
         "path": "packages/types/src/gateway/payloads.ts"
       },
-      "package": "@fluxerjs/types"
+      "package": "/types"
     },
     {
       "name": "GatewayGuildBanRemoveDispatchData",
@@ -11585,7 +11585,7 @@
         "line": 237,
         "path": "packages/types/src/gateway/payloads.ts"
       },
-      "package": "@fluxerjs/types"
+      "package": "/types"
     },
     {
       "name": "GatewayGuildCreateDispatchData",
@@ -11596,7 +11596,7 @@
         "line": 159,
         "path": "packages/types/src/gateway/payloads.ts"
       },
-      "package": "@fluxerjs/types"
+      "package": "/types"
     },
     {
       "name": "GatewayGuildDeleteDispatchData",
@@ -11620,7 +11620,7 @@
         "line": 163,
         "path": "packages/types/src/gateway/payloads.ts"
       },
-      "package": "@fluxerjs/types"
+      "package": "/types"
     },
     {
       "name": "GatewayGuildEmojisUpdateDispatchData",
@@ -11644,7 +11644,7 @@
         "line": 313,
         "path": "packages/types/src/gateway/payloads.ts"
       },
-      "package": "@fluxerjs/types"
+      "package": "/types"
     },
     {
       "name": "GatewayGuildIntegrationsUpdateDispatchData",
@@ -11662,7 +11662,7 @@
         "line": 325,
         "path": "packages/types/src/gateway/payloads.ts"
       },
-      "package": "@fluxerjs/types"
+      "package": "/types"
     },
     {
       "name": "GatewayGuildMemberAddDispatchData",
@@ -11673,7 +11673,7 @@
         "line": 190,
         "path": "packages/types/src/gateway/payloads.ts"
       },
-      "package": "@fluxerjs/types"
+      "package": "/types"
     },
     {
       "name": "GatewayGuildMemberListUpdateDispatchData",
@@ -11721,7 +11721,7 @@
         "line": 217,
         "path": "packages/types/src/gateway/payloads.ts"
       },
-      "package": "@fluxerjs/types"
+      "package": "/types"
     },
     {
       "name": "GatewayGuildMemberRemoveDispatchData",
@@ -11745,7 +11745,7 @@
         "line": 203,
         "path": "packages/types/src/gateway/payloads.ts"
       },
-      "package": "@fluxerjs/types"
+      "package": "/types"
     },
     {
       "name": "GatewayGuildMembersChunkDispatchData",
@@ -11793,7 +11793,7 @@
         "line": 208,
         "path": "packages/types/src/gateway/payloads.ts"
       },
-      "package": "@fluxerjs/types"
+      "package": "/types"
     },
     {
       "name": "GatewayGuildMemberUpdateDispatchData",
@@ -11853,7 +11853,7 @@
         "line": 192,
         "path": "packages/types/src/gateway/payloads.ts"
       },
-      "package": "@fluxerjs/types"
+      "package": "/types"
     },
     {
       "name": "GatewayGuildRoleCreateDispatchData",
@@ -11877,7 +11877,7 @@
         "line": 264,
         "path": "packages/types/src/gateway/payloads.ts"
       },
-      "package": "@fluxerjs/types"
+      "package": "/types"
     },
     {
       "name": "GatewayGuildRoleDeleteDispatchData",
@@ -11901,7 +11901,7 @@
         "line": 274,
         "path": "packages/types/src/gateway/payloads.ts"
       },
-      "package": "@fluxerjs/types"
+      "package": "/types"
     },
     {
       "name": "GatewayGuildRoleUpdateBulkDispatchData",
@@ -11925,7 +11925,7 @@
         "line": 279,
         "path": "packages/types/src/gateway/payloads.ts"
       },
-      "package": "@fluxerjs/types"
+      "package": "/types"
     },
     {
       "name": "GatewayGuildRoleUpdateDispatchData",
@@ -11949,7 +11949,7 @@
         "line": 269,
         "path": "packages/types/src/gateway/payloads.ts"
       },
-      "package": "@fluxerjs/types"
+      "package": "/types"
     },
     {
       "name": "GatewayGuildScheduledEventCreateDispatchData",
@@ -11973,7 +11973,7 @@
         "line": 330,
         "path": "packages/types/src/gateway/payloads.ts"
       },
-      "package": "@fluxerjs/types"
+      "package": "/types"
     },
     {
       "name": "GatewayGuildScheduledEventDeleteDispatchData",
@@ -11997,7 +11997,7 @@
         "line": 342,
         "path": "packages/types/src/gateway/payloads.ts"
       },
-      "package": "@fluxerjs/types"
+      "package": "/types"
     },
     {
       "name": "GatewayGuildScheduledEventUpdateDispatchData",
@@ -12021,7 +12021,7 @@
         "line": 336,
         "path": "packages/types/src/gateway/payloads.ts"
       },
-      "package": "@fluxerjs/types"
+      "package": "/types"
     },
     {
       "name": "GatewayGuildStickersUpdateDispatchData",
@@ -12045,7 +12045,7 @@
         "line": 319,
         "path": "packages/types/src/gateway/payloads.ts"
       },
-      "package": "@fluxerjs/types"
+      "package": "/types"
     },
     {
       "name": "GatewayGuildSyncDispatchData",
@@ -12056,7 +12056,7 @@
         "line": 418,
         "path": "packages/types/src/gateway/payloads.ts"
       },
-      "package": "@fluxerjs/types"
+      "package": "/types"
     },
     {
       "name": "GatewayGuildUpdateDispatchData",
@@ -12067,7 +12067,7 @@
         "line": 161,
         "path": "packages/types/src/gateway/payloads.ts"
       },
-      "package": "@fluxerjs/types"
+      "package": "/types"
     },
     {
       "name": "GatewayHelloData",
@@ -12085,7 +12085,7 @@
         "line": 79,
         "path": "packages/types/src/gateway/payloads.ts"
       },
-      "package": "@fluxerjs/types"
+      "package": "/types"
     },
     {
       "name": "GatewayIdentifyData",
@@ -12139,7 +12139,7 @@
         "line": 18,
         "path": "packages/types/src/gateway/payloads.ts"
       },
-      "package": "@fluxerjs/types"
+      "package": "/types"
     },
     {
       "name": "GatewayInteractionCreateDispatchData",
@@ -12150,7 +12150,7 @@
         "line": 467,
         "path": "packages/types/src/gateway/payloads.ts"
       },
-      "package": "@fluxerjs/types"
+      "package": "/types"
     },
     {
       "name": "GatewayInviteCreateDispatchData",
@@ -12161,7 +12161,7 @@
         "line": 243,
         "path": "packages/types/src/gateway/payloads.ts"
       },
-      "package": "@fluxerjs/types"
+      "package": "/types"
     },
     {
       "name": "GatewayInviteDeleteDispatchData",
@@ -12191,7 +12191,7 @@
         "line": 246,
         "path": "packages/types/src/gateway/payloads.ts"
       },
-      "package": "@fluxerjs/types"
+      "package": "/types"
     },
     {
       "name": "GatewayMessageAckDispatchData",
@@ -12215,7 +12215,7 @@
         "line": 153,
         "path": "packages/types/src/gateway/payloads.ts"
       },
-      "package": "@fluxerjs/types"
+      "package": "/types"
     },
     {
       "name": "GatewayMessageCreateDispatchData",
@@ -12226,7 +12226,7 @@
         "line": 94,
         "path": "packages/types/src/gateway/payloads.ts"
       },
-      "package": "@fluxerjs/types"
+      "package": "/types"
     },
     {
       "name": "GatewayMessageDeleteBulkDispatchData",
@@ -12256,7 +12256,7 @@
         "line": 107,
         "path": "packages/types/src/gateway/payloads.ts"
       },
-      "package": "@fluxerjs/types"
+      "package": "/types"
     },
     {
       "name": "GatewayMessageDeleteDispatchData",
@@ -12298,7 +12298,7 @@
         "line": 98,
         "path": "packages/types/src/gateway/payloads.ts"
       },
-      "package": "@fluxerjs/types"
+      "package": "/types"
     },
     {
       "name": "GatewayMessageReactionAddDispatchData",
@@ -12340,7 +12340,7 @@
         "line": 121,
         "path": "packages/types/src/gateway/payloads.ts"
       },
-      "package": "@fluxerjs/types"
+      "package": "/types"
     },
     {
       "name": "GatewayMessageReactionRemoveAllDispatchData",
@@ -12370,7 +12370,7 @@
         "line": 147,
         "path": "packages/types/src/gateway/payloads.ts"
       },
-      "package": "@fluxerjs/types"
+      "package": "/types"
     },
     {
       "name": "GatewayMessageReactionRemoveDispatchData",
@@ -12412,7 +12412,7 @@
         "line": 130,
         "path": "packages/types/src/gateway/payloads.ts"
       },
-      "package": "@fluxerjs/types"
+      "package": "/types"
     },
     {
       "name": "GatewayMessageReactionRemoveEmojiDispatchData",
@@ -12448,7 +12448,7 @@
         "line": 139,
         "path": "packages/types/src/gateway/payloads.ts"
       },
-      "package": "@fluxerjs/types"
+      "package": "/types"
     },
     {
       "name": "GatewayMessageUpdateDispatchData",
@@ -12459,7 +12459,7 @@
         "line": 96,
         "path": "packages/types/src/gateway/payloads.ts"
       },
-      "package": "@fluxerjs/types"
+      "package": "/types"
     },
     {
       "name": "GatewayPassiveUpdatesDispatchData",
@@ -12470,7 +12470,7 @@
         "line": 415,
         "path": "packages/types/src/gateway/payloads.ts"
       },
-      "package": "@fluxerjs/types"
+      "package": "/types"
     },
     {
       "name": "GatewayPresenceUpdateData",
@@ -12512,7 +12512,7 @@
         "line": 45,
         "path": "packages/types/src/gateway/payloads.ts"
       },
-      "package": "@fluxerjs/types"
+      "package": "/types"
     },
     {
       "name": "GatewayPresenceUpdateDispatchData",
@@ -12555,7 +12555,7 @@
         "line": 360,
         "path": "packages/types/src/gateway/payloads.ts"
       },
-      "package": "@fluxerjs/types"
+      "package": "/types"
     },
     {
       "name": "GatewayReactionEmoji",
@@ -12585,7 +12585,7 @@
         "line": 114,
         "path": "packages/types/src/gateway/payloads.ts"
       },
-      "package": "@fluxerjs/types"
+      "package": "/types"
     },
     {
       "name": "GatewayReadyDispatchData",
@@ -12633,7 +12633,7 @@
         "line": 84,
         "path": "packages/types/src/gateway/payloads.ts"
       },
-      "package": "@fluxerjs/types"
+      "package": "/types"
     },
     {
       "name": "GatewayReceivePayload",
@@ -12668,7 +12668,7 @@
         "line": 469,
         "path": "packages/types/src/gateway/payloads.ts"
       },
-      "package": "@fluxerjs/types"
+      "package": "/types"
     },
     {
       "name": "GatewayRecentMentionDeleteDispatchData",
@@ -12679,7 +12679,7 @@
         "line": 401,
         "path": "packages/types/src/gateway/payloads.ts"
       },
-      "package": "@fluxerjs/types"
+      "package": "/types"
     },
     {
       "name": "GatewayRelationshipAddDispatchData",
@@ -12703,7 +12703,7 @@
         "line": 421,
         "path": "packages/types/src/gateway/payloads.ts"
       },
-      "package": "@fluxerjs/types"
+      "package": "/types"
     },
     {
       "name": "GatewayRelationshipRemoveDispatchData",
@@ -12721,7 +12721,7 @@
         "line": 433,
         "path": "packages/types/src/gateway/payloads.ts"
       },
-      "package": "@fluxerjs/types"
+      "package": "/types"
     },
     {
       "name": "GatewayRelationshipUpdateDispatchData",
@@ -12745,7 +12745,7 @@
         "line": 427,
         "path": "packages/types/src/gateway/payloads.ts"
       },
-      "package": "@fluxerjs/types"
+      "package": "/types"
     },
     {
       "name": "GatewayResumeData",
@@ -12774,7 +12774,7 @@
         "line": 32,
         "path": "packages/types/src/gateway/payloads.ts"
       },
-      "package": "@fluxerjs/types"
+      "package": "/types"
     },
     {
       "name": "GatewayResumedDispatchData",
@@ -12785,7 +12785,7 @@
         "line": 378,
         "path": "packages/types/src/gateway/payloads.ts"
       },
-      "package": "@fluxerjs/types"
+      "package": "/types"
     },
     {
       "name": "GatewaySavedMessageCreateDispatchData",
@@ -12796,7 +12796,7 @@
         "line": 404,
         "path": "packages/types/src/gateway/payloads.ts"
       },
-      "package": "@fluxerjs/types"
+      "package": "/types"
     },
     {
       "name": "GatewaySavedMessageDeleteDispatchData",
@@ -12814,7 +12814,7 @@
         "line": 407,
         "path": "packages/types/src/gateway/payloads.ts"
       },
-      "package": "@fluxerjs/types"
+      "package": "/types"
     },
     {
       "name": "GatewaySendPayload",
@@ -12824,7 +12824,7 @@
         "line": 67,
         "path": "packages/types/src/gateway/payloads.ts"
       },
-      "package": "@fluxerjs/types"
+      "package": "/types"
     },
     {
       "name": "GatewaySessionsReplaceDispatchData",
@@ -12842,7 +12842,7 @@
         "line": 381,
         "path": "packages/types/src/gateway/payloads.ts"
       },
-      "package": "@fluxerjs/types"
+      "package": "/types"
     },
     {
       "name": "GatewayTypingStartDispatchData",
@@ -12884,7 +12884,7 @@
         "line": 253,
         "path": "packages/types/src/gateway/payloads.ts"
       },
-      "package": "@fluxerjs/types"
+      "package": "/types"
     },
     {
       "name": "GatewayUserGuildSettingsUpdateDispatchData",
@@ -12895,7 +12895,7 @@
         "line": 389,
         "path": "packages/types/src/gateway/payloads.ts"
       },
-      "package": "@fluxerjs/types"
+      "package": "/types"
     },
     {
       "name": "GatewayUserNoteUpdateDispatchData",
@@ -12919,7 +12919,7 @@
         "line": 395,
         "path": "packages/types/src/gateway/payloads.ts"
       },
-      "package": "@fluxerjs/types"
+      "package": "/types"
     },
     {
       "name": "GatewayUserPinnedDmsUpdateDispatchData",
@@ -12930,7 +12930,7 @@
         "line": 392,
         "path": "packages/types/src/gateway/payloads.ts"
       },
-      "package": "@fluxerjs/types"
+      "package": "/types"
     },
     {
       "name": "GatewayUserSettingsUpdateDispatchData",
@@ -12941,7 +12941,7 @@
         "line": 386,
         "path": "packages/types/src/gateway/payloads.ts"
       },
-      "package": "@fluxerjs/types"
+      "package": "/types"
     },
     {
       "name": "GatewayUserUpdateDispatchData",
@@ -12952,7 +12952,7 @@
         "line": 261,
         "path": "packages/types/src/gateway/payloads.ts"
       },
-      "package": "@fluxerjs/types"
+      "package": "/types"
     },
     {
       "name": "GatewayVoiceServerUpdateDispatchData",
@@ -12989,7 +12989,7 @@
         "line": 304,
         "path": "packages/types/src/gateway/payloads.ts"
       },
-      "package": "@fluxerjs/types"
+      "package": "/types"
     },
     {
       "name": "GatewayVoiceStateUpdateData",
@@ -13045,7 +13045,7 @@
         "line": 54,
         "path": "packages/types/src/gateway/payloads.ts"
       },
-      "package": "@fluxerjs/types"
+      "package": "/types"
     },
     {
       "name": "GatewayVoiceStateUpdateDispatchData",
@@ -13137,7 +13137,7 @@
         "line": 285,
         "path": "packages/types/src/gateway/payloads.ts"
       },
-      "package": "@fluxerjs/types"
+      "package": "/types"
     },
     {
       "name": "GatewayWebhooksUpdateDispatchData",
@@ -13161,7 +13161,7 @@
         "line": 370,
         "path": "packages/types/src/gateway/payloads.ts"
       },
-      "package": "@fluxerjs/types"
+      "package": "/types"
     },
     {
       "name": "GuildFeature",
@@ -13171,7 +13171,7 @@
         "line": 27,
         "path": "packages/types/src/api/guild.ts"
       },
-      "package": "@fluxerjs/types"
+      "package": "/types"
     },
     {
       "name": "LiveKitAudioFrame",
@@ -13181,7 +13181,7 @@
         "line": 193,
         "path": "packages/voice/src/LiveKitRtcConnection.ts"
       },
-      "package": "@fluxerjs/voice"
+      "package": "/voice"
     },
     {
       "name": "LiveKitReceiveSubscription",
@@ -13191,7 +13191,7 @@
         "line": 201,
         "path": "packages/voice/src/LiveKitRtcConnection.ts"
       },
-      "package": "@fluxerjs/voice"
+      "package": "/voice"
     },
     {
       "name": "LiveKitRtcConnectionEvents",
@@ -13202,7 +13202,7 @@
         "line": 181,
         "path": "packages/voice/src/LiveKitRtcConnection.ts"
       },
-      "package": "@fluxerjs/voice"
+      "package": "/voice"
     },
     {
       "name": "MessageAttachmentMeta",
@@ -13245,7 +13245,7 @@
         "line": 56,
         "path": "packages/fluxer-core/src/util/messageUtils.ts"
       },
-      "package": "@fluxerjs/core"
+      "package": "/core"
     },
     {
       "name": "MessageCollectorEndReason",
@@ -13255,7 +13255,7 @@
         "line": 16,
         "path": "packages/fluxer-core/src/util/MessageCollector.ts"
       },
-      "package": "@fluxerjs/core"
+      "package": "/core"
     },
     {
       "name": "MessageCollectorEvents",
@@ -13278,7 +13278,7 @@
         "line": 18,
         "path": "packages/fluxer-core/src/util/MessageCollector.ts"
       },
-      "package": "@fluxerjs/core"
+      "package": "/core"
     },
     {
       "name": "MessageCollectorOptions",
@@ -13310,7 +13310,7 @@
         "line": 7,
         "path": "packages/fluxer-core/src/util/MessageCollector.ts"
       },
-      "package": "@fluxerjs/core"
+      "package": "/core"
     },
     {
       "name": "MessageEditOptions",
@@ -13336,7 +13336,7 @@
         "line": 32,
         "path": "packages/fluxer-core/src/structures/Message.ts"
       },
-      "package": "@fluxerjs/core"
+      "package": "/core"
     },
     {
       "name": "MessageFileData",
@@ -13347,7 +13347,7 @@
         "line": 12,
         "path": "packages/fluxer-core/src/util/messageUtils.ts"
       },
-      "package": "@fluxerjs/core"
+      "package": "/core"
     },
     {
       "name": "MessageFlagsResolvable",
@@ -13357,7 +13357,7 @@
         "line": 20,
         "path": "packages/util/src/MessageFlagsBitField.ts"
       },
-      "package": "@fluxerjs/util"
+      "package": "/util"
     },
     {
       "name": "MessageFlagsString",
@@ -13367,7 +13367,7 @@
         "line": 14,
         "path": "packages/util/src/MessageFlagsBitField.ts"
       },
-      "package": "@fluxerjs/util"
+      "package": "/util"
     },
     {
       "name": "MessagePayload",
@@ -13377,7 +13377,7 @@
         "line": 39,
         "path": "packages/fluxer-core/src/structures/Message.ts"
       },
-      "package": "@fluxerjs/core"
+      "package": "/core"
     },
     {
       "name": "MessagePayloadData",
@@ -13425,7 +13425,7 @@
         "line": 6,
         "path": "packages/builders/src/messages/MessagePayload.ts"
       },
-      "package": "@fluxerjs/builders"
+      "package": "/builders"
     },
     {
       "name": "MessageSendOptions",
@@ -13436,7 +13436,7 @@
         "line": 68,
         "path": "packages/fluxer-core/src/util/messageUtils.ts"
       },
-      "package": "@fluxerjs/core"
+      "package": "/core"
     },
     {
       "name": "MP4File",
@@ -13465,7 +13465,7 @@
         "line": 2,
         "path": "packages/voice/src/mp4box.d.ts"
       },
-      "package": "@fluxerjs/voice"
+      "package": "/voice"
     },
     {
       "name": "PartialMessage",
@@ -13509,7 +13509,7 @@
         "line": 4,
         "path": "packages/fluxer-core/src/structures/PartialMessage.ts"
       },
-      "package": "@fluxerjs/core"
+      "package": "/core"
     },
     {
       "name": "PermissionResolvable",
@@ -13519,7 +13519,7 @@
         "line": 61,
         "path": "packages/util/src/PermissionsBitField.ts"
       },
-      "package": "@fluxerjs/util"
+      "package": "/util"
     },
     {
       "name": "PermissionString",
@@ -13529,7 +13529,7 @@
         "line": 55,
         "path": "packages/util/src/PermissionsBitField.ts"
       },
-      "package": "@fluxerjs/util"
+      "package": "/util"
     },
     {
       "name": "RateLimitErrorBody",
@@ -13558,7 +13558,7 @@
         "line": 64,
         "path": "packages/types/src/api/errors.ts"
       },
-      "package": "@fluxerjs/types"
+      "package": "/types"
     },
     {
       "name": "RateLimitState",
@@ -13588,7 +13588,7 @@
         "line": 5,
         "path": "packages/rest/src/RateLimitManager.ts"
       },
-      "package": "@fluxerjs/rest"
+      "package": "/rest"
     },
     {
       "name": "ReactionCollectorEndReason",
@@ -13598,7 +13598,7 @@
         "line": 18,
         "path": "packages/fluxer-core/src/util/ReactionCollector.ts"
       },
-      "package": "@fluxerjs/core"
+      "package": "/core"
     },
     {
       "name": "ReactionCollectorEvents",
@@ -13621,7 +13621,7 @@
         "line": 25,
         "path": "packages/fluxer-core/src/util/ReactionCollector.ts"
       },
-      "package": "@fluxerjs/core"
+      "package": "/core"
     },
     {
       "name": "ReactionCollectorOptions",
@@ -13653,7 +13653,7 @@
         "line": 9,
         "path": "packages/fluxer-core/src/util/ReactionCollector.ts"
       },
-      "package": "@fluxerjs/core"
+      "package": "/core"
     },
     {
       "name": "ReadonlyCollection",
@@ -13664,7 +13664,7 @@
         "line": 196,
         "path": "packages/collection/src/Collection.ts"
       },
-      "package": "@fluxerjs/collection"
+      "package": "/collection"
     },
     {
       "name": "ReplyOptions",
@@ -13690,7 +13690,7 @@
         "line": 45,
         "path": "packages/fluxer-core/src/structures/Message.ts"
       },
-      "package": "@fluxerjs/core"
+      "package": "/core"
     },
     {
       "name": "RequestOptions",
@@ -13725,7 +13725,7 @@
         "line": 6,
         "path": "packages/rest/src/RequestManager.ts"
       },
-      "package": "@fluxerjs/rest"
+      "package": "/rest"
     },
     {
       "name": "ResolvedMessageFile",
@@ -13755,7 +13755,7 @@
         "line": 5,
         "path": "packages/fluxer-core/src/util/messageUtils.ts"
       },
-      "package": "@fluxerjs/core"
+      "package": "/core"
     },
     {
       "name": "RESTCreateRoleBody",
@@ -13815,7 +13815,7 @@
         "line": 20,
         "path": "packages/types/src/api/role.ts"
       },
-      "package": "@fluxerjs/types"
+      "package": "/types"
     },
     {
       "name": "RestOptions",
@@ -13862,7 +13862,7 @@
         "line": 17,
         "path": "packages/rest/src/RequestManager.ts"
       },
-      "package": "@fluxerjs/rest"
+      "package": "/rest"
     },
     {
       "name": "RESTOptions",
@@ -13910,7 +13910,7 @@
         "line": 6,
         "path": "packages/rest/src/REST.ts"
       },
-      "package": "@fluxerjs/rest"
+      "package": "/rest"
     },
     {
       "name": "RESTUpdateRoleBody",
@@ -13970,7 +13970,7 @@
         "line": 32,
         "path": "packages/types/src/api/role.ts"
       },
-      "package": "@fluxerjs/types"
+      "package": "/types"
     },
     {
       "name": "RoleResolvable",
@@ -13981,7 +13981,7 @@
         "line": 7,
         "path": "packages/fluxer-core/src/structures/GuildMemberRoleManager.ts"
       },
-      "package": "@fluxerjs/core"
+      "package": "/core"
     },
     {
       "name": "SendBodyResult",
@@ -14018,7 +14018,7 @@
         "line": 81,
         "path": "packages/fluxer-core/src/util/messageUtils.ts"
       },
-      "package": "@fluxerjs/core"
+      "package": "/core"
     },
     {
       "name": "Snowflake",
@@ -14029,7 +14029,7 @@
         "line": 5,
         "path": "packages/types/src/common/snowflake.ts"
       },
-      "package": "@fluxerjs/types"
+      "package": "/types"
     },
     {
       "name": "TenorMediaResult",
@@ -14053,7 +14053,7 @@
         "line": 4,
         "path": "packages/util/src/tenorUtils.ts"
       },
-      "package": "@fluxerjs/util"
+      "package": "/util"
     },
     {
       "name": "UserFlagsResolvable",
@@ -14063,7 +14063,7 @@
         "line": 48,
         "path": "packages/util/src/UserFlagsBitField.ts"
       },
-      "package": "@fluxerjs/util"
+      "package": "/util"
     },
     {
       "name": "UserFlagsString",
@@ -14073,7 +14073,7 @@
         "line": 42,
         "path": "packages/util/src/UserFlagsBitField.ts"
       },
-      "package": "@fluxerjs/util"
+      "package": "/util"
     },
     {
       "name": "VideoPlayOptions",
@@ -14141,7 +14141,7 @@
         "line": 223,
         "path": "packages/voice/src/LiveKitRtcConnection.ts"
       },
-      "package": "@fluxerjs/voice"
+      "package": "/voice"
     },
     {
       "name": "VoiceConnectionEvents",
@@ -14170,7 +14170,7 @@
         "line": 61,
         "path": "packages/voice/src/VoiceConnection.ts"
       },
-      "package": "@fluxerjs/voice"
+      "package": "/voice"
     },
     {
       "name": "VoiceConnectionLike",
@@ -14181,7 +14181,7 @@
         "line": 17,
         "path": "packages/voice/src/index.ts"
       },
-      "package": "@fluxerjs/voice"
+      "package": "/voice"
     },
     {
       "name": "VoiceManagerOptions",
@@ -14200,7 +14200,7 @@
         "line": 25,
         "path": "packages/voice/src/VoiceManager.ts"
       },
-      "package": "@fluxerjs/voice"
+      "package": "/voice"
     },
     {
       "name": "VoiceStateMap",
@@ -14211,7 +14211,7 @@
         "line": 17,
         "path": "packages/voice/src/VoiceManager.ts"
       },
-      "package": "@fluxerjs/voice"
+      "package": "/voice"
     },
     {
       "name": "WebhookAttachmentMeta",
@@ -14254,7 +14254,7 @@
         "line": 16,
         "path": "packages/fluxer-core/src/structures/Webhook.ts"
       },
-      "package": "@fluxerjs/core"
+      "package": "/core"
     },
     {
       "name": "WebhookFileData",
@@ -14265,7 +14265,7 @@
         "line": 13,
         "path": "packages/fluxer-core/src/structures/Webhook.ts"
       },
-      "package": "@fluxerjs/core"
+      "package": "/core"
     },
     {
       "name": "WebhookSendOptions",
@@ -14326,7 +14326,7 @@
         "line": 26,
         "path": "packages/fluxer-core/src/structures/Webhook.ts"
       },
-      "package": "@fluxerjs/core"
+      "package": "/core"
     },
     {
       "name": "WebSocketConstructor",
@@ -14336,7 +14336,7 @@
         "line": 20,
         "path": "packages/ws/src/WebSocketShard.ts"
       },
-      "package": "@fluxerjs/ws"
+      "package": "/ws"
     },
     {
       "name": "WebSocketLike",
@@ -14346,7 +14346,7 @@
         "line": 13,
         "path": "packages/ws/src/WebSocketShard.ts"
       },
-      "package": "@fluxerjs/ws"
+      "package": "/ws"
     },
     {
       "name": "WebSocketManagerOptions",
@@ -14405,7 +14405,7 @@
         "line": 17,
         "path": "packages/ws/src/WebSocketManager.ts"
       },
-      "package": "@fluxerjs/ws"
+      "package": "/ws"
     },
     {
       "name": "WebSocketShardEvents",
@@ -14452,7 +14452,7 @@
         "line": 34,
         "path": "packages/ws/src/WebSocketShard.ts"
       },
-      "package": "@fluxerjs/ws"
+      "package": "/ws"
     },
     {
       "name": "WebSocketShardOptions",
@@ -14512,7 +14512,7 @@
         "line": 22,
         "path": "packages/ws/src/WebSocketShard.ts"
       },
-      "package": "@fluxerjs/ws"
+      "package": "/ws"
     }
   ],
   "enums": [
@@ -14674,7 +14674,7 @@
         "line": 5,
         "path": "packages/types/src/api/errors.ts"
       },
-      "package": "@fluxerjs/types"
+      "package": "/types"
     },
     {
       "name": "ChannelType",
@@ -14714,7 +14714,7 @@
         "line": 8,
         "path": "packages/types/src/api/channel.ts"
       },
-      "package": "@fluxerjs/types"
+      "package": "/types"
     },
     {
       "name": "DefaultMessageNotifications",
@@ -14733,7 +14733,7 @@
         "line": 22,
         "path": "packages/types/src/api/guild.ts"
       },
-      "package": "@fluxerjs/types"
+      "package": "/types"
     },
     {
       "name": "GatewayOpcodes",
@@ -14789,7 +14789,7 @@
         "line": 5,
         "path": "packages/types/src/gateway/opcodes.ts"
       },
-      "package": "@fluxerjs/types"
+      "package": "/types"
     },
     {
       "name": "GuildExplicitContentFilter",
@@ -14812,7 +14812,7 @@
         "line": 16,
         "path": "packages/types/src/api/guild.ts"
       },
-      "package": "@fluxerjs/types"
+      "package": "/types"
     },
     {
       "name": "GuildMFALevel",
@@ -14831,7 +14831,7 @@
         "line": 11,
         "path": "packages/types/src/api/guild.ts"
       },
-      "package": "@fluxerjs/types"
+      "package": "/types"
     },
     {
       "name": "GuildVerificationLevel",
@@ -14862,7 +14862,7 @@
         "line": 3,
         "path": "packages/types/src/api/guild.ts"
       },
-      "package": "@fluxerjs/types"
+      "package": "/types"
     },
     {
       "name": "MessageFlags",
@@ -14889,7 +14889,7 @@
         "line": 18,
         "path": "packages/types/src/api/message.ts"
       },
-      "package": "@fluxerjs/types"
+      "package": "/types"
     },
     {
       "name": "MessageType",
@@ -14936,7 +14936,7 @@
         "line": 6,
         "path": "packages/types/src/api/message.ts"
       },
-      "package": "@fluxerjs/types"
+      "package": "/types"
     },
     {
       "name": "OverwriteType",
@@ -14956,7 +14956,7 @@
         "line": 20,
         "path": "packages/types/src/api/channel.ts"
       },
-      "package": "@fluxerjs/types"
+      "package": "/types"
     },
     {
       "name": "WebhookType",
@@ -14975,7 +14975,7 @@
         "line": 4,
         "path": "packages/types/src/api/webhook.ts"
       },
-      "package": "@fluxerjs/types"
+      "package": "/types"
     }
   ]
 }

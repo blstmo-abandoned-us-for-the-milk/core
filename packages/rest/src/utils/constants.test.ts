@@ -16,9 +16,9 @@ describe('rest constants', () => {
     expect(DEFAULT_VERSION).toBe('1');
   });
 
-  it('DEFAULT_USER_AGENT contains fluxerjs', () => {
-    expect(DEFAULT_USER_AGENT).toContain('fluxerjs');
-    expect(DEFAULT_USER_AGENT).toContain('github.com/fluxerjs');
+  it('DEFAULT_USER_AGENT contains erin.js and repository URL', () => {
+    expect(DEFAULT_USER_AGENT).toContain('erin.js');
+    expect(DEFAULT_USER_AGENT).toContain('github.com/blstmo-abandoned-us-for-the-milk/core');
   });
 
   it('REQUEST_TIMEOUT is 15 seconds', () => {

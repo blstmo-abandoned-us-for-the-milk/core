@@ -1,5 +1,5 @@
 /**
- * Doc schema - matches output from @fluxerjs/docgen
+ * Doc schema - matches output from @erinjs/docgen
  */
 
 export interface DocMeta {
@@ -63,7 +63,7 @@ export interface DocClass {
   deprecated?: boolean | string;
   /** Discord.js compatible: string = link to d.js docs, true = no link */
   discordJsCompat?: boolean | string;
-  /** Package name e.g. @fluxerjs/core */
+  /** Package name e.g. @erinjs/core */
   package?: string;
 }
 
@@ -81,7 +81,7 @@ export interface DocInterface {
   description?: string;
   properties: DocInterfaceProperty[];
   source?: DocSource;
-  /** Package name e.g. @fluxerjs/core */
+  /** Package name e.g. @erinjs/core */
   package?: string;
 }
 
@@ -95,7 +95,7 @@ export interface DocEnum {
   description?: string;
   members: DocEnumMember[];
   source?: DocSource;
-  /** Package name e.g. @fluxerjs/core */
+  /** Package name e.g. @erinjs/core */
   package?: string;
 }
 

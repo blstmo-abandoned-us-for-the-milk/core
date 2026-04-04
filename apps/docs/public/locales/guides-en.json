@@ -331,7 +331,7 @@
   },
   "voice": {
     "title": "Voice",
-    "description": "Join voice channels and play audio with @fluxerjs/voice. Supports WebM/Opus streams—no FFmpeg required.",
+    "description": "Join voice channels and play audio with @erinjs/voice. Supports WebM/Opus streams—no FFmpeg required.",
     "sections": [
       {
         "title": "Installation",
@@ -389,11 +389,11 @@
       },
       {
         "title": "Gateway Dispatch Events Reference",
-        "description": "All events the Fluxer gateway can send. Use GatewayDispatchEvents from @fluxerjs/types for type-safe checks."
+        "description": "All events the Fluxer gateway can send. Use GatewayDispatchEvents from @erinjs/types for type-safe checks."
       },
       {
         "title": "Event Payload Reference",
-        "description": "Payload structure for each event. Handler receives (data) or (message), (reaction, user, ...) etc. Types: Gateway*DispatchData from @fluxerjs/types."
+        "description": "Payload structure for each event. Handler receives (data) or (message), (reaction, user, ...) etc. Types: Gateway*DispatchData from @erinjs/types."
       }
     ]
   },

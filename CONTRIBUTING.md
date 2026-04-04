@@ -1,4 +1,4 @@
-# Contributing to Fluxer SDK
+# Contributing to erin.js SDK
 
 Thank you for your interest in contributing!
 
@@ -7,7 +7,7 @@ Thank you for your interest in contributing!
 1. Clone the repository and install dependencies:
 
    ```bash
-   git clone https://github.com/fluxerjs/core.git
+   git clone https://github.com/blstmo-abandoned-us-for-the-milk/core.git
    cd core
    pnpm install
    ```

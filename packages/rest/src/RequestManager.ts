@@ -1,6 +1,6 @@
 import { RateLimitManager } from './RateLimitManager.js';
 import { FluxerAPIError, RateLimitError, HTTPError } from './errors/index.js';
-import { APIErrorBody, RateLimitErrorBody } from '@fluxerjs/types';
+import { APIErrorBody, RateLimitErrorBody } from '@erinjs/types';
 import { buildFormData } from './utils/files.js';
 
 export interface RequestOptions {
@@ -35,7 +35,7 @@ export class RequestManager {
       authPrefix: options.authPrefix ?? 'Bot',
       timeout: options.timeout ?? 15000,
       retries: options.retries ?? 3,
-      userAgent: options.userAgent ?? 'fluxerjs',
+      userAgent: options.userAgent ?? 'erin.js',
     };
   }
 

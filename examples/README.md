@@ -1,6 +1,6 @@
-# Fluxer SDK Examples
+# erin.js SDK Examples
 
-Example bots demonstrating common use cases with the Fluxer SDK.
+Example bots demonstrating common use cases with the erin.js SDK.
 
 ## Quickest start
 
@@ -10,7 +10,11 @@ From the repo root after `pnpm install && pnpm run build`:
 FLUXER_BOT_TOKEN=your_token node examples/minimal-bot.js
 ```
 
-That runs the [minimal bot](minimal-bot.js) — login + `!ping` → Pong. See the [Basic Bot guide](https://fluxerjs.blstmo.com/v/latest/guides/basic-bot) for more.
+That runs the [minimal bot](minimal-bot.js) — login + `!ping` → Pong. Guide route: `/v/latest/guides/basic-bot`.
+
+Public guide: https://erin.js.org/v/latest/guides/basic-bot
+
+To browse guides locally, run `pnpm run docs:dev` from the repo root and open `http://localhost:3333`.
 
 ## Setup
 
@@ -37,14 +41,14 @@ That runs the [minimal bot](minimal-bot.js) — login + `!ping` → Pong. See th
 
 | Example                                        | Description                                      | Guide                                                                                                                                                                                                                |
 | ---------------------------------------------- | ------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [minimal-bot.js](minimal-bot.js)               | Login + `!ping` → Pong                           | [Basic Bot](https://fluxerjs.blstmo.com/v/latest/guides/basic-bot)                                                                                                                                                   |
-| [first-steps-bot.js](first-steps-bot.js)       | !ping, !hello, !avatar, !embed, !perms           | [Basic Bot](https://fluxerjs.blstmo.com/v/latest/guides/basic-bot), [Profile URLs](https://fluxerjs.blstmo.com/v/latest/guides/profile-urls), [Permissions](https://fluxerjs.blstmo.com/v/latest/guides/permissions) |
-| [ping-bot.js](ping-bot.js)                     | Prefix commands, embeds, DMs, voice, audio/video | [Basic Bot](https://fluxerjs.blstmo.com/v/latest/guides/basic-bot), [Voice](https://fluxerjs.blstmo.com/v/latest/guides/voice)                                                                                       |
-| [reaction-bot.js](reaction-bot.js)             | Simple reaction handling                         | [Reactions](https://fluxerjs.blstmo.com/v/latest/guides/reactions)                                                                                                                                                   |
-| [reaction-roles-bot.js](reaction-roles-bot.js) | Reaction-based role assignment                   | [Reactions](https://fluxerjs.blstmo.com/v/latest/guides/reactions)                                                                                                                                                   |
-| [webhook-bot.js](webhook-bot.js)               | Webhook-based bot (no gateway)                   | [Webhooks](https://fluxerjs.blstmo.com/v/latest/guides/webhooks)                                                                                                                                                     |
-| [webi-bot.js](webi-bot.js)                     | Full webhook demo: embeds, files, all options    | [Webhook Attachments & Embeds](https://fluxerjs.blstmo.com/v/latest/guides/webhook-attachments-embeds)                                                                                                               |
-| [moderation-bot.js](moderation-bot.js)         | Ban, kick, unban, !perms (permissions)           | [Permissions](https://fluxerjs.blstmo.com/v/latest/guides/permissions), [Moderation](https://fluxerjs.blstmo.com/v/latest/guides/moderation)                                                                         |
+| [minimal-bot.js](minimal-bot.js)               | Login + `!ping` → Pong                           | `/v/latest/guides/basic-bot`                                                                                                                                                   |
+| [first-steps-bot.js](first-steps-bot.js)       | !ping, !hello, !avatar, !embed, !perms           | `/v/latest/guides/basic-bot`, `/v/latest/guides/profile-urls`, `/v/latest/guides/permissions` |
+| [ping-bot.js](ping-bot.js)                     | Prefix commands, embeds, DMs, voice, audio/video | `/v/latest/guides/basic-bot`, `/v/latest/guides/voice`                                                                                       |
+| [reaction-bot.js](reaction-bot.js)             | Simple reaction handling                         | `/v/latest/guides/reactions`                                                                                                                                                   |
+| [reaction-roles-bot.js](reaction-roles-bot.js) | Reaction-based role assignment                   | `/v/latest/guides/reactions`                                                                                                                                                   |
+| [webhook-bot.js](webhook-bot.js)               | Webhook-based bot (no gateway)                   | `/v/latest/guides/webhooks`                                                                                                                                                     |
+| [webi-bot.js](webi-bot.js)                     | Full webhook demo: embeds, files, all options    | `/v/latest/guides/webhook-attachments-embeds`                                                                                                               |
+| [moderation-bot.js](moderation-bot.js)         | Ban, kick, unban, !perms (permissions)           | `/v/latest/guides/permissions`, `/v/latest/guides/moderation`                                                                         |
 
 ## Environment Variables
 
@@ -61,4 +65,4 @@ That runs the [minimal bot](minimal-bot.js) — login + `!ping` → Pong. See th
 
 ## Documentation
 
-See the [Fluxer SDK documentation](https://fluxerjs.blstmo.com) for full API reference.
+Full API reference: https://erin.js.org (or run `pnpm run docs:dev` and open `http://localhost:3333` for local docs).

@@ -6,8 +6,8 @@ import {
   GatewayIdentifyData,
   GatewayResumeData,
   GatewayPresenceUpdateData,
-} from '@fluxerjs/types';
-import { GatewayOpcodes } from '@fluxerjs/types';
+} from '@erinjs/types';
+import { GatewayOpcodes } from '@erinjs/types';
 import { getDefaultWebSocketSync } from './utils/getWebSocket.js';
 
 export type WebSocketLike = {
@@ -219,8 +219,8 @@ export class WebSocketShard extends EventEmitter {
         intents: this.options.intents,
         properties: {
           os: process.platform ?? 'unknown',
-          browser: 'fluxerjs',
-          device: 'fluxerjs',
+          browser: 'erin.js',
+          device: 'erin.js',
         },
       };
       if (this.options.presence) identify.presence = this.options.presence;

@@ -1,5 +1,5 @@
 {
-  "name": "@fluxerjs/rest",
+  "name": "@erinjs/rest",
   "publishConfig": {
     "access": "public"
   },
@@ -7,11 +7,11 @@
   "description": "REST client for the Fluxer API",
   "repository": {
     "type": "git",
-    "url": "https://github.com/fluxerjs/core.git",
+    "url": "https://github.com/blstmo-abandoned-us-for-the-milk/core.git",
     "directory": "packages/rest"
   },
-  "bugs": "https://github.com/fluxerjs/core/issues",
-  "homepage": "https://fluxerjs.blstmo.com",
+  "bugs": "https://github.com/blstmo-abandoned-us-for-the-milk/core/issues",
+  "homepage": "https://github.com/blstmo-abandoned-us-for-the-milk/core#readme",
   "keywords": [
     "fluxer",
     "api",
@@ -42,7 +42,7 @@
     "test:coverage": "vitest run --coverage --passWithNoTests"
   },
   "dependencies": {
-    "@fluxerjs/types": "workspace:*"
+    "@erinjs/types": "workspace:*"
   },
   "devDependencies": {
     "@types/node": "^20.0.0",

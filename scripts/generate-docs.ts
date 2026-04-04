@@ -7,22 +7,22 @@
 import { resolve, dirname } from 'path';
 import { mkdirSync, writeFileSync, readFileSync, unlinkSync, readdirSync } from 'fs';
 import { fileURLToPath, pathToFileURL } from 'url';
-import { generateDocs } from '@fluxerjs/docgen';
-import { DocOutput } from '@fluxerjs/docgen';
+import { generateDocs } from '@erinjs/docgen';
+import { DocOutput } from '@erinjs/docgen';
 import { guides } from '../apps/docs/src/data/guides';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const root = resolve(__dirname, '..');
 
 const PACKAGES: { id: string; name: string; pkgPath: string }[] = [
-  { id: 'core', name: '@fluxerjs/core', pkgPath: 'packages/fluxer-core' },
-  { id: 'builders', name: '@fluxerjs/builders', pkgPath: 'packages/builders' },
-  { id: 'rest', name: '@fluxerjs/rest', pkgPath: 'packages/rest' },
-  { id: 'ws', name: '@fluxerjs/ws', pkgPath: 'packages/ws' },
-  { id: 'voice', name: '@fluxerjs/voice', pkgPath: 'packages/voice' },
-  { id: 'util', name: '@fluxerjs/util', pkgPath: 'packages/util' },
-  { id: 'collection', name: '@fluxerjs/collection', pkgPath: 'packages/collection' },
-  { id: 'types', name: '@fluxerjs/types', pkgPath: 'packages/types' },
+  { id: 'core', name: '@erinjs/core', pkgPath: 'packages/fluxer-core' },
+  { id: 'builders', name: '@erinjs/builders', pkgPath: 'packages/builders' },
+  { id: 'rest', name: '@erinjs/rest', pkgPath: 'packages/rest' },
+  { id: 'ws', name: '@erinjs/ws', pkgPath: 'packages/ws' },
+  { id: 'voice', name: '@erinjs/voice', pkgPath: 'packages/voice' },
+  { id: 'util', name: '@erinjs/util', pkgPath: 'packages/util' },
+  { id: 'collection', name: '@erinjs/collection', pkgPath: 'packages/collection' },
+  { id: 'types', name: '@erinjs/types', pkgPath: 'packages/types' },
 ];
 
 const DOCS_DIR = resolve(root, 'apps/docs/public/docs');
@@ -97,7 +97,7 @@ async function main(): Promise<void> {
   const version = getVersion();
   const combined: DocOutput = {
     meta: { generator: 'fluxer-docgen', version: '1', date: Date.now() },
-    package: '@fluxerjs/core',
+    package: '@erinjs/core',
     version,
     packages: Array.from(packages).sort(),
     classes: allClasses,

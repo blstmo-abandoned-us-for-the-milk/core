@@ -118,7 +118,7 @@ function formatValue(v: string | number): string {
   return typeof v === 'string' ? `"${v}"` : String(v);
 }
 
-const GITHUB_BASE = 'https://github.com/fluxerjs/core/blob/main';
+const GITHUB_BASE = 'https://github.com/blstmo-abandoned-us-for-the-milk/core/blob/main';
 function sourceUrl(source: { file: string; line: number; path?: string }) {
   return `${GITHUB_BASE}/${source.path}#L${source.line}`;
 }

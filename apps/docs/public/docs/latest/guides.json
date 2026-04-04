@@ -7,7 +7,7 @@
     "category": "getting-started",
     "sections": [
       {
-        "code": "npm install @fluxerjs/core\n\n# Run your bot (Node 18+)\nFLUXER_BOT_TOKEN=your_token node your-bot.js",
+        "code": "npm install /core\n\n# Run your bot (Node 18+)\nFLUXER_BOT_TOKEN=your_token node your-bot.js",
         "language": "bash"
       }
     ]
@@ -20,12 +20,12 @@
     "category": "getting-started",
     "sections": [
       {
-        "code": "import { Client, Events } from '@fluxerjs/core';\n\nconst client = new Client({ intents: 0 });\n\nclient.on(Events.Ready, () => console.log('Ready!'));\nclient.on(Events.MessageCreate, async (message) => {\n  if (message.content === '!ping') {\n    await message.reply('Pong!');\n  }\n});\n\nawait client.login(process.env.FLUXER_BOT_TOKEN);",
+        "code": "import { Client, Events } from '/core';\n\nconst client = new Client({ intents: 0 });\n\nclient.on(Events.Ready, () => console.log('Ready!'));\nclient.on(Events.MessageCreate, async (message) => {\n  if (message.content === '!ping') {\n    await message.reply('Pong!');\n  }\n});\n\nawait client.login(process.env.FLUXER_BOT_TOKEN);",
         "language": "javascript",
         "tip": "You can also use client.events for chainable, typed handlers with better autocomplete.",
         "alternateCode": {
           "label": "client.events",
-          "code": "import { Client, Events } from '@fluxerjs/core';\n\nconst client = new Client({ intents: 0 });\n\nclient\n  .events.Ready(() => console.log('Ready!'))\n  .events.MessageCreate(async (message) => {\n    if (message.content === '!ping') await message.reply('Pong!');\n  });\n\nawait client.login(process.env.FLUXER_BOT_TOKEN);"
+          "code": "import { Client, Events } from '/core';\n\nconst client = new Client({ intents: 0 });\n\nclient\n  .events.Ready(() => console.log('Ready!'))\n  .events.MessageCreate(async (message) => {\n    if (message.content === '!ping') await message.reply('Pong!');\n  });\n\nawait client.login(process.env.FLUXER_BOT_TOKEN);"
         }
       },
       {
@@ -81,25 +81,25 @@
       {
         "title": "Sending to the same channel",
         "description": "Use message.send() when you want to post in the channel without replying. Same signature as reply(): pass a string or object with content and/or embeds.",
-        "code": "import { Client, Events } from '@fluxerjs/core';\n\nconst client = new Client({ intents: 0 });\n\nclient.on(Events.MessageCreate, async (message) => {\n  if (message.content === '!hello') {\n    await message.send('Hello! This is a regular message, not a reply.');\n  }\n});\n\nawait client.login(process.env.FLUXER_BOT_TOKEN);",
+        "code": "import { Client, Events } from '/core';\n\nconst client = new Client({ intents: 0 });\n\nclient.on(Events.MessageCreate, async (message) => {\n  if (message.content === '!hello') {\n    await message.send('Hello! This is a regular message, not a reply.');\n  }\n});\n\nawait client.login(process.env.FLUXER_BOT_TOKEN);",
         "language": "javascript"
       },
       {
         "title": "Sending to a specific channel (e.g. logging)",
         "description": "Use message.sendTo(channelId, payload) to send to another channel—handy for logging, announcements, or forwarding. You only need the target channel ID.",
-        "code": "import { Client, Events, EmbedBuilder } from '@fluxerjs/core';\n\nconst client = new Client({ intents: 0 });\nconst LOG_CHANNEL_ID = process.env.LOG_CHANNEL_ID; // Your log channel's snowflake\n\nclient.on(Events.MessageCreate, async (message) => {\n  if (message.content === '!report' && message.guildId && LOG_CHANNEL_ID) {\n    const embed = new EmbedBuilder()\n      .setTitle('User report')\n      .setDescription(message.content)\n      .addFields(\n        { name: 'Author', value: message.author.username, inline: true },\n        { name: 'Channel', value: `<#${message.channelId}>`, inline: true }\n      )\n      .setTimestamp();\n\n    await message.sendTo(LOG_CHANNEL_ID, { embeds: [embed] });\n    await message.send('Report logged.');\n  }\n});\n\nawait client.login(process.env.FLUXER_BOT_TOKEN);",
+        "code": "import { Client, Events, EmbedBuilder } from '/core';\n\nconst client = new Client({ intents: 0 });\nconst LOG_CHANNEL_ID = process.env.LOG_CHANNEL_ID; // Your log channel's snowflake\n\nclient.on(Events.MessageCreate, async (message) => {\n  if (message.content === '!report' && message.guildId && LOG_CHANNEL_ID) {\n    const embed = new EmbedBuilder()\n      .setTitle('User report')\n      .setDescription(message.content)\n      .addFields(\n        { name: 'Author', value: message.author.username, inline: true },\n        { name: 'Channel', value: `<#${message.channelId}>`, inline: true }\n      )\n      .setTimestamp();\n\n    await message.sendTo(LOG_CHANNEL_ID, { embeds: [embed] });\n    await message.send('Report logged.');\n  }\n});\n\nawait client.login(process.env.FLUXER_BOT_TOKEN);",
         "language": "javascript"
       },
       {
         "title": "client.channels.send() — send by channel ID",
         "description": "Use client.channels.send(channelId, payload) when you have a channel ID. Works even if the channel is not cached. No need to fetch first when you only need to send.",
-        "code": "import { Client, Events } from '@fluxerjs/core';\n\nconst client = new Client({ intents: 0 });\nconst ANNOUNCE_CHANNEL_ID = process.env.ANNOUNCE_CHANNEL_ID;\n\nclient.on(Events.Ready, async () => {\n  if (ANNOUNCE_CHANNEL_ID) {\n    await client.channels.send(ANNOUNCE_CHANNEL_ID, 'Bot is online!');\n  }\n});\n\nawait client.login(process.env.FLUXER_BOT_TOKEN);",
+        "code": "import { Client, Events } from '/core';\n\nconst client = new Client({ intents: 0 });\nconst ANNOUNCE_CHANNEL_ID = process.env.ANNOUNCE_CHANNEL_ID;\n\nclient.on(Events.Ready, async () => {\n  if (ANNOUNCE_CHANNEL_ID) {\n    await client.channels.send(ANNOUNCE_CHANNEL_ID, 'Bot is online!');\n  }\n});\n\nawait client.login(process.env.FLUXER_BOT_TOKEN);",
         "language": "javascript"
       },
       {
         "title": "client.channels.resolve() — get channel by ID",
         "description": "Resolve a channel by ID from cache or API. Use channel.canSendMessage() or channel.isTextBased() before sending. For sending when you only have an ID, prefer client.channels.send() which skips the fetch.",
-        "code": "import { Client } from '@fluxerjs/core';\n\nconst client = new Client({ intents: 0 });\nawait client.login(process.env.FLUXER_BOT_TOKEN);\n\n// Fetch channel (from API if not cached)\nconst channel = await client.channels.resolve(channelId);\nif (channel?.canSendMessage()) {\n  await channel.send('Hello!');\n}\n// Or for webhooks: if (channel?.createWebhook) { ... }",
+        "code": "import { Client } from '/core';\n\nconst client = new Client({ intents: 0 });\nawait client.login(process.env.FLUXER_BOT_TOKEN);\n\n// Fetch channel (from API if not cached)\nconst channel = await client.channels.resolve(channelId);\nif (channel?.canSendMessage()) {\n  await channel.send('Hello!');\n}\n// Or for webhooks: if (channel?.createWebhook) { ... }",
         "language": "javascript"
       },
       {
@@ -147,7 +147,7 @@
       {
         "title": "Basic embed",
         "description": "Minimal embed with title, description, color, fields, footer, and timestamp.",
-        "code": "import { Client, Events, EmbedBuilder } from '@fluxerjs/core';\n\nconst client = new Client({ intents: 0 });\n\nclient.on(Events.MessageCreate, async (message) => {\n  if (message.content === '!embed') {\n    const embed = new EmbedBuilder()\n      .setTitle('Hello!')\n      .setDescription('This is a Fluxer embed.')\n      .setColor(0x5865f2)\n      .addFields(\n        { name: 'Field 1', value: 'Value 1', inline: true },\n        { name: 'Field 2', value: 'Value 2', inline: true }\n      )\n      .setFooter({ text: 'Powered by Fluxer.js' })\n      .setTimestamp();\n\n    await message.reply({ embeds: [embed] });\n  }\n});\n\nawait client.login(process.env.FLUXER_BOT_TOKEN);",
+        "code": "import { Client, Events, EmbedBuilder } from '/core';\n\nconst client = new Client({ intents: 0 });\n\nclient.on(Events.MessageCreate, async (message) => {\n  if (message.content === '!embed') {\n    const embed = new EmbedBuilder()\n      .setTitle('Hello!')\n      .setDescription('This is a Fluxer embed.')\n      .setColor(0x5865f2)\n      .addFields(\n        { name: 'Field 1', value: 'Value 1', inline: true },\n        { name: 'Field 2', value: 'Value 2', inline: true }\n      )\n      .setFooter({ text: 'Powered by Fluxer.js' })\n      .setTimestamp();\n\n    await message.reply({ embeds: [embed] });\n  }\n});\n\nawait client.login(process.env.FLUXER_BOT_TOKEN);",
         "language": "javascript"
       },
       {
@@ -236,7 +236,7 @@
       {
         "title": "Edit Embeds",
         "description": "Replace or update embeds on an existing message. Pass an array of EmbedBuilder instances or APIEmbed objects.",
-        "code": "import { Client, Events, EmbedBuilder } from '@fluxerjs/core';\n\nconst client = new Client({ intents: 0 });\n\nclient.on(Events.MessageCreate, async (message) => {\n  if (message.content === '!editembed') {\n    const embed = new EmbedBuilder()\n      .setTitle('Loading...')\n      .setColor(0x5865f2)\n      .setTimestamp();\n\n    const reply = await message.reply({ embeds: [embed] });\n\n    // Simulate loading, then update the embed\n    await new Promise((r) => setTimeout(r, 2000));\n\n    const updatedEmbed = new EmbedBuilder()\n      .setTitle('Done!')\n      .setDescription('This embed was edited after 2 seconds.')\n      .setColor(0x57f287)\n      .setTimestamp();\n\n    await reply.edit({ embeds: [updatedEmbed] });\n  }\n});\n\nawait client.login(process.env.FLUXER_BOT_TOKEN);",
+        "code": "import { Client, Events, EmbedBuilder } from '/core';\n\nconst client = new Client({ intents: 0 });\n\nclient.on(Events.MessageCreate, async (message) => {\n  if (message.content === '!editembed') {\n    const embed = new EmbedBuilder()\n      .setTitle('Loading...')\n      .setColor(0x5865f2)\n      .setTimestamp();\n\n    const reply = await message.reply({ embeds: [embed] });\n\n    // Simulate loading, then update the embed\n    await new Promise((r) => setTimeout(r, 2000));\n\n    const updatedEmbed = new EmbedBuilder()\n      .setTitle('Done!')\n      .setDescription('This embed was edited after 2 seconds.')\n      .setColor(0x57f287)\n      .setTimestamp();\n\n    await reply.edit({ embeds: [updatedEmbed] });\n  }\n});\n\nawait client.login(process.env.FLUXER_BOT_TOKEN);",
         "language": "javascript"
       },
       {
@@ -261,7 +261,7 @@
       {
         "title": "Images and Thumbnails",
         "description": "Use setImage() and setThumbnail() with a URL string, or pass full EmbedMediaOptions for width, height, content_type, and other metadata.",
-        "code": "import { Client, Events, EmbedBuilder } from '@fluxerjs/core';\n\nconst client = new Client({ intents: 0 });\n\nclient.on(Events.MessageCreate, async (message) => {\n  if (message.content === '!embedimg') {\n    const embed = new EmbedBuilder()\n      .setTitle('Image Embed')\n      .setDescription('Simple image from URL.')\n      .setImage('https://placehold.co/400x200/5865f2/white?text=Image')\n      .setThumbnail('https://placehold.co/100x100/57f287/white?text=Thumb')\n      .setColor(0x5865f2);\n\n    await message.reply({ embeds: [embed] });\n  }\n});",
+        "code": "import { Client, Events, EmbedBuilder } from '/core';\n\nconst client = new Client({ intents: 0 });\n\nclient.on(Events.MessageCreate, async (message) => {\n  if (message.content === '!embedimg') {\n    const embed = new EmbedBuilder()\n      .setTitle('Image Embed')\n      .setDescription('Simple image from URL.')\n      .setImage('https://placehold.co/400x200/5865f2/white?text=Image')\n      .setThumbnail('https://placehold.co/100x100/57f287/white?text=Thumb')\n      .setColor(0x5865f2);\n\n    await message.reply({ embeds: [embed] });\n  }\n});",
         "language": "javascript"
       },
       {
@@ -302,13 +302,13 @@
       {
         "title": "Send a Tenor GIF",
         "description": "Send the Tenor URL as content. No embeds needed. The unfurler detects the URL and creates the gifv embed.",
-        "code": "import { Client, Events } from '@fluxerjs/core';\n\nconst client = new Client({ intents: 0 });\n\nclient.on(Events.MessageCreate, async (message) => {\n  if (message.content === '!gif') {\n    const tenorUrl = 'https://tenor.com/view/stressed-gif-7048057395502071840';\n    await message.reply({ content: tenorUrl });\n  }\n});",
+        "code": "import { Client, Events } from '/core';\n\nconst client = new Client({ intents: 0 });\n\nclient.on(Events.MessageCreate, async (message) => {\n  if (message.content === '!gif') {\n    const tenorUrl = 'https://tenor.com/view/stressed-gif-7048057395502071840';\n    await message.reply({ content: tenorUrl });\n  }\n});",
         "language": "javascript"
       },
       {
         "title": "Tenor URL in an embed",
         "description": "Tenor page URLs do not work as setImage() URLs. Use resolveTenorToImageUrl() to fetch the Tenor page or oEmbed, derive the GIF URL (embeds require GIF, not MP4), and return { url, flags: IS_ANIMATED }. For full gifv embeds, send the Tenor URL as content.",
-        "code": "import { EmbedBuilder, resolveTenorToImageUrl } from '@fluxerjs/core';\n\nconst tenorUrl = 'https://tenor.com/view/stressed-gif-7048057395502071840';\nconst media = await resolveTenorToImageUrl(tenorUrl);\nif (media) {\n  const embed = new EmbedBuilder()\n    .setTitle('Tenor in embed')\n    .setDescription('GIF URL + IS_ANIMATED flag')\n    .setImage(media)\n    .setColor(0x5865f2);\n  await message.reply({ embeds: [embed] });\n}",
+        "code": "import { EmbedBuilder, resolveTenorToImageUrl } from '/core';\n\nconst tenorUrl = 'https://tenor.com/view/stressed-gif-7048057395502071840';\nconst media = await resolveTenorToImageUrl(tenorUrl);\nif (media) {\n  const embed = new EmbedBuilder()\n    .setTitle('Tenor in embed')\n    .setDescription('GIF URL + IS_ANIMATED flag')\n    .setImage(media)\n    .setColor(0x5865f2);\n  await message.reply({ embeds: [embed] });\n}",
         "language": "javascript"
       },
       {
@@ -327,19 +327,19 @@
       {
         "title": "Basic File Upload",
         "description": "Pass files in your send options. Each file needs a name and data (Buffer, Blob, Uint8Array). Use with message.reply(), message.send(), or channel.send().",
-        "code": "import { Client, Events } from '@fluxerjs/core';\nimport { readFileSync } from 'fs';\n\nconst client = new Client({ intents: 0 });\n\nclient.on(Events.MessageCreate, async (message) => {\n  if (message.content === '!file') {\n    const data = Buffer.from('Hello from Fluxer!', 'utf-8');\n    await message.reply({\n      content: 'Here is a file:',\n      files: [{ name: 'hello.txt', data }],\n    });\n  }\n});",
+        "code": "import { Client, Events } from '/core';\nimport { readFileSync } from 'fs';\n\nconst client = new Client({ intents: 0 });\n\nclient.on(Events.MessageCreate, async (message) => {\n  if (message.content === '!file') {\n    const data = Buffer.from('Hello from Fluxer!', 'utf-8');\n    await message.reply({\n      content: 'Here is a file:',\n      files: [{ name: 'hello.txt', data }],\n    });\n  }\n});",
         "language": "javascript"
       },
       {
         "title": "Attachment Metadata",
         "description": "When using files, you can pass attachments to set metadata per file: filename, title, description, and flags. The id in each attachment matches the file index (0, 1, 2...).",
-        "code": "import { MessageAttachmentFlags } from '@fluxerjs/core';\n\nawait message.reply({\n  content: 'Spoiler image:',\n  files: [{ name: 'secret.png', data: imageBuffer }],\n  attachments: [\n    {\n      id: 0,\n      filename: 'secret.png',\n      title: 'Hidden image',\n      flags: MessageAttachmentFlags.IS_SPOILER,\n    },\n  ],\n});",
+        "code": "import { MessageAttachmentFlags } from '/core';\n\nawait message.reply({\n  content: 'Spoiler image:',\n  files: [{ name: 'secret.png', data: imageBuffer }],\n  attachments: [\n    {\n      id: 0,\n      filename: 'secret.png',\n      title: 'Hidden image',\n      flags: MessageAttachmentFlags.IS_SPOILER,\n    },\n  ],\n});",
         "language": "javascript"
       },
       {
         "title": "Attachment Flags",
         "description": "MessageAttachmentFlags: IS_SPOILER (8) blurs until clicked, CONTAINS_EXPLICIT_MEDIA (16) for explicit content, IS_ANIMATED (32) for GIFs and animated WebP. Combine with bitwise OR.",
-        "code": "import { MessageAttachmentFlags } from '@fluxerjs/core';\n\n// Spoiler (blurred until clicked)\nflags: MessageAttachmentFlags.IS_SPOILER\n\n// Animated image (GIF, animated WebP)\nflags: MessageAttachmentFlags.IS_ANIMATED\n\n// Combine flags\nflags: MessageAttachmentFlags.IS_SPOILER | MessageAttachmentFlags.IS_ANIMATED",
+        "code": "import { MessageAttachmentFlags } from '/core';\n\n// Spoiler (blurred until clicked)\nflags: MessageAttachmentFlags.IS_SPOILER\n\n// Animated image (GIF, animated WebP)\nflags: MessageAttachmentFlags.IS_ANIMATED\n\n// Combine flags\nflags: MessageAttachmentFlags.IS_SPOILER | MessageAttachmentFlags.IS_ANIMATED",
         "language": "javascript"
       }
     ]
@@ -354,7 +354,7 @@
       {
         "title": "Using a URL",
         "description": "Pass { name, url } in the files array. The SDK fetches the URL (30s timeout), validates it with URL.canParse(), and uploads the result. Works with channel.send(), message.reply(), message.send(), webhook.send(), and client.channels.send().",
-        "code": "import { Client, Events } from '@fluxerjs/core';\n\nconst client = new Client({ intents: 0 });\n\nclient.on(Events.MessageCreate, async (message) => {\n  if (message.content === '!attachurl') {\n    await message.reply({\n      content: 'Image from URL:',\n      files: [\n        {\n          name: 'image.png',\n          url: 'https://example.com/image.png',\n        },\n      ],\n    });\n  }\n});\n\nawait client.login(process.env.FLUXER_BOT_TOKEN);",
+        "code": "import { Client, Events } from '/core';\n\nconst client = new Client({ intents: 0 });\n\nclient.on(Events.MessageCreate, async (message) => {\n  if (message.content === '!attachurl') {\n    await message.reply({\n      content: 'Image from URL:',\n      files: [\n        {\n          name: 'image.png',\n          url: 'https://example.com/image.png',\n        },\n      ],\n    });\n  }\n});\n\nawait client.login(process.env.FLUXER_BOT_TOKEN);",
         "language": "javascript"
       },
       {
@@ -381,13 +381,13 @@
       {
         "title": "User avatar and banner",
         "description": "When you have a User object (e.g. message.author), use avatarURL(), displayAvatarURL(), and bannerURL(). These handle animated avatars (a_ prefix) and default fallbacks.",
-        "code": "import { Client, Events, EmbedBuilder } from '@fluxerjs/core';\n\nconst client = new Client({ intents: 0 });\n\nclient.on(Events.MessageCreate, async (message) => {\n  if (message.content === '!avatar') {\n    const user = message.author;\n    // avatarURL() returns null if no custom avatar; displayAvatarURL() uses default\n    const avatarUrl = user.displayAvatarURL({ size: 256 });\n    const bannerUrl = user.bannerURL({ size: 512 });\n\n    const embed = new EmbedBuilder()\n      .setTitle(`${user.username}'s profile`)\n      .setThumbnail(avatarUrl)\n      .setColor(user.avatarColor ?? 0x5865f2);\n    if (bannerUrl) embed.setImage(bannerUrl);\n    await message.reply({ embeds: [embed] });\n  }\n});",
+        "code": "import { Client, Events, EmbedBuilder } from '/core';\n\nconst client = new Client({ intents: 0 });\n\nclient.on(Events.MessageCreate, async (message) => {\n  if (message.content === '!avatar') {\n    const user = message.author;\n    // avatarURL() returns null if no custom avatar; displayAvatarURL() uses default\n    const avatarUrl = user.displayAvatarURL({ size: 256 });\n    const bannerUrl = user.bannerURL({ size: 512 });\n\n    const embed = new EmbedBuilder()\n      .setTitle(`${user.username}'s profile`)\n      .setThumbnail(avatarUrl)\n      .setColor(user.avatarColor ?? 0x5865f2);\n    if (bannerUrl) embed.setImage(bannerUrl);\n    await message.reply({ embeds: [embed] });\n  }\n});",
         "language": "javascript"
       },
       {
         "title": "Raw API data: CDN helpers",
         "description": "When you have raw API data (e.g. from client.rest.get(Routes.user(id))), use the standalone CDN helpers. They work with id + hash and support size and extension options.",
-        "code": "import { cdnAvatarURL, cdnBannerURL } from '@fluxerjs/core';\n\n// From REST response\nconst userData = await client.rest.get(Routes.user(userId));\nconst avatarUrl = cdnAvatarURL(userData.id, userData.avatar, { size: 256 });\nconst bannerUrl = cdnBannerURL(userData.id, profile?.banner ?? null, { size: 512 });\n\n// Or use User: client.getOrCreateUser(userData) then user.displayAvatarURL()\nconst user = client.getOrCreateUser(userData);\nconst avatarUrl2 = user.displayAvatarURL({ size: 256 });",
+        "code": "import { cdnAvatarURL, cdnBannerURL } from '/core';\n\n// From REST response\nconst userData = await client.rest.get(Routes.user(userId));\nconst avatarUrl = cdnAvatarURL(userData.id, userData.avatar, { size: 256 });\nconst bannerUrl = cdnBannerURL(userData.id, profile?.banner ?? null, { size: 512 });\n\n// Or use User: client.getOrCreateUser(userData) then user.displayAvatarURL()\nconst user = client.getOrCreateUser(userData);\nconst avatarUrl2 = user.displayAvatarURL({ size: 256 });",
         "language": "javascript"
       },
       {
@@ -446,19 +446,19 @@
       {
         "title": "Webhooks Without a Bot",
         "description": "A Client with intents: 0 is enough. No need to connect to the gateway or handle events. Ideal for scripts or one-off sends.",
-        "code": "import { Client, Webhook } from '@fluxerjs/core';\n\nconst client = new Client({ intents: 0 });\nconst webhook = Webhook.fromToken(client, webhookId, webhookToken);\nawait webhook.send('Message from a script!');",
+        "code": "import { Client, Webhook } from '/core';\n\nconst client = new Client({ intents: 0 });\nconst webhook = Webhook.fromToken(client, webhookId, webhookToken);\nawait webhook.send('Message from a script!');",
         "language": "javascript"
       },
       {
         "title": "Creating a Webhook",
         "description": "Create a webhook on a text channel. Requires Manage Webhooks permission. The token is returned only when creating—store it securely. It will never be returned when listing or fetching.",
-        "code": "import { Client } from '@fluxerjs/core';\n\nconst client = new Client({ intents: 0 });\nawait client.login(process.env.FLUXER_BOT_TOKEN);\n\nconst channel = client.channels.get(channelId);\nif (!channel?.createWebhook) throw new Error('Channel does not support webhooks');\n\nconst webhook = await channel.createWebhook({ name: 'My Webhook' });\nconsole.log(webhook.id, webhook.token); // Store token—it won't be returned when listing",
+        "code": "import { Client } from '/core';\n\nconst client = new Client({ intents: 0 });\nawait client.login(process.env.FLUXER_BOT_TOKEN);\n\nconst channel = client.channels.get(channelId);\nif (!channel?.createWebhook) throw new Error('Channel does not support webhooks');\n\nconst webhook = await channel.createWebhook({ name: 'My Webhook' });\nconsole.log(webhook.id, webhook.token); // Store token—it won't be returned when listing",
         "language": "javascript"
       },
       {
         "title": "Sending Messages",
         "description": "Send text, embeds, or both. You can override the username and avatar for each message.",
-        "code": "import { Client, Webhook, EmbedBuilder } from '@fluxerjs/core';\n\nconst client = new Client({ intents: 0 });\nconst webhook = Webhook.fromToken(client, webhookId, webhookToken);\n\nawait webhook.send({\n  content: 'Hello from webhook!',\n  embeds: [\n    new EmbedBuilder()\n      .setTitle('Webhook Message')\n      .setColor(0x5865f2)\n      .setTimestamp(),\n  ],\n  username: 'Custom Name',\n  avatar_url: 'https://example.com/avatar.png',\n});",
+        "code": "import { Client, Webhook, EmbedBuilder } from '/core';\n\nconst client = new Client({ intents: 0 });\nconst webhook = Webhook.fromToken(client, webhookId, webhookToken);\n\nawait webhook.send({\n  content: 'Hello from webhook!',\n  embeds: [\n    new EmbedBuilder()\n      .setTitle('Webhook Message')\n      .setColor(0x5865f2)\n      .setTimestamp(),\n  ],\n  username: 'Custom Name',\n  avatar_url: 'https://example.com/avatar.png',\n});",
         "language": "javascript"
       },
       {
@@ -475,13 +475,13 @@
       {
         "title": "Fetching & Listing Webhooks",
         "description": "Fetch by ID or list channel/guild webhooks. Requires a logged-in bot. Fetched webhooks have no token and cannot send—but you can edit or delete them with bot auth.",
-        "code": "import { Client, Webhook } from '@fluxerjs/core';\n\nconst client = new Client({ intents: 0 });\nawait client.login(process.env.FLUXER_BOT_TOKEN);\n\n// Fetch single webhook (no token)\nconst webhook = await Webhook.fetch(client, webhookId);\n\n// List channel webhooks\nconst channel = client.channels.get(channelId);\nconst channelWebhooks = await channel?.fetchWebhooks() ?? [];\n\n// List guild webhooks\nconst guild = client.guilds.get(guildId);\nconst guildWebhooks = await guild?.fetchWebhooks() ?? [];",
+        "code": "import { Client, Webhook } from '/core';\n\nconst client = new Client({ intents: 0 });\nawait client.login(process.env.FLUXER_BOT_TOKEN);\n\n// Fetch single webhook (no token)\nconst webhook = await Webhook.fetch(client, webhookId);\n\n// List channel webhooks\nconst channel = client.channels.get(channelId);\nconst channelWebhooks = await channel?.fetchWebhooks() ?? [];\n\n// List guild webhooks\nconst guild = client.guilds.get(guildId);\nconst guildWebhooks = await guild?.fetchWebhooks() ?? [];",
         "language": "javascript"
       },
       {
         "title": "Editing a Webhook",
         "description": "Use webhook.edit() to change name, avatar, or (with bot auth) channel. With a token (e.g. from createWebhook or fromToken), you can update name and avatar. Without a token (fetched webhook), bot auth lets you also change the target channel.",
-        "code": "import { Client, Webhook } from '@fluxerjs/core';\n\nconst client = new Client({ intents: 0 });\nawait client.login(process.env.FLUXER_BOT_TOKEN);\n\n// With token (name and avatar only)\nconst webhook = Webhook.fromToken(client, webhookId, webhookToken);\nawait webhook.edit({ name: 'New Name', avatar: null });\n// avatar: null clears the webhook avatar\n\n// With bot auth (fetched webhook — can also move to another channel)\nconst fetched = await Webhook.fetch(client, webhookId);\nawait fetched.edit({\n  name: 'Updated Name',\n  channel_id: newChannelId,  // move webhook to different channel\n});",
+        "code": "import { Client, Webhook } from '/core';\n\nconst client = new Client({ intents: 0 });\nawait client.login(process.env.FLUXER_BOT_TOKEN);\n\n// With token (name and avatar only)\nconst webhook = Webhook.fromToken(client, webhookId, webhookToken);\nawait webhook.edit({ name: 'New Name', avatar: null });\n// avatar: null clears the webhook avatar\n\n// With bot auth (fetched webhook — can also move to another channel)\nconst fetched = await Webhook.fetch(client, webhookId);\nawait fetched.edit({\n  name: 'Updated Name',\n  channel_id: newChannelId,  // move webhook to different channel\n});",
         "language": "javascript"
       },
       {
@@ -505,19 +505,19 @@
       {
         "title": "Embeds Without a Title",
         "description": "You do not need a title for embeds to work. At least one of title, description, fields, or image/thumbnail is required. A description-only embed is valid.",
-        "code": "import { Client, Webhook, EmbedBuilder } from '@fluxerjs/core';\n\nconst client = new Client({ intents: 0 });\nconst webhook = Webhook.fromToken(client, webhookId, webhookToken);\n\n// Description only—no title\nawait webhook.send({\n  embeds: [\n    new EmbedBuilder()\n      .setDescription('This embed has no title. Description-only works fine.')\n      .setColor(0x5865f2)\n      .setTimestamp(),\n  ],\n});",
+        "code": "import { Client, Webhook, EmbedBuilder } from '/core';\n\nconst client = new Client({ intents: 0 });\nconst webhook = Webhook.fromToken(client, webhookId, webhookToken);\n\n// Description only—no title\nawait webhook.send({\n  embeds: [\n    new EmbedBuilder()\n      .setDescription('This embed has no title. Description-only works fine.')\n      .setColor(0x5865f2)\n      .setTimestamp(),\n  ],\n});",
         "language": "javascript"
       },
       {
         "title": "Direct Attachments",
         "description": "Attach files to webhook messages using the files array. Each file needs name and data (Blob, ArrayBuffer, or Uint8Array). Optional filename overrides the display name.",
-        "code": "import { Client, Webhook } from '@fluxerjs/core';\nimport { readFileSync } from 'fs';\n\nconst client = new Client({ intents: 0 });\nconst webhook = Webhook.fromToken(client, webhookId, webhookToken);\n\nconst buffer = readFileSync('report.pdf');\nawait webhook.send({\n  content: 'Report attached',\n  files: [\n    { name: 'report.pdf', data: buffer },\n    { name: 'log.txt', data: new TextEncoder().encode('Log content'), filename: 'log-2025.txt' },\n  ],\n});",
+        "code": "import { Client, Webhook } from '/core';\nimport { readFileSync } from 'fs';\n\nconst client = new Client({ intents: 0 });\nconst webhook = Webhook.fromToken(client, webhookId, webhookToken);\n\nconst buffer = readFileSync('report.pdf');\nawait webhook.send({\n  content: 'Report attached',\n  files: [\n    { name: 'report.pdf', data: buffer },\n    { name: 'log.txt', data: new TextEncoder().encode('Log content'), filename: 'log-2025.txt' },\n  ],\n});",
         "language": "javascript"
       },
       {
         "title": "Full Example: Embed + Files",
         "description": "Combine content, description-only embed, and file attachments in a single webhook send.",
-        "code": "import { Client, Webhook, EmbedBuilder } from '@fluxerjs/core';\nimport { readFileSync } from 'fs';\n\nconst client = new Client({ intents: 0 });\nconst webhook = Webhook.fromToken(client, webhookId, webhookToken);\n\nawait webhook.send({\n  content: 'Build completed',\n  embeds: [\n    new EmbedBuilder()\n      .setDescription('Deploy succeeded. See attachment for logs.')\n      .setColor(0x57f287)\n      .setTimestamp(),\n  ],\n  files: [{ name: 'deploy.log', data: readFileSync('deploy.log') }],\n  username: 'CI Bot',\n});",
+        "code": "import { Client, Webhook, EmbedBuilder } from '/core';\nimport { readFileSync } from 'fs';\n\nconst client = new Client({ intents: 0 });\nconst webhook = Webhook.fromToken(client, webhookId, webhookToken);\n\nawait webhook.send({\n  content: 'Build completed',\n  embeds: [\n    new EmbedBuilder()\n      .setDescription('Deploy succeeded. See attachment for logs.')\n      .setColor(0x57f287)\n      .setTimestamp(),\n  ],\n  files: [{ name: 'deploy.log', data: readFileSync('deploy.log') }],\n  username: 'CI Bot',\n});",
         "language": "javascript"
       }
     ]
@@ -526,19 +526,19 @@
     "id": "voice",
     "slug": "voice",
     "title": "Voice",
-    "description": "Join voice channels and play audio with @fluxerjs/voice. Supports WebM/Opus streams—no FFmpeg required.",
+    "description": "Join voice channels and play audio with /voice. Supports WebM/Opus streams—no FFmpeg required.",
     "category": "voice",
     "sections": [
       {
         "title": "Installation",
         "description": "Add the voice package alongside the core library.",
-        "code": "pnpm add @fluxerjs/voice @fluxerjs/core",
+        "code": "pnpm add /voice /core",
         "language": "bash"
       },
       {
         "title": "Setup",
         "description": "Create a VoiceManager before login so it receives VoiceStatesSync from READY/GUILD_CREATE. This lets the manager see users already in voice when the bot starts.",
-        "code": "import { Client, Events, VoiceChannel } from '@fluxerjs/core';\nimport { getVoiceManager } from '@fluxerjs/voice';\n\nconst client = new Client({ intents: 0 });\ngetVoiceManager(client); // Must be before login\n\nawait client.login(process.env.FLUXER_BOT_TOKEN);",
+        "code": "import { Client, Events, VoiceChannel } from '/core';\nimport { getVoiceManager } from '/voice';\n\nconst client = new Client({ intents: 0 });\ngetVoiceManager(client); // Must be before login\n\nawait client.login(process.env.FLUXER_BOT_TOKEN);",
         "language": "javascript"
       },
       {
@@ -562,7 +562,7 @@
       {
         "title": "Volume Control",
         "description": "LiveKitRtcConnection supports setVolume(0-200) and getVolume(). 100 = normal, 50 = half, 200 = double. Affects current and future playback.",
-        "code": "import { LiveKitRtcConnection } from '@fluxerjs/voice';\n\nif (connection instanceof LiveKitRtcConnection) {\n  connection.setVolume(80); // 80% volume\n  console.log('Current volume:', connection.getVolume());\n}",
+        "code": "import { LiveKitRtcConnection } from '/voice';\n\nif (connection instanceof LiveKitRtcConnection) {\n  connection.setVolume(80); // 80% volume\n  console.log('Current volume:', connection.getVolume());\n}",
         "language": "javascript"
       },
       {
@@ -593,7 +593,7 @@
       {
         "title": "Usage",
         "description": "Pass waitForGuilds: true in ClientOptions. Ready will emit only after all guilds from READY (including those marked unavailable) have been received via GUILD_CREATE.",
-        "code": "import { Client, Events } from '@fluxerjs/core';\n\nconst client = new Client({\n  waitForGuilds: true,\n});\n\nclient.on(Events.Ready, () => {\n  // client.guilds now contains every guild — no stubs, all fully loaded\n  console.log(`Bot is in ${client.guilds.size} guilds`);\n  for (const [id, guild] of client.guilds) {\n    console.log(`- ${guild.name} (${guild.channels.size} channels)`);\n  }\n});\n\nawait client.login(process.env.FLUXER_BOT_TOKEN);",
+        "code": "import { Client, Events } from '/core';\n\nconst client = new Client({\n  waitForGuilds: true,\n});\n\nclient.on(Events.Ready, () => {\n  // client.guilds now contains every guild — no stubs, all fully loaded\n  console.log(`Bot is in ${client.guilds.size} guilds`);\n  for (const [id, guild] of client.guilds) {\n    console.log(`- ${guild.name} (${guild.channels.size} channels)`);\n  }\n});\n\nawait client.login(process.env.FLUXER_BOT_TOKEN);",
         "language": "javascript"
       },
       {
@@ -613,24 +613,24 @@
       {
         "title": "Basic Usage",
         "description": "Use client.on(Events.X, handler) to subscribe to events. Handlers receive event-specific payloads.",
-        "code": "import { Client, Events } from '@fluxerjs/core';\n\nconst client = new Client({ intents: 0 });\n\nclient.on(Events.Ready, () => {\n  console.log('Bot is ready!');\n});\n\nclient.on(Events.MessageCreate, async (message) => {\n  console.log(message.content);\n});\n\nawait client.login(process.env.FLUXER_BOT_TOKEN);",
+        "code": "import { Client, Events } from '/core';\n\nconst client = new Client({ intents: 0 });\n\nclient.on(Events.Ready, () => {\n  console.log('Bot is ready!');\n});\n\nclient.on(Events.MessageCreate, async (message) => {\n  console.log(message.content);\n});\n\nawait client.login(process.env.FLUXER_BOT_TOKEN);",
         "language": "javascript",
         "tip": "client.events.X(handler) offers the same API with chaining and better autocomplete.",
         "alternateCode": {
           "label": "client.events",
-          "code": "import { Client, Events } from '@fluxerjs/core';\n\nconst client = new Client({ intents: 0 });\n\nclient\n  .events.Ready(() => console.log('Bot is ready!'))\n  .events.MessageCreate(async (message) => console.log(message.content));\n\nawait client.login(process.env.FLUXER_BOT_TOKEN);"
+          "code": "import { Client, Events } from '/core';\n\nconst client = new Client({ intents: 0 });\n\nclient\n  .events.Ready(() => console.log('Bot is ready!'))\n  .events.MessageCreate(async (message) => console.log(message.content));\n\nawait client.login(process.env.FLUXER_BOT_TOKEN);"
         }
       },
       {
         "title": "Common Events",
         "description": "Essential events for most bots.",
-        "code": "// Bot finished loading\nclient.on(Events.Ready, () => {});\n\n// New message (DM or guild)\nclient.on(Events.MessageCreate, async (message) => {});\n\n// Reaction events\nclient.on(Events.MessageReactionAdd, (reaction, user, messageId, channelId, emoji, userId) => {});\nclient.on(Events.MessageReactionRemove, (reaction, user, messageId, channelId, emoji, userId) => {});\n\n// Guild joined/left/updated\nclient.on(Events.GuildCreate, (guild) => {});\nclient.on(Events.GuildDelete, (guild) => {});\n\n// Channel created/updated/deleted\nclient.on(Events.ChannelCreate, (channel) => {});\nclient.on(Events.ChannelDelete, (channel) => {});\n\n// Member joined/left/updated\nclient.on(Events.GuildMemberAdd, (member) => {});\nclient.on(Events.GuildMemberRemove, (member) => {});\n\n// Voice state changed (for @fluxerjs/voice)\nclient.on(Events.VoiceStateUpdate, (data) => {});\nclient.on(Events.VoiceServerUpdate, (data) => {});",
+        "code": "// Bot finished loading\nclient.on(Events.Ready, () => {});\n\n// New message (DM or guild)\nclient.on(Events.MessageCreate, async (message) => {});\n\n// Reaction events\nclient.on(Events.MessageReactionAdd, (reaction, user, messageId, channelId, emoji, userId) => {});\nclient.on(Events.MessageReactionRemove, (reaction, user, messageId, channelId, emoji, userId) => {});\n\n// Guild joined/left/updated\nclient.on(Events.GuildCreate, (guild) => {});\nclient.on(Events.GuildDelete, (guild) => {});\n\n// Channel created/updated/deleted\nclient.on(Events.ChannelCreate, (channel) => {});\nclient.on(Events.ChannelDelete, (channel) => {});\n\n// Member joined/left/updated\nclient.on(Events.GuildMemberAdd, (member) => {});\nclient.on(Events.GuildMemberRemove, (member) => {});\n\n// Voice state changed (for /voice)\nclient.on(Events.VoiceStateUpdate, (data) => {});\nclient.on(Events.VoiceServerUpdate, (data) => {});",
         "language": "javascript"
       },
       {
         "title": "Reaction Events",
         "description": "Listen for when users add or remove reactions. Handlers receive (reaction, user, messageId, channelId, emoji, userId). Use MessageReactionRemoveAll and MessageReactionRemoveEmoji for moderator actions.",
-        "code": "import { Client, Events } from '@fluxerjs/core';\n\nconst client = new Client({ intents: 0 });\n\nclient.on(Events.MessageReactionAdd, (reaction, user, messageId, channelId, emoji, userId) => {\n  const emojiStr = emoji.id ? `<:${emoji.name}:${emoji.id}>` : emoji.name;\n  console.log(`User ${userId} reacted with ${emojiStr} on message ${messageId}`);\n\n  // Filter for specific message (e.g. poll) or emoji\n  if (emoji.name === '👍') {\n    console.log('Someone voted yes!');\n  }\n});\n\nclient.on(Events.MessageReactionRemove, (reaction, user, messageId, channelId, emoji, userId) => {\n  console.log(`User ${userId} removed ${emoji.name} from message ${messageId}`);\n});\n\nclient.on(Events.MessageReactionRemoveAll, (data) => {\n  console.log(`All reactions cleared from message ${data.message_id}`);\n});\n\nclient.on(Events.MessageReactionRemoveEmoji, (data) => {\n  console.log(`All ${data.emoji.name} reactions removed from message ${data.message_id}`);\n});\n\nawait client.login(process.env.FLUXER_BOT_TOKEN);",
+        "code": "import { Client, Events } from '/core';\n\nconst client = new Client({ intents: 0 });\n\nclient.on(Events.MessageReactionAdd, (reaction, user, messageId, channelId, emoji, userId) => {\n  const emojiStr = emoji.id ? `<:${emoji.name}:${emoji.id}>` : emoji.name;\n  console.log(`User ${userId} reacted with ${emojiStr} on message ${messageId}`);\n\n  // Filter for specific message (e.g. poll) or emoji\n  if (emoji.name === '👍') {\n    console.log('Someone voted yes!');\n  }\n});\n\nclient.on(Events.MessageReactionRemove, (reaction, user, messageId, channelId, emoji, userId) => {\n  console.log(`User ${userId} removed ${emoji.name} from message ${messageId}`);\n});\n\nclient.on(Events.MessageReactionRemoveAll, (data) => {\n  console.log(`All reactions cleared from message ${data.message_id}`);\n});\n\nclient.on(Events.MessageReactionRemoveEmoji, (data) => {\n  console.log(`All ${data.emoji.name} reactions removed from message ${data.message_id}`);\n});\n\nawait client.login(process.env.FLUXER_BOT_TOKEN);",
         "language": "javascript"
       },
       {
@@ -640,7 +640,7 @@
       },
       {
         "title": "Gateway Dispatch Events Reference",
-        "description": "All events the Fluxer gateway can send. Use GatewayDispatchEvents from @fluxerjs/types for type-safe checks.",
+        "description": "All events the Fluxer gateway can send. Use GatewayDispatchEvents from /types for type-safe checks.",
         "table": {
           "headers": [
             "Category",
@@ -731,7 +731,7 @@
       },
       {
         "title": "Event Payload Reference",
-        "description": "Payload structure for each event. Handler receives (data) or (message), (reaction, user, ...) etc. Types: Gateway*DispatchData from @fluxerjs/types.",
+        "description": "Payload structure for each event. Handler receives (data) or (message), (reaction, user, ...) etc. Types: Gateway*DispatchData from /types.",
         "table": {
           "headers": [
             "Event",
@@ -1078,7 +1078,7 @@
       {
         "title": "Guild-level permissions",
         "description": "member.permissions returns an object with has(permission). Use it for server-wide actions like ban, kick, manage roles.",
-        "code": "import { Client, Events, PermissionFlags } from '@fluxerjs/core';\n\nconst client = new Client({ intents: 0 });\n\nasync function getMemberPerms(message) {\n  const guild = message.guild ?? await message.client.guilds.resolve(message.guildId);\n  if (!guild) return null;\n  const member = guild.members.get(message.author.id) ?? await guild.fetchMember(message.author.id);\n  return member?.permissions ?? null;\n}\n\nclient.on(Events.MessageCreate, async (message) => {\n  const perms = await getMemberPerms(message);\n  if (!perms) return;\n\n  if (perms.has(PermissionFlags.BanMembers)) {\n    await message.reply('You can ban members.');\n  }\n  if (perms.has(PermissionFlags.Administrator)) {\n    await message.reply('You have Administrator.');\n  }\n});\n\nawait client.login(process.env.FLUXER_BOT_TOKEN);",
+        "code": "import { Client, Events, PermissionFlags } from '/core';\n\nconst client = new Client({ intents: 0 });\n\nasync function getMemberPerms(message) {\n  const guild = message.guild ?? await message.client.guilds.resolve(message.guildId);\n  if (!guild) return null;\n  const member = guild.members.get(message.author.id) ?? await guild.fetchMember(message.author.id);\n  return member?.permissions ?? null;\n}\n\nclient.on(Events.MessageCreate, async (message) => {\n  const perms = await getMemberPerms(message);\n  if (!perms) return;\n\n  if (perms.has(PermissionFlags.BanMembers)) {\n    await message.reply('You can ban members.');\n  }\n  if (perms.has(PermissionFlags.Administrator)) {\n    await message.reply('You have Administrator.');\n  }\n});\n\nawait client.login(process.env.FLUXER_BOT_TOKEN);",
         "language": "javascript"
       },
       {
@@ -1115,7 +1115,7 @@
       {
         "title": "PermissionFlags reference",
         "description": "Common flags: BanMembers, KickMembers, Administrator, ManageRoles, ManageChannels, ManageGuild, ViewAuditLog, ManageMessages, SendMessages, EmbedLinks, AttachFiles, ReadMessageHistory, MentionEveryone, Connect, Speak, MuteMembers, ModerateMembers, CreateExpressions, PinMessages, BypassSlowmode.",
-        "code": "import { PermissionFlags } from '@fluxerjs/core';\n\n// Check multiple\nconst canModerate = perms.has(PermissionFlags.BanMembers) || perms.has(PermissionFlags.Administrator);\n\n// List all permissions the user has\nconst names = Object.keys(PermissionFlags).filter((name) =>\n  perms.has(PermissionFlags[name])\n);\nawait message.reply(`Your permissions: ${names.join(', ')}`);",
+        "code": "import { PermissionFlags } from '/core';\n\n// Check multiple\nconst canModerate = perms.has(PermissionFlags.BanMembers) || perms.has(PermissionFlags.Administrator);\n\n// List all permissions the user has\nconst names = Object.keys(PermissionFlags).filter((name) =>\n  perms.has(PermissionFlags[name])\n);\nawait message.reply(`Your permissions: ${names.join(', ')}`);",
         "language": "javascript"
       }
     ]
@@ -1152,7 +1152,7 @@
       {
         "title": "Full moderation example",
         "description": "See examples/moderation-bot.js for a complete bot with !ban, !kick, !unban, and !perms commands.",
-        "code": "import { Client, Events, PermissionFlags, parseUserMention } from '@fluxerjs/core';\n\nconst PREFIX = '!';\nconst client = new Client({ intents: 0 });\n\nasync function getModeratorPerms(message) {\n  const guild = message.guild ?? await message.client.guilds.resolve(message.guildId);\n  if (!guild) return null;\n  const member = guild.members.get(message.author.id);\n  const resolved = member ?? await guild.fetchMember(message.author.id);\n  return resolved?.permissions ?? null;\n}\n\nclient.on(Events.MessageCreate, async (message) => {\n  if (message.author.bot || !message.content?.startsWith(PREFIX)) return;\n  const [cmd, target, ...rest] = message.content.slice(PREFIX.length).trim().split(/\\s+/);\n  const perms = await getModeratorPerms(message);\n  if (!perms) return;\n\n  const guild = message.guild ?? await message.client.guilds.resolve(message.guildId);\n  if (!guild) return;\n\n  if (cmd === 'ban' && (perms.has(PermissionFlags.BanMembers) || perms.has(PermissionFlags.Administrator))) {\n    const userId = parseUserMention(target);\n    if (userId) {\n      await guild.ban(userId, { reason: rest.join(' ') || undefined });\n      await message.reply(`Banned <@${userId}>.`);\n    }\n  }\n  if (cmd === 'kick' && (perms.has(PermissionFlags.KickMembers) || perms.has(PermissionFlags.Administrator))) {\n    const userId = parseUserMention(target);\n    if (userId) {\n      await guild.kick(userId, { reason: rest.join(' ') || undefined });\n      await message.reply(`Kicked <@${userId}>.`);\n    }\n  }\n});\n\nawait client.login(process.env.FLUXER_BOT_TOKEN);",
+        "code": "import { Client, Events, PermissionFlags, parseUserMention } from '/core';\n\nconst PREFIX = '!';\nconst client = new Client({ intents: 0 });\n\nasync function getModeratorPerms(message) {\n  const guild = message.guild ?? await message.client.guilds.resolve(message.guildId);\n  if (!guild) return null;\n  const member = guild.members.get(message.author.id);\n  const resolved = member ?? await guild.fetchMember(message.author.id);\n  return resolved?.permissions ?? null;\n}\n\nclient.on(Events.MessageCreate, async (message) => {\n  if (message.author.bot || !message.content?.startsWith(PREFIX)) return;\n  const [cmd, target, ...rest] = message.content.slice(PREFIX.length).trim().split(/\\s+/);\n  const perms = await getModeratorPerms(message);\n  if (!perms) return;\n\n  const guild = message.guild ?? await message.client.guilds.resolve(message.guildId);\n  if (!guild) return;\n\n  if (cmd === 'ban' && (perms.has(PermissionFlags.BanMembers) || perms.has(PermissionFlags.Administrator))) {\n    const userId = parseUserMention(target);\n    if (userId) {\n      await guild.ban(userId, { reason: rest.join(' ') || undefined });\n      await message.reply(`Banned <@${userId}>.`);\n    }\n  }\n  if (cmd === 'kick' && (perms.has(PermissionFlags.KickMembers) || perms.has(PermissionFlags.Administrator))) {\n    const userId = parseUserMention(target);\n    if (userId) {\n      await guild.kick(userId, { reason: rest.join(' ') || undefined });\n      await message.reply(`Kicked <@${userId}>.`);\n    }\n  }\n});\n\nawait client.login(process.env.FLUXER_BOT_TOKEN);",
         "language": "javascript"
       }
     ]
@@ -1171,7 +1171,7 @@
       {
         "title": "Create a role",
         "description": "Use guild.createRole() to create a new role. Pass name, permissions, color, hoist, mentionable, unicode_emoji, position, or hoist_position. Permissions accept PermissionResolvable (string, number, array) for convenience.",
-        "code": "import { Client, Events, PermissionFlags, resolvePermissionsToBitfield } from '@fluxerjs/core';\n\nconst client = new Client({ intents: 0 });\n\nclient.on(Events.MessageCreate, async (message) => {\n  if (message.content === '!createrole' && message.guildId) {\n    const guild = client.guilds.get(message.guildId) ?? await client.guilds.resolve(message.guildId);\n    if (!guild) return;\n\n    const role = await guild.createRole({\n      name: 'Moderator',\n      permissions: ['BanMembers', 'KickMembers', 'ManageMessages'],\n      color: 0x5865f2,\n      hoist: true,\n      mentionable: false,\n    });\n    await message.reply(`Created role ${role.name} (${role.id})`);\n  }\n});\n\nawait client.login(process.env.FLUXER_BOT_TOKEN);",
+        "code": "import { Client, Events, PermissionFlags, resolvePermissionsToBitfield } from '/core';\n\nconst client = new Client({ intents: 0 });\n\nclient.on(Events.MessageCreate, async (message) => {\n  if (message.content === '!createrole' && message.guildId) {\n    const guild = client.guilds.get(message.guildId) ?? await client.guilds.resolve(message.guildId);\n    if (!guild) return;\n\n    const role = await guild.createRole({\n      name: 'Moderator',\n      permissions: ['BanMembers', 'KickMembers', 'ManageMessages'],\n      color: 0x5865f2,\n      hoist: true,\n      mentionable: false,\n    });\n    await message.reply(`Created role ${role.name} (${role.id})`);\n  }\n});\n\nawait client.login(process.env.FLUXER_BOT_TOKEN);",
         "language": "javascript"
       },
       {
@@ -1195,7 +1195,7 @@
       {
         "title": "Check role permissions",
         "description": "Use role.has(permission) to check if a role has a specific permission. Administrator implies all permissions.",
-        "code": "import { PermissionFlags } from '@fluxerjs/core';\n\nif (role.has(PermissionFlags.BanMembers)) {\n  await message.reply('This role can ban members.');\n}\nif (role.has('ManageChannels')) {\n  await message.reply('This role can manage channels.');\n}",
+        "code": "import { PermissionFlags } from '/core';\n\nif (role.has(PermissionFlags.BanMembers)) {\n  await message.reply('This role can ban members.');\n}\nif (role.has('ManageChannels')) {\n  await message.reply('This role can manage channels.');\n}",
         "language": "javascript"
       },
       {
@@ -1208,7 +1208,7 @@
       {
         "title": "Permission bitfields for create/edit",
         "description": "When creating or editing roles, pass permissions as a string (API format), number, PermissionString, or array. Use resolvePermissionsToBitfield() to combine multiple permissions. Handles high bits (PinMessages, ModerateMembers, etc.) correctly with BigInt.",
-        "code": "import { resolvePermissionsToBitfield, PermissionFlags } from '@fluxerjs/core';\n\n// Single permission by name\nresolvePermissionsToBitfield('SendMessages');  // \"2048\"\n\n// Array of permissions (OR'd together)\nresolvePermissionsToBitfield(['SendMessages', 'ViewChannel', 'ReadMessageHistory']);\n// Returns combined bitfield as string\n\n// From PermissionFlags enum\nresolvePermissionsToBitfield(PermissionFlags.BanMembers);  // \"4\"",
+        "code": "import { resolvePermissionsToBitfield, PermissionFlags } from '/core';\n\n// Single permission by name\nresolvePermissionsToBitfield('SendMessages');  // \"2048\"\n\n// Array of permissions (OR'd together)\nresolvePermissionsToBitfield(['SendMessages', 'ViewChannel', 'ReadMessageHistory']);\n// Returns combined bitfield as string\n\n// From PermissionFlags enum\nresolvePermissionsToBitfield(PermissionFlags.BanMembers);  // \"4\"",
         "language": "javascript"
       }
     ]
@@ -1223,7 +1223,7 @@
       {
         "title": "Basic Structure",
         "description": "Check for a prefix, split args, and dispatch to command handlers.",
-        "code": "import { Client, Events } from '@fluxerjs/core';\n\nconst PREFIX = '!';\nconst client = new Client({ intents: 0 });\n\nclient.on(Events.MessageCreate, async (message) => {\n  if (message.author.bot || !message.content) return;\n  if (!message.content.startsWith(PREFIX)) return;\n\n  const args = message.content.slice(PREFIX.length).trim().split(/\\s+/);\n  const command = args.shift()?.toLowerCase();\n\n  if (command === 'ping') {\n    await message.reply('Pong!');\n  }\n  if (command === 'hello') {\n    const name = args[0] ?? 'there';\n    await message.reply(`Hello, ${name}!`);\n  }\n});\n\nawait client.login(process.env.FLUXER_BOT_TOKEN);",
+        "code": "import { Client, Events } from '/core';\n\nconst PREFIX = '!';\nconst client = new Client({ intents: 0 });\n\nclient.on(Events.MessageCreate, async (message) => {\n  if (message.author.bot || !message.content) return;\n  if (!message.content.startsWith(PREFIX)) return;\n\n  const args = message.content.slice(PREFIX.length).trim().split(/\\s+/);\n  const command = args.shift()?.toLowerCase();\n\n  if (command === 'ping') {\n    await message.reply('Pong!');\n  }\n  if (command === 'hello') {\n    const name = args[0] ?? 'there';\n    await message.reply(`Hello, ${name}!`);\n  }\n});\n\nawait client.login(process.env.FLUXER_BOT_TOKEN);",
         "language": "javascript"
       },
       {
@@ -1243,7 +1243,7 @@
       {
         "title": "Channels — Create",
         "description": "Use guild.createChannel() to create text (0), voice (2), category (4), or link (5) channels. Requires Manage Channels permission. Pass parent_id to put a channel under a category.",
-        "code": "import { Client, Events } from '@fluxerjs/core';\n\nconst client = new Client({ intents: 0 });\n\nclient.on(Events.MessageCreate, async (message) => {\n  if (!message.guildId || message.content !== '!createchannel') return;\n  const guild = client.guilds.get(message.guildId) ?? await client.guilds.resolve(message.guildId);\n  if (!guild) return;\n\n  // Text channel (0), voice (2), category (4), link (5)\n  const textChannel = await guild.createChannel({\n    type: 0,\n    name: 'general',\n  });\n\n  // Category, then voice channel under it\n  const category = await guild.createChannel({\n    type: 4,\n    name: 'Voice Chats',\n  });\n  const voiceChannel = await guild.createChannel({\n    type: 2,\n    name: 'Lounge',\n    parent_id: category.id,\n    bitrate: 64000,\n  });\n\n  await message.reply(`Created ${textChannel.name} and ${voiceChannel.name} in ${category.name}`);\n});\n\nawait client.login(process.env.FLUXER_BOT_TOKEN);",
+        "code": "import { Client, Events } from '/core';\n\nconst client = new Client({ intents: 0 });\n\nclient.on(Events.MessageCreate, async (message) => {\n  if (!message.guildId || message.content !== '!createchannel') return;\n  const guild = client.guilds.get(message.guildId) ?? await client.guilds.resolve(message.guildId);\n  if (!guild) return;\n\n  // Text channel (0), voice (2), category (4), link (5)\n  const textChannel = await guild.createChannel({\n    type: 0,\n    name: 'general',\n  });\n\n  // Category, then voice channel under it\n  const category = await guild.createChannel({\n    type: 4,\n    name: 'Voice Chats',\n  });\n  const voiceChannel = await guild.createChannel({\n    type: 2,\n    name: 'Lounge',\n    parent_id: category.id,\n    bitrate: 64000,\n  });\n\n  await message.reply(`Created ${textChannel.name} and ${voiceChannel.name} in ${category.name}`);\n});\n\nawait client.login(process.env.FLUXER_BOT_TOKEN);",
         "language": "javascript"
       },
       {
@@ -1261,7 +1261,7 @@
       {
         "title": "Channel Permission Overwrites",
         "description": "Use channel.editPermission() to add or update overwrites (type 0=role, 1=member). Use channel.deletePermission() to remove. Use resolvePermissionsToBitfield() for allow/deny bitfields.",
-        "code": "import { resolvePermissionsToBitfield, PermissionFlags } from '@fluxerjs/core';\n\n// Deny SendMessages for a role (type 0=role, 1=member)\nawait channel.editPermission(roleId, {\n  type: 0,\n  deny: resolvePermissionsToBitfield(['SendMessages']),\n});\n\n// Allow ViewChannel for a specific member\nawait channel.editPermission(userId, {\n  type: 1,\n  allow: resolvePermissionsToBitfield([PermissionFlags.ViewChannel]),\n});\n\n// Remove overwrite\nawait channel.deletePermission(roleId);",
+        "code": "import { resolvePermissionsToBitfield, PermissionFlags } from '/core';\n\n// Deny SendMessages for a role (type 0=role, 1=member)\nawait channel.editPermission(roleId, {\n  type: 0,\n  deny: resolvePermissionsToBitfield(['SendMessages']),\n});\n\n// Allow ViewChannel for a specific member\nawait channel.editPermission(userId, {\n  type: 1,\n  allow: resolvePermissionsToBitfield([PermissionFlags.ViewChannel]),\n});\n\n// Remove overwrite\nawait channel.deletePermission(roleId);",
         "language": "javascript"
       },
       {
@@ -1274,7 +1274,7 @@
       {
         "title": "Invites",
         "description": "Use channel.createInvite() to create an invite. Use channel.fetchInvites() to list channel invites. Use invite.delete() to revoke. invite.url gives the full invite URL.",
-        "code": "import { Client, Events } from '@fluxerjs/core';\n\nconst client = new Client({ intents: 0 });\n\nclient.on(Events.MessageCreate, async (message) => {\n  if (!message.content.startsWith('!invite') || !message.guildId) return;\n  const channel = message.channel;\n  if (!channel?.createInvite) return;\n\n  if (message.content === '!invite') {\n    const invite = await channel.createInvite({\n      max_age: 86400,    // 24 hours\n      max_uses: 10,\n      temporary: false,\n    });\n    await message.reply(`Invite: ${invite.url}`);\n  }\n\n  if (message.content === '!invitelist') {\n    const invites = await channel.fetchInvites();\n    const list = invites.map((i) => `${i.code} (${i.max_uses ?? '∞'} uses)`).join('\\n');\n    await message.reply(list || 'No invites.');\n  }\n\n  if (message.content.startsWith('!inviterevoke ')) {\n    const code = message.content.slice(13).trim();\n    const invites = await channel.fetchInvites();\n    const inv = invites.find((i) => i.code === code);\n    if (inv) {\n      await inv.delete();\n      await message.reply('Invite revoked.');\n    }\n  }\n});\n\nawait client.login(process.env.FLUXER_BOT_TOKEN);",
+        "code": "import { Client, Events } from '/core';\n\nconst client = new Client({ intents: 0 });\n\nclient.on(Events.MessageCreate, async (message) => {\n  if (!message.content.startsWith('!invite') || !message.guildId) return;\n  const channel = message.channel;\n  if (!channel?.createInvite) return;\n\n  if (message.content === '!invite') {\n    const invite = await channel.createInvite({\n      max_age: 86400,    // 24 hours\n      max_uses: 10,\n      temporary: false,\n    });\n    await message.reply(`Invite: ${invite.url}`);\n  }\n\n  if (message.content === '!invitelist') {\n    const invites = await channel.fetchInvites();\n    const list = invites.map((i) => `${i.code} (${i.max_uses ?? '∞'} uses)`).join('\\n');\n    await message.reply(list || 'No invites.');\n  }\n\n  if (message.content.startsWith('!inviterevoke ')) {\n    const code = message.content.slice(13).trim();\n    const invites = await channel.fetchInvites();\n    const inv = invites.find((i) => i.code === code);\n    if (inv) {\n      await inv.delete();\n      await message.reply('Invite revoked.');\n    }\n  }\n});\n\nawait client.login(process.env.FLUXER_BOT_TOKEN);",
         "language": "javascript"
       },
       {
@@ -1370,13 +1370,13 @@
       {
         "title": "Fetch Emojis",
         "description": "Use guild.fetchEmojis() to get all emojis in a guild. Cached in guild.emojis. Use guild.fetchEmoji(emojiId) for a single emoji. Use emoji.delete() to remove an emoji (e.g. autocreated ones).",
-        "code": "import { Client, Events } from '@fluxerjs/core';\n\nconst client = new Client({ intents: 0 });\n\nclient.on(Events.MessageCreate, async (message) => {\n  if (!message.guildId || message.content !== '!emojis') return;\n  const guild = client.guilds.get(message.guildId) ?? await client.guilds.resolve(message.guildId);\n  if (!guild) return;\n\n  const emojis = await guild.fetchEmojis();\n  const list = emojis.map((e) => `:${e.name}: (${e.id})`).join(', ');\n  await message.reply(emojis.length ? list : 'No emojis.');\n\n  // Or get from cache after fetching: guild.emojis.get(emojiId)\n});\n\n// Fetch single emoji by ID\nconst emoji = await guild.fetchEmoji(emojiId);\nawait emoji.delete();",
+        "code": "import { Client, Events } from '/core';\n\nconst client = new Client({ intents: 0 });\n\nclient.on(Events.MessageCreate, async (message) => {\n  if (!message.guildId || message.content !== '!emojis') return;\n  const guild = client.guilds.get(message.guildId) ?? await client.guilds.resolve(message.guildId);\n  if (!guild) return;\n\n  const emojis = await guild.fetchEmojis();\n  const list = emojis.map((e) => `:${e.name}: (${e.id})`).join(', ');\n  await message.reply(emojis.length ? list : 'No emojis.');\n\n  // Or get from cache after fetching: guild.emojis.get(emojiId)\n});\n\n// Fetch single emoji by ID\nconst emoji = await guild.fetchEmoji(emojiId);\nawait emoji.delete();",
         "language": "javascript"
       },
       {
         "title": "Create Emojis & Stickers",
         "description": "Use guild.createEmojisBulk() and guild.createStickersBulk() with base64 image data. Use emoji.edit() / emoji.delete() and sticker.edit() / sticker.delete() for individual updates.",
-        "code": "import { Client, Events } from '@fluxerjs/core';\n\nconst client = new Client({ intents: 0 });\n\n// Create emoji from URL (fetch and convert to base64)\nasync function createEmojiFromUrl(guild, name, imageUrl) {\n  const res = await fetch(imageUrl);\n  const buf = await res.arrayBuffer();\n  const base64 = Buffer.from(buf).toString('base64');\n  const [emoji] = await guild.createEmojisBulk([{ name, image: base64 }]);\n  return emoji;\n}\n\nclient.on(Events.MessageCreate, async (message) => {\n  if (!message.guildId || !message.content.startsWith('!addemoji ')) return;\n  const guild = client.guilds.get(message.guildId) ?? await client.guilds.resolve(message.guildId);\n  if (!guild) return;\n\n  const [_, name, url] = message.content.split(/\\s+/);\n  if (!name || !url) return;\n  const emoji = await createEmojiFromUrl(guild, name, url);\n  await message.reply(`Created emoji :${emoji.name}:`);\n});\n\n// Bulk create stickers\nconst stickers = await guild.createStickersBulk([\n  { name: 'cool', image: base64Image, description: 'A cool sticker' },\n]);\n\n// Edit and delete\nawait emoji.edit({ name: 'newname' });\nawait emoji.delete();",
+        "code": "import { Client, Events } from '/core';\n\nconst client = new Client({ intents: 0 });\n\n// Create emoji from URL (fetch and convert to base64)\nasync function createEmojiFromUrl(guild, name, imageUrl) {\n  const res = await fetch(imageUrl);\n  const buf = await res.arrayBuffer();\n  const base64 = Buffer.from(buf).toString('base64');\n  const [emoji] = await guild.createEmojisBulk([{ name, image: base64 }]);\n  return emoji;\n}\n\nclient.on(Events.MessageCreate, async (message) => {\n  if (!message.guildId || !message.content.startsWith('!addemoji ')) return;\n  const guild = client.guilds.get(message.guildId) ?? await client.guilds.resolve(message.guildId);\n  if (!guild) return;\n\n  const [_, name, url] = message.content.split(/\\s+/);\n  if (!name || !url) return;\n  const emoji = await createEmojiFromUrl(guild, name, url);\n  await message.reply(`Created emoji :${emoji.name}:`);\n});\n\n// Bulk create stickers\nconst stickers = await guild.createStickersBulk([\n  { name: 'cool', image: base64Image, description: 'A cool sticker' },\n]);\n\n// Edit and delete\nawait emoji.edit({ name: 'newname' });\nawait emoji.delete();",
         "language": "javascript"
       },
       {

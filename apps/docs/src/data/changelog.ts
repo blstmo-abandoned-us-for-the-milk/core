@@ -15,17 +15,17 @@ export const changelogEntries: ChangelogEntry[] = [
     date: '2026-03-19',
     sections: [
       {
-        title: '@fluxerjs/core — waitForGuilds fix',
+        title: '@erinjs/core — waitForGuilds fix',
         items: [
           'Fixed waitForGuilds: true — Ready event now receives populated client.guilds when the gateway sends READY with an empty guilds array and guilds via GUILD_CREATE; SDK defers Ready by 500ms so guild stream settles before emitting',
         ],
       },
       {
-        title: '@fluxerjs/core — GuildMember.move()',
+        title: '@erinjs/core — GuildMember.move()',
         items: ['GuildMember.move(channelId) — move members between voice channels (#27)'],
       },
       {
-        title: '@fluxerjs/ws — Reconnect fixes',
+        title: '@erinjs/ws — Reconnect fixes',
         items: [
           'Close socket before reconnecting on invalid session (#25)',
           'Add gateway close code 4013 (AckBackpressure) as reconnectable (#24)',
@@ -38,7 +38,7 @@ export const changelogEntries: ChangelogEntry[] = [
     date: '2026-02-23',
     sections: [
       {
-        title: '@fluxerjs/core — Message.reply() fix',
+        title: '@erinjs/core — Message.reply() fix',
         items: [
           'Fixed message.reply() not creating actual replies — SDK now sends message_reference (not referenced_message) in the request body per Discord/Fluxer API spec',
           'Added !replytest command to ping-bot example for verification',
@@ -52,7 +52,7 @@ export const changelogEntries: ChangelogEntry[] = [
     date: '2026-02-22',
     sections: [
       {
-        title: '@fluxerjs/voice — LiveKit inbound receive',
+        title: '@erinjs/voice — LiveKit inbound receive',
         items: [
           'LiveKit inbound audio receive APIs for participant subscriptions, audioFrame events, and speaking lifecycle events',
           'VoiceManager helpers for channel participant subscriptions',
@@ -61,14 +61,14 @@ export const changelogEntries: ChangelogEntry[] = [
         ],
       },
       {
-        title: '@fluxerjs/voice — ESM fix',
+        title: '@erinjs/voice — ESM fix',
         items: [
-          'Fixed "Dynamic require of path is not supported" when using @fluxerjs/voice in ESM projects',
+          'Fixed "Dynamic require of path is not supported" when using @erinjs/voice in ESM projects',
           'node-webcodecs is now loaded via dynamic import and externalized from the bundle',
         ],
       },
       {
-        title: '@fluxerjs/core — Message.channel.send() & Channel.canSendMessage()',
+        title: '@erinjs/core — Message.channel.send() & Channel.canSendMessage()',
         items: [
           'Message.channel — now typed as (TextChannel | DMChannel | GuildChannel) | null so message.channel.send() works (messages only exist in text-based channels)',
           'Channel.canSendMessage() — returns true for DMs; for guild channels checks ViewChannel and SendMessages via guild.members.me permissions',
@@ -76,14 +76,14 @@ export const changelogEntries: ChangelogEntry[] = [
         ],
       },
       {
-        title: '@fluxerjs/core — Ready & guilds',
+        title: '@erinjs/core — Ready & guilds',
         items: [
           'ClientOptions.waitForGuilds — when true, delays the Ready event until all guilds from READY (including unavailable stubs) have been received via GUILD_CREATE; opt-in for bots that need full guild cache before handling Ready',
           'New guide: Wait for All Guilds',
         ],
       },
       {
-        title: '@fluxerjs/core — Channel type guards',
+        title: '@erinjs/core — Channel type guards',
         items: [
           'BREAKING: isSendable() renamed to isTextBased() — migrate callers to isTextBased()',
           'Added isLink(), isDM(), isVoice() type guards on Channel',
@@ -126,7 +126,7 @@ export const changelogEntries: ChangelogEntry[] = [
         title: 'SDK — GuildMemberRoleManager',
         items: [
           'member.roles — add(roleOrId), remove(roleOrId), set(roleIds), cache (Collection of Role objects), roleIds, has(roleOrId). Discord.js parity.',
-          'GuildMemberRoleManager and RoleResolvable exported from @fluxerjs/core',
+          'GuildMemberRoleManager and RoleResolvable exported from @erinjs/core',
         ],
       },
       {
@@ -142,7 +142,7 @@ export const changelogEntries: ChangelogEntry[] = [
         items: [
           'ChannelManager — return type now includes GuildChannel when fetching a guild channel; client.channels.get(guildChannelId) and fetch() return Channel | GuildChannel',
           'GatewayReactionEmoji — id is now optional (id?: Snowflake) to match API; default/unicode emoji omit id',
-          '@fluxerjs/util BitField — BitFieldResolvable now accepts bigint',
+          '@erinjs/util BitField — BitFieldResolvable now accepts bigint',
         ],
       },
       {
@@ -199,7 +199,7 @@ export const changelogEntries: ChangelogEntry[] = [
         items: [
           'Support banner — closable with × button; preference persisted in localStorage',
           'Guides page — wider content area and improved layout to use more screen space',
-          'Join our Fluxer community — prominent callout on homepage, Guides sidebar, Docs sidebar, REST API sidebar, and Footer',
+          'Join our erin.js community — prominent callout on homepage, Guides sidebar, Docs sidebar, REST API sidebar, and Footer',
           'CommunityCallout component with hero and sidebar variants linking to fluxer.gg/fluxer-js',
         ],
       },
@@ -246,14 +246,14 @@ export const changelogEntries: ChangelogEntry[] = [
         ],
       },
       {
-        title: '@fluxerjs/collection',
+        title: '@erinjs/collection',
         items: [
           'findKey(predicate), some(predicate), every(predicate), partition(predicate)',
           'clone(), concat(other), last(amount?), tap(fn), toString()',
         ],
       },
       {
-        title: '@fluxerjs/rest',
+        title: '@erinjs/rest',
         items: [
           'FluxerAPIError.isRetryable, HTTPError.isRetryable — true for 429 and 5xx; useful for retry logic',
         ],
@@ -303,14 +303,14 @@ export const changelogEntries: ChangelogEntry[] = [
         ],
       },
       {
-        title: '@fluxerjs/voice',
+        title: '@erinjs/voice',
         items: [
           'LiveKitRtcConnection — setVolume(0-200), getVolume() for playback volume control',
           'VoiceManager — multi-channel: connections keyed by channel_id; leave(guildId) leaves all channels; leaveChannel(channelId), getConnection(channelOrGuildId)',
         ],
       },
       {
-        title: '@fluxerjs/ws',
+        title: '@erinjs/ws',
         items: [
           'WebSocketManager — retry loop for getDefaultWebSocket() and gateway fetch with exponential backoff (1s → 45s max); no longer crashes when API or gateway is unreachable',
           'WebSocketShard — max reconnect backoff increased from 30s to 45s; reconnects on additional close codes: 1005, 1006, 1012–1015 (Abnormal Closure, Service Restart, Bad Gateway, etc.)',
@@ -476,7 +476,7 @@ export const changelogEntries: ChangelogEntry[] = [
           'MessageSendOptions — shared type for Channel.send, User.send, DMChannel.send, Message.send, Message.reply; embeds accept (APIEmbed | EmbedBuilder)[]',
           'Webhook.send — embeds typed as (APIEmbed | EmbedBuilder)[]; optional wait param returns Message when true',
           'ClientEvents — GuildEmojisUpdate, GuildStickersUpdate, and other events now use typed dispatch data',
-          'Gateway dispatch types — GatewayGuildEmojisUpdateDispatchData, GatewayChannelPinsUpdateDispatchData, etc. exported from @fluxerjs/types',
+          'Gateway dispatch types — GatewayGuildEmojisUpdateDispatchData, GatewayChannelPinsUpdateDispatchData, etc. exported from @erinjs/types',
           'APIApplicationCommandInteraction — member and user fields typed as APIGuildMember and APIUser',
           'APIGuildAuditLogEntry changes — old_value/new_value typed; fetchPinnedMessages pinned items typed',
         ],
@@ -494,7 +494,7 @@ export const changelogEntries: ChangelogEntry[] = [
       {
         title: 'Media & embeds',
         items: [
-          '@fluxerjs/util — resolveTenorToImageUrl() — resolve Tenor view URLs to GIF URLs for embed images; returns { url, flags: IS_ANIMATED }; derives GIF from JSON-LD or oEmbed (embeds require GIF, not MP4)',
+          '@erinjs/util — resolveTenorToImageUrl() — resolve Tenor view URLs to GIF URLs for embed images; returns { url, flags: IS_ANIMATED }; derives GIF from JSON-LD or oEmbed (embeds require GIF, not MP4)',
           'EmbedBuilder — setImage/setThumbnail accept EmbedMediaOptions with flags (e.g. EmbedMediaFlags.IS_ANIMATED)',
         ],
       },
@@ -512,7 +512,7 @@ export const changelogEntries: ChangelogEntry[] = [
         title: 'Deprecation warnings',
         items: [
           'Runtime deprecation warnings — deprecated APIs (e.g. ChannelManager.fetchMessage, Channel.fetchMessage, Client.fetchMessage) now emit a one-time console.warn when used',
-          'emitDeprecationWarning(symbol, message) — exported from @fluxerjs/util for SDK use',
+          'emitDeprecationWarning(symbol, message) — exported from @erinjs/util for SDK use',
           'FLUXER_SUPPRESS_DEPRECATION=1 — set to silence all deprecation warnings',
         ],
       },
@@ -613,7 +613,7 @@ export const changelogEntries: ChangelogEntry[] = [
           'Guild.addRoleToMember(userId, roleId) — assign a role by user ID and role ID without fetching the member',
           'Guild.removeRoleFromMember(userId, roleId) — remove a role by user ID and role ID',
           'Guild.resolveRoleId(arg) — resolve role mention (@role), raw snowflake ID, or role name to role ID (fetches guild roles when needed)',
-          'parseRoleMention(arg) in @fluxerjs/util — extract role ID from <@&id> format',
+          'parseRoleMention(arg) in @erinjs/util — extract role ID from <@&id> format',
         ],
       },
       {

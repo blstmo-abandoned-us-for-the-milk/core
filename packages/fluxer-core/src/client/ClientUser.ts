@@ -1,7 +1,7 @@
 import { Client } from './Client.js';
 import { User } from '../structures/User.js';
-import { APIGuild, APIUserPartial } from '@fluxerjs/types';
-import { Routes } from '@fluxerjs/types';
+import { APIGuild, APIUserPartial } from '@erinjs/types';
+import { Routes } from '@erinjs/types';
 import { Guild } from '../structures/Guild.js';
 
 export class ClientUser extends User {
