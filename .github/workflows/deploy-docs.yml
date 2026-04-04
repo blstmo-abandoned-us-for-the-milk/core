@@ -16,6 +16,15 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Generate GitHub App token
+        id: app-token
+        uses: actions/create-github-app-token@v1
+        with:
+          app-id: ${{ secrets.DOCS_APP_ID }}
+          private-key: ${{ secrets.DOCS_APP_PRIVATE_KEY }}
+          owner: blstmo-abandoned-us-for-the-milk
+          repositories: docs
+
       - uses: pnpm/action-setup@v4
 
       - uses: actions/setup-node@v4
@@ -39,7 +48,7 @@ jobs:
       - name: Deploy to docs gh-pages
         uses: peaceiris/actions-gh-pages@v4
         with:
-          personal_token: ${{ secrets.DOCS_DEPLOY_TOKEN }}
+          personal_token: ${{ steps.app-token.outputs.token }}
           external_repository: blstmo-abandoned-us-for-the-milk/docs
           publish_branch: gh-pages
           publish_dir: apps/docs-vitepress/.vitepress/dist
