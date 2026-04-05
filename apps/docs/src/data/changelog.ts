@@ -11,6 +11,36 @@ export interface ChangelogEntry {
 
 export const changelogEntries: ChangelogEntry[] = [
   {
+    version: '1.2.5',
+    date: '2026-04-05',
+    sections: [
+      {
+        title: '@erinjs/core — Gateway members chunk handling',
+        items: [
+          'Added GUILD_MEMBERS_CHUNK handling in the client dispatch registry; valid members from chunk payloads now populate guild.members cache',
+          'Added Events.GuildMembersChunk and ClientEvents typing for chunk payloads',
+          'Added regression tests for cached/missing guild chunk flows and invalid member rows',
+        ],
+      },
+      {
+        title: '@erinjs/ws — Gateway opcode coverage',
+        items: [
+          'Added GatewayError opcode handling in WebSocketShard; now emits debug plus Error events when gateway reports an opcode-level error payload',
+          'Gateway opcode enum now includes VoiceServerPing (5), GatewayError (12), and LazyRequest (14)',
+          'Added WebSocketShard tests validating GatewayError behavior for string and object payloads',
+        ],
+      },
+      {
+        title: '@erinjs/core + @erinjs/types — Typing improvements',
+        items: [
+          'Client now has typed EventEmitter overloads for on/once/off/emit, preserving custom event compatibility while improving SDK event inference',
+          'Added compile-time typecheck coverage for event listener inference to prevent regressions',
+          'Replaced remaining Record<string, unknown> gateway payload aliases with concrete interfaces and extensibility index signatures',
+        ],
+      },
+    ],
+  },
+  {
     version: '1.2.4',
     date: '2026-03-19',
     sections: [
