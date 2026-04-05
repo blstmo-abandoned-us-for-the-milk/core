@@ -221,10 +221,20 @@ export interface GatewayGuildMemberListUpdateDispatchData {
   online_count: number;
   groups: Array<{ id: string; count: number }>;
   ops: Array<{
-    op: 'SYNC' | 'INVALIDATE';
+    op: 'SYNC' | 'INVALIDATE' | 'INSERT' | 'UPDATE' | 'DELETE';
     range?: [number, number];
-    items?: Array<Record<string, unknown>>;
+    index?: number;
+    item?: GatewayGuildMemberListItem;
+    items?: GatewayGuildMemberListItem[];
   }>;
+}
+
+/** Item payload used by GUILD_MEMBER_LIST_UPDATE op entries. */
+export interface GatewayGuildMemberListItem {
+  group?: { id: string; count?: number };
+  member?: APIGuildMember & { guild_id?: Snowflake };
+  user?: APIUser;
+  [key: string]: unknown;
 }
 
 /** GUILD_BAN_ADD — guild_id, user, reason? */
@@ -386,17 +396,31 @@ export type GatewayResumedDispatchData = undefined;
 
 /** SESSIONS_REPLACE — user's active sessions list replaced */
 export interface GatewaySessionsReplaceDispatchData {
-  sessions?: Array<Record<string, unknown>>;
+  sessions?: GatewaySession[];
 }
 
 /** USER_SETTINGS_UPDATE — user settings (theme, locale, etc.) changed */
-export type GatewayUserSettingsUpdateDispatchData = Record<string, unknown>;
+export interface GatewayUserSettingsUpdateDispatchData {
+  locale?: string;
+  theme?: string;
+  status?: string;
+  custom_status?: GatewayCustomStatus | null;
+  [key: string]: unknown;
+}
 
 /** USER_GUILD_SETTINGS_UPDATE — per-guild settings changed */
-export type GatewayUserGuildSettingsUpdateDispatchData = Record<string, unknown>;
+export interface GatewayUserGuildSettingsUpdateDispatchData {
+  guild_id?: Snowflake;
+  channel_overrides?: Array<{ channel_id: Snowflake; muted?: boolean; [key: string]: unknown }>;
+  muted?: boolean;
+  [key: string]: unknown;
+}
 
 /** USER_PINNED_DMS_UPDATE — pinned DM order changed */
-export type GatewayUserPinnedDmsUpdateDispatchData = Record<string, unknown>;
+export interface GatewayUserPinnedDmsUpdateDispatchData {
+  pinned_channels?: Snowflake[];
+  [key: string]: unknown;
+}
 
 /** USER_NOTE_UPDATE — note on another user changed */
 export interface GatewayUserNoteUpdateDispatchData {
@@ -405,7 +429,12 @@ export interface GatewayUserNoteUpdateDispatchData {
 }
 
 /** RECENT_MENTION_DELETE — recent mention cleared */
-export type GatewayRecentMentionDeleteDispatchData = Record<string, unknown>;
+export interface GatewayRecentMentionDeleteDispatchData {
+  id?: Snowflake;
+  channel_id?: Snowflake;
+  guild_id?: Snowflake;
+  [key: string]: unknown;
+}
 
 /** SAVED_MESSAGE_CREATE — message saved (bookmarked) */
 export type GatewaySavedMessageCreateDispatchData = APIMessage;
@@ -416,13 +445,24 @@ export interface GatewaySavedMessageDeleteDispatchData {
 }
 
 /** AUTH_SESSION_CHANGE — login/logout on another client */
-export type GatewayAuthSessionChangeDispatchData = Record<string, unknown>;
+export interface GatewayAuthSessionChangeDispatchData {
+  session_id?: string;
+  kind?: 'login' | 'logout' | 'update' | string;
+  [key: string]: unknown;
+}
 
 /** PASSIVE_UPDATES — lazy-loaded entity updates */
-export type GatewayPassiveUpdatesDispatchData = Record<string, unknown>;
+export interface GatewayPassiveUpdatesDispatchData {
+  guild_id?: Snowflake;
+  [key: string]: unknown;
+}
 
 /** GUILD_SYNC — guild sync state (passive/lazy) */
-export type GatewayGuildSyncDispatchData = Record<string, unknown>;
+export interface GatewayGuildSyncDispatchData {
+  id?: Snowflake;
+  guild_id?: Snowflake;
+  [key: string]: unknown;
+}
 
 /** RELATIONSHIP_ADD — relationship (friend, block) added */
 export interface GatewayRelationshipAddDispatchData {
@@ -462,13 +502,36 @@ export interface GatewayCallDeleteDispatchData {
 }
 
 /** FAVORITE_MEME_CREATE — favorite meme/media added */
-export type GatewayFavoriteMemeCreateDispatchData = Record<string, unknown>;
+export type GatewayFavoriteMemeCreateDispatchData = GatewayFavoriteMemePayload;
 
 /** FAVORITE_MEME_UPDATE — favorite meme/media updated */
-export type GatewayFavoriteMemeUpdateDispatchData = Record<string, unknown>;
+export type GatewayFavoriteMemeUpdateDispatchData = GatewayFavoriteMemePayload;
 
 /** FAVORITE_MEME_DELETE — favorite meme/media removed */
-export type GatewayFavoriteMemeDeleteDispatchData = Record<string, unknown>;
+export type GatewayFavoriteMemeDeleteDispatchData = GatewayFavoriteMemePayload;
+
+/** Active session object used by SESSIONS_REPLACE. */
+export interface GatewaySession {
+  session_id?: string;
+  status?: string;
+  activities?: Array<{ name?: string; type?: number; [key: string]: unknown }>;
+  client_info?: {
+    os?: string;
+    client?: string;
+    version?: number;
+    [key: string]: unknown;
+  };
+  [key: string]: unknown;
+}
+
+/** Shared favorite meme/media payload shape. */
+export interface GatewayFavoriteMemePayload {
+  id?: Snowflake;
+  user_id?: Snowflake;
+  name?: string;
+  url?: string;
+  [key: string]: unknown;
+}
 
 /** INTERACTION_CREATE — slash command or component interaction */
 export type GatewayInteractionCreateDispatchData = APIApplicationCommandInteraction;
