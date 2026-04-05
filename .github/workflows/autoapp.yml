@@ -5,7 +5,7 @@ on:
     types: [opened, synchronize, reopened]
 
 jobs:
-auto-approve:
+  auto-approve:
     runs-on: ubuntu-latest
     permissions:
       pull-requests: write
