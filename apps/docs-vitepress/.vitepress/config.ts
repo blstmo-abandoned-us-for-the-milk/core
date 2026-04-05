@@ -2,7 +2,7 @@ import { defineConfig } from 'vitepress'
 
 // Set to '/docs/' for project pages (github.com/blstmo-abandoned-us-for-the-milk/docs)
 // Set to '/' if using a custom domain
-const BASE = process.env.VITEPRESS_BASE ?? '/docs/'
+const BASE = process.env.VITEPRESS_BASE ?? '/'
 
 export default defineConfig({
   base: BASE,
