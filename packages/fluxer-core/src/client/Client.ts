@@ -38,6 +38,7 @@ import {
   GatewayChannelPinsUpdateDispatchData,
   GatewayPresenceUpdateDispatchData,
   GatewayWebhooksUpdateDispatchData,
+  GatewayGuildMembersChunkDispatchData,
 } from '@erinjs/types';
 import {
   APIChannel,
@@ -103,6 +104,7 @@ export interface ClientEvents {
   [Events.GuildMemberAdd]: [member: GuildMember];
   [Events.GuildMemberUpdate]: [oldMember: GuildMember, newMember: GuildMember];
   [Events.GuildMemberRemove]: [member: GuildMember];
+  [Events.GuildMembersChunk]: [data: GatewayGuildMembersChunkDispatchData];
   [Events.VoiceStateUpdate]: [data: GatewayVoiceStateUpdateDispatchData];
   [Events.VoiceServerUpdate]: [data: GatewayVoiceServerUpdateDispatchData];
   [Events.VoiceStatesSync]: [
@@ -131,6 +133,9 @@ export interface ClientEvents {
   [Events.Error]: [error: Error];
   [Events.Debug]: [message: string];
 }
+
+type ClientEventName = keyof ClientEvents;
+type ClientEventListener<K extends ClientEventName> = (...args: ClientEvents[K]) => void;
 
 /** Typed event handler methods. Use client.events.MessageReactionAdd((reaction, user, messageId, channelId, emoji, userId) => {...}) or client.on(Events.MessageReactionAdd, ...). */
 export type ClientEventMethods = {
@@ -190,6 +195,34 @@ export class Client extends EventEmitter {
       version: options.rest?.version ?? '1',
       ...options.rest,
     });
+  }
+
+  /** Typed EventEmitter.on for known client events. */
+  override on<K extends ClientEventName>(event: K, listener: ClientEventListener<K>): this;
+  override on(event: string | symbol, listener: (...args: unknown[]) => void): this;
+  override on(event: string | symbol, listener: (...args: unknown[]) => void): this {
+    return super.on(event, listener);
+  }
+
+  /** Typed EventEmitter.once for known client events. */
+  override once<K extends ClientEventName>(event: K, listener: ClientEventListener<K>): this;
+  override once(event: string | symbol, listener: (...args: unknown[]) => void): this;
+  override once(event: string | symbol, listener: (...args: unknown[]) => void): this {
+    return super.once(event, listener);
+  }
+
+  /** Typed EventEmitter.off for known client events. */
+  override off<K extends ClientEventName>(event: K, listener: ClientEventListener<K>): this;
+  override off(event: string | symbol, listener: (...args: unknown[]) => void): this;
+  override off(event: string | symbol, listener: (...args: unknown[]) => void): this {
+    return super.off(event, listener);
+  }
+
+  /** Typed EventEmitter.emit for known client events. */
+  override emit<K extends ClientEventName>(event: K, ...args: ClientEvents[K]): boolean;
+  override emit(event: string | symbol, ...args: unknown[]): boolean;
+  override emit(event: string | symbol, ...args: unknown[]): boolean {
+    return super.emit(event, ...args);
   }
 
   /**

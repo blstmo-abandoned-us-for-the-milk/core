@@ -30,6 +30,7 @@ import {
   GatewayTypingStartDispatchData,
   GatewayUserUpdateDispatchData,
   GatewayGuildMemberRemoveDispatchData,
+  GatewayGuildMembersChunkDispatchData,
 } from '@erinjs/types';
 import { Client } from './Client.js';
 import { normalizeGuildPayload } from '../util/guildUtils';
@@ -304,6 +305,21 @@ handlers.set('GUILD_MEMBER_REMOVE', async (client, d) => {
     member = new GuildMember(client, memberData, guild);
   }
   client.emit(Events.GuildMemberRemove, member);
+});
+
+handlers.set('GUILD_MEMBERS_CHUNK', async (client, d) => {
+  const data = d as GatewayGuildMembersChunkDispatchData;
+  const guild = client.guilds.get(data.guild_id);
+  if (guild) {
+    for (const m of data.members ?? []) {
+      if (m?.user?.id) {
+        const memberData = { ...m, guild_id: guild.id };
+        const member = new GuildMember(client, memberData, guild);
+        guild.members.set(member.id, member);
+      }
+    }
+  }
+  client.emit(Events.GuildMembersChunk, data);
 });
 
 handlers.set('INTERACTION_CREATE', async (client, d) => {

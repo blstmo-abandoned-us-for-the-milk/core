@@ -38,7 +38,8 @@
     "clean": "rm -rf dist",
     "lint": "eslint src --max-warnings 0 --config ../../eslint.config.js",
     "lint:fix": "eslint src --fix --config ../../eslint.config.js",
-    "test": "vitest run --passWithNoTests",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "test": "pnpm run typecheck && vitest run --passWithNoTests",
     "test:coverage": "vitest run --coverage"
   },
   "dependencies": {
