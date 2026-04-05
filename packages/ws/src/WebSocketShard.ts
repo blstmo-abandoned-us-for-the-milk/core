@@ -194,6 +194,12 @@ export class WebSocketShard extends EventEmitter {
         this.ws?.close(1000);
         setTimeout(() => this.connect(), 100);
         break;
+      case GatewayOpcodes.GatewayError: {
+        const msg = typeof payload.d === 'string' ? payload.d : JSON.stringify(payload.d);
+        this.debug(`Gateway error: ${msg}`);
+        this.emit('error', new Error(`Gateway error: ${msg}`));
+        break;
+      }
       default:
         break;
     }

@@ -21,6 +21,7 @@ export const Events = {
   GuildMemberAdd: 'guildMemberAdd',
   GuildMemberUpdate: 'guildMemberUpdate',
   GuildMemberRemove: 'guildMemberRemove',
+  GuildMembersChunk: 'guildMembersChunk',
   GuildRoleCreate: 'guildRoleCreate',
   GuildRoleUpdate: 'guildRoleUpdate',
   GuildRoleDelete: 'guildRoleDelete',
