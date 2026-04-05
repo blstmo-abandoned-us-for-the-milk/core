@@ -42,6 +42,7 @@ import {
 import {
   APIChannel,
   APIGuild,
+  APIGatewayBotResponse,
   APIMessage,
   APIUser,
   APIUserPartial,
@@ -271,6 +272,14 @@ export class Client extends EventEmitter {
    */
   async fetchInstance(): Promise<APIInstance> {
     return this.rest.get<APIInstance>(Routes.instanceDiscovery(), { auth: false });
+  }
+
+  /**
+   * Fetch gateway connection metadata (WebSocket URL, recommended shards, session limits).
+   * Uses authenticated GET /gateway/bot.
+   */
+  async fetchGatewayInfo(): Promise<APIGatewayBotResponse> {
+    return this.rest.get<APIGatewayBotResponse>(Routes.gatewayBot());
   }
 
   /**

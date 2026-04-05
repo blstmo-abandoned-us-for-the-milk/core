@@ -239,8 +239,15 @@ export interface GatewayGuildBanRemoveDispatchData {
   user: APIUser;
 }
 
-/** INVITE_CREATE — full invite: code, guild, channel, inviter?, expires_at?, ... */
-export type GatewayInviteCreateDispatchData = APIInvite;
+/**
+ * INVITE_CREATE — invite payload from gateway.
+ * The Fluxer Docs indicate this event can, or is an empty payload; some instances may also send partial invite fields.
+ */
+export interface GatewayInviteCreateDispatchData extends Partial<APIInvite> {
+  code?: string;
+  guild_id?: Snowflake;
+  channel_id?: Snowflake;
+}
 
 /** INVITE_DELETE — code, channel_id, guild_id? */
 export interface GatewayInviteDeleteDispatchData {

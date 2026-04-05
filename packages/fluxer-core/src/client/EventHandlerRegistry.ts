@@ -2,8 +2,11 @@ import { Events } from '../util/Events.js';
 import {
   APIMessage,
   APIChannel,
+  APIChannelPartial,
   APIGuild,
+  APIGuildPartial,
   APIGuildMember,
+  APIInvite,
   APIUserPartial,
   APIApplicationCommandInteraction,
   APIBan,
@@ -43,6 +46,49 @@ import { GuildEmoji } from '../structures/GuildEmoji';
 export type DispatchHandler = (client: Client, data: unknown) => Promise<void>;
 
 const handlers = new Map<string, DispatchHandler>();
+
+function normalizeInviteCreatePayload(
+  client: Client,
+  payload: GatewayInviteCreateDispatchData,
+): APIInvite | null {
+  if (!payload?.code) return null;
+
+  const guildId = payload.guild?.id ?? payload.guild_id ?? '0';
+  const cachedGuild = guildId !== '0' ? client.guilds.get(guildId) : null;
+  const guild: APIGuildPartial = {
+    id: guildId,
+    name: payload.guild?.name ?? cachedGuild?.name ?? 'Unknown Guild',
+    icon: payload.guild?.icon ?? null,
+    banner: payload.guild?.banner ?? null,
+    splash: payload.guild?.splash ?? null,
+    features: payload.guild?.features,
+  };
+
+  const channelId = payload.channel?.id ?? payload.channel_id ?? '0';
+  const cachedChannel = channelId !== '0' ? client.channels.get(channelId) : null;
+  const channel: APIChannelPartial = {
+    id: channelId,
+    type: payload.channel?.type ?? cachedChannel?.type ?? 0,
+    name: payload.channel?.name ?? cachedChannel?.name ?? null,
+    icon: payload.channel?.icon ?? null,
+  };
+
+  return {
+    code: payload.code,
+    type: typeof payload.type === 'number' ? payload.type : 0,
+    guild,
+    channel,
+    inviter: payload.inviter ?? null,
+    member_count: payload.member_count,
+    presence_count: payload.presence_count,
+    expires_at: payload.expires_at,
+    temporary: payload.temporary,
+    created_at: payload.created_at,
+    uses: payload.uses,
+    max_uses: payload.max_uses,
+    max_age: payload.max_age,
+  };
+}
 
 handlers.set('MESSAGE_CREATE', async (client, d) => {
   const data = d as APIMessage & { member?: APIGuildMember };
@@ -375,7 +421,19 @@ handlers.set('CHANNEL_PINS_UPDATE', async (client, d) => {
 });
 
 handlers.set('INVITE_CREATE', async (client, d) => {
-  const data = d as GatewayInviteCreateDispatchData;
+  const data = normalizeInviteCreatePayload(client, d as GatewayInviteCreateDispatchData);
+  if (!data) {
+    client.emit(
+      Events.Debug,
+      '[Gateway] INVITE_CREATE payload had no invite code (documented as possibly empty)',
+    );
+    return;
+  }
+
+  client.emit(
+    Events.Debug,
+    `[Gateway] INVITE_CREATE code=${data.code} guild=${data.guild.id} channel=${data.channel.id}`,
+  );
   client.emit(Events.InviteCreate, new Invite(client, data));
 });
 

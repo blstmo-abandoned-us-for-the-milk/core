@@ -7,6 +7,10 @@ dist
 coverage
 test-results
 .turbo
+
+# local Erin.js SDK playground
+.local/
+
 .DS_Store
 openapi.json
 .cl*
