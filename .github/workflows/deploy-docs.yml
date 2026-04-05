@@ -43,7 +43,7 @@ jobs:
         working-directory: apps/docs-vitepress
         run: npx vitepress build
         env:
-          VITEPRESS_BASE: /docs/
+          VITEPRESS_BASE: /
 
       - name: Deploy to docs gh-pages
         uses: peaceiris/actions-gh-pages@v4
