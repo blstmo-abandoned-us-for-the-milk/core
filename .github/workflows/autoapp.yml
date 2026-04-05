@@ -5,6 +5,11 @@ on:
     types: [opened, synchronize, reopened]
 
 jobs:
+  debug:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Author association: ${{ github.event.pull_request.author_association }}"
+
   auto-approve:
     runs-on: ubuntu-latest
     permissions:
@@ -12,7 +17,5 @@ jobs:
     if: github.event.pull_request.author_association == 'MEMBER' || github.event.pull_request.author_association == 'OWNER'
 
     steps:
-      - name: debug
-        run: echo "Author association: ${{ github.event.pull_request.author_association }}"
       - uses: hmarr/auto-approve-action@v4
         continue-on-error: true
