@@ -39,16 +39,16 @@ To browse guides locally, run `pnpm run docs:dev` from the repo root and open `h
 
 ## Examples
 
-| Example                                        | Description                                      | Guide                                                                                                                                                                                                                |
-| ---------------------------------------------- | ------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [minimal-bot.js](minimal-bot.js)               | Login + `!ping` → Pong                           | `/v/latest/guides/basic-bot`                                                                                                                                                   |
+| Example                                        | Description                                      | Guide                                                                                         |
+| ---------------------------------------------- | ------------------------------------------------ | --------------------------------------------------------------------------------------------- |
+| [minimal-bot.js](minimal-bot.js)               | Login + `!ping` → Pong                           | `/v/latest/guides/basic-bot`                                                                  |
 | [first-steps-bot.js](first-steps-bot.js)       | !ping, !hello, !avatar, !embed, !perms           | `/v/latest/guides/basic-bot`, `/v/latest/guides/profile-urls`, `/v/latest/guides/permissions` |
-| [ping-bot.js](ping-bot.js)                     | Prefix commands, embeds, DMs, voice, audio/video | `/v/latest/guides/basic-bot`, `/v/latest/guides/voice`                                                                                       |
-| [reaction-bot.js](reaction-bot.js)             | Simple reaction handling                         | `/v/latest/guides/reactions`                                                                                                                                                   |
-| [reaction-roles-bot.js](reaction-roles-bot.js) | Reaction-based role assignment                   | `/v/latest/guides/reactions`                                                                                                                                                   |
-| [webhook-bot.js](webhook-bot.js)               | Webhook-based bot (no gateway)                   | `/v/latest/guides/webhooks`                                                                                                                                                     |
-| [webi-bot.js](webi-bot.js)                     | Full webhook demo: embeds, files, all options    | `/v/latest/guides/webhook-attachments-embeds`                                                                                                               |
-| [moderation-bot.js](moderation-bot.js)         | Ban, kick, unban, !perms (permissions)           | `/v/latest/guides/permissions`, `/v/latest/guides/moderation`                                                                         |
+| [ping-bot.js](ping-bot.js)                     | Prefix commands, embeds, DMs, voice, audio/video | `/v/latest/guides/basic-bot`, `/v/latest/guides/voice`                                        |
+| [reaction-bot.js](reaction-bot.js)             | Simple reaction handling                         | `/v/latest/guides/reactions`                                                                  |
+| [reaction-roles-bot.js](reaction-roles-bot.js) | Reaction-based role assignment                   | `/v/latest/guides/reactions`                                                                  |
+| [webhook-bot.js](webhook-bot.js)               | Webhook-based bot (no gateway)                   | `/v/latest/guides/webhooks`                                                                   |
+| [webi-bot.js](webi-bot.js)                     | Full webhook demo: embeds, files, all options    | `/v/latest/guides/webhook-attachments-embeds`                                                 |
+| [moderation-bot.js](moderation-bot.js)         | Ban, kick, unban, !perms (permissions)           | `/v/latest/guides/permissions`, `/v/latest/guides/moderation`                                 |
 
 ## Environment Variables
 
