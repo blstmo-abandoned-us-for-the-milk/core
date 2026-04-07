@@ -60,7 +60,7 @@ import youtubedl from 'youtube-dl-exec';
 
 const result = await youtubedl(videoUrl, {
   getUrl: true,
-  f: 'bestaudio[ext=webm][acodec=opus]/bestaudio[ext=webm]/bestaudio',
+  format: 'bestaudio[ext=webm][acodec=opus]/bestaudio[ext=webm]/bestaudio',
 }, { timeout: 15000 });
 
 const streamUrl = String(result ?? '').trim();
