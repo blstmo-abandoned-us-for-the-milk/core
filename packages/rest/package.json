@@ -3,7 +3,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "version": "1.2.4",
+  "version": "1.2.5-community.0",
   "description": "REST client for the Fluxer API",
   "repository": {
     "type": "git",
