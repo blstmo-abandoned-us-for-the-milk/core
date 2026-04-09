@@ -11,7 +11,10 @@
     "@erinjs/types": "1.2.4",
     "@erinjs/util": "1.2.4",
     "@erinjs/voice": "1.2.4",
-    "@erinjs/ws": "1.2.4"
+    "@erinjs/ws": "1.2.4",
+    "erinjs-docs": "1.0.0"
   },
-  "changesets": []
+  "changesets": [
+    "community-bootstrap-release"
+  ]
 }
